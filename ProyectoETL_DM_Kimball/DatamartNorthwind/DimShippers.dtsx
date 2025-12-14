@@ -1,0 +1,1549 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="12/1/2025 3:58:32 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="MSI"
+  DTS:CreatorName="MSI\gusta"
+  DTS:DTSID="{198308B0-758F-450F-8D34-5F4BF955B892}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="16.0.5685.0"
+  DTS:LocaleID="2058"
+  DTS:ObjectName="DimShippers"
+  DTS:PackageType="5"
+  DTS:VersionBuild="41"
+  DTS:VersionGUID="{8681B68D-5434-43F7-B1F3-799A79B8F793}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[.,1422.Datamart_Northwind.sa]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{D33F932B-FB2D-477D-9609-33B246E57185}"
+      DTS:ObjectName=".,1422.Datamart_Northwind.sa">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=.,1422;User ID=sa;Initial Catalog=Datamart_Northwind;Provider=MSOLEDBSQL.1;Persist Security Info=True;Application Name=SSIS-Package1-{D33F932B-FB2D-477D-9609-33B246E57185}.,1422.Datamart_Northwind.sa;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[.,1422.Datamart_northwind.sa1]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{542C275C-0B23-4EDA-BD65-DA55E1B764C4}"
+      DTS:ObjectName=".,1422.Datamart_northwind.sa1">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=.,1422;User ID=sa;Initial Catalog=Datamart_northwind;Provider=MSOLEDBSQL.1;Application Name=SSIS-DimShippers-{542C275C-0B23-4EDA-BD65-DA55E1B764C4}.,1422.Datamart_northwind.sa1;Auto Translate=False;">
+          <DTS:Password
+            DTS:Name="Password"
+            Sensitive="1"
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAxkPZQf2+b06WS1sIs1Z74AAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAACP15n5ScObGpFTAL60xsmgdUscaQhA+qswaGryvizMDwAAAAAOgAAAAAIAACAAAACa4ZJXQn90f21WuMZ8A8oXPPBqa7fc1MUXZnZDFgJ7SSAAAAAQwKqedw0g+rV0jjBBCFpA+rB+p2c2NlAaPMS9eZFXaEAAAAAAi+lJ2/tj3uVW1sNSKnRPCj6hGFV8ti1DYv40nBXGbLJtkn64PWtxuFpidXWqxX3ILsy8TjyG064gU5C3kdID</DTS:Password>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[.,1422.NORTHWIND_METADATA.sa]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{91193120-8C2E-4227-A064-0FAB02E8BD47}"
+      DTS:ObjectName=".,1422.NORTHWIND_METADATA.sa">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=.,1422;User ID=sa;Initial Catalog=NORTHWIND_METADATA;Provider=MSOLEDBSQL.1;Persist Security Info=True;Application Name=SSIS-Package1-{91193120-8C2E-4227-A064-0FAB02E8BD47}.,1422.NORTHWIND_METADATA.sa;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[.,1422.NORTHWIND_METADATA.sa1]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{F1024EDE-D492-47F5-818A-828A00E63D51}"
+      DTS:ObjectName=".,1422.NORTHWIND_METADATA.sa1">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=.,1422;User ID=sa;Initial Catalog=NORTHWIND_METADATA;Provider=MSOLEDBSQL.1;Persist Security Info=True;Application Name=SSIS-DimShippers-{F1024EDE-D492-47F5-818A-828A00E63D51}.,1422.NORTHWIND_METADATA.sa1;Auto Translate=False;">
+          <DTS:Password
+            DTS:Name="Password"
+            Sensitive="1"
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAxkPZQf2+b06WS1sIs1Z74AAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAAAyBRtxzmF/+01rMko/hD/ZyVRXAeEY3EoseA2vPzd/2AAAAAAOgAAAAAIAACAAAACeBxrN7/pAmrtH/LVZov0TkQMXzBMY8moHlxz/sGIxFSAAAAADVrgn54FDDOrnzspN7jfM+54gayTWPPUaI+SZ0b+CXkAAAAA3EcRxmJFEp33Ya5N+SLjn7lYmh0B4Yn0NxhqAXgBGrXyAPFlKsxIua1J6Fpa7ZOgNcr1KwaR/8JCOeRBbCT3B</DTS:Password>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[.,1422.Stage_Northwind.sa]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{144C8237-A65C-42B1-AD83-A5282F7925EF}"
+      DTS:ObjectName=".,1422.Stage_Northwind.sa">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=.,1422;User ID=sa;Initial Catalog=Stage_Northwind;Provider=MSOLEDBSQL.1;Persist Security Info=True;Application Name=SSIS-Package1-{144C8237-A65C-42B1-AD83-A5282F7925EF}.,1422.Stage_Northwind.sa;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[.,1422.Stage_Northwind.sa1]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{9ED671A1-952D-463A-BCD1-98DEFB980B6F}"
+      DTS:ObjectName=".,1422.Stage_Northwind.sa1">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=.,1422;User ID=sa;Initial Catalog=Stage_Northwind;Provider=MSOLEDBSQL.1;Persist Security Info=True;Application Name=SSIS-DimShippers-{9ED671A1-952D-463A-BCD1-98DEFB980B6F}.,1422.Stage_Northwind.sa1;Auto Translate=False;">
+          <DTS:Password
+            DTS:Name="Password"
+            Sensitive="1"
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAxkPZQf2+b06WS1sIs1Z74AAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAAAryqWOzspBbz3eJXzeoS7NhP56rthP7i9k6f/cwsY4sgAAAAAOgAAAAAIAACAAAAChaAbhuBonGGfX4nphwL2Sd9bt/V49TR+e0v0IQnO82yAAAAC98VrAkTs/vKb9FkcyBRtbi+v9wCgimYXY61J37/y9JkAAAADxUlTGgrelT0jGXv1uN+sCbxiCT4DwifT8m+YRKNEmQ7/DkSa6SgzNxTal0ad0CgxBFZwrom0WL5/5FK78USK+</DTS:Password>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{4DEC1D2E-765C-4DBF-AD1B-E8602F663EE1}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="ETLCantidadRegistrosModificados">
+      <DTS:VariableValue
+        DTS:DataType="3">0</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{6641629E-211B-47A8-B090-5098A4C7A40A}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="ETLCantidadRegistrosNuevos">
+      <DTS:VariableValue
+        DTS:DataType="3">0</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{C10DDD5D-DCD3-40CB-A71A-0C614EFC1749}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="ETLExecution">
+      <DTS:VariableValue
+        DTS:DataType="3">0</DTS:VariableValue>
+    </DTS:Variable>
+  </DTS:Variables>
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\DimShippers"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{5bffc63f-c1a6-475e-802d-738e84dbf271}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="DimShippers"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\DimShippers\Comando de OLE DB"
+              componentClassID="Microsoft.OLEDBCommand"
+              contactInfo="Comando de OLE DB;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos los derechos reservados; http://www.microsoft.com/sql/support;2"
+              description="Ejecuta una instrucción SQL para cada fila de un flujo de datos. Por ejemplo, se usa para llamar al procedimiento almacenado de configuración de nuevo empleado para cada fila de la tabla de nuevos empleados. Nota: la ejecución de una instrucción SQL para cada fila de un flujo de datos de gran tamaño puede tardar mucho tiempo."
+              name="Comando de OLE DB"
+              usesDispositions="true"
+              version="2">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="Número de segundos antes de que se agote el tiempo de espera de un comando. Un valor de 0 indica un tiempo de espera infinito."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Comando SQL para ejecutar."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">UPDATE dbo.dim_shipper
+SET company_name = ?
+WHERE shipperid_nk = ?;</property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica la página de códigos de columna para utilizar cuando la información de página de códigos no está disponible en el origen de datos."
+                  name="DefaultCodePage">1252</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\DimShippers\Comando de OLE DB.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[.,1422.Datamart_northwind.sa1]"
+                  connectionManagerRefId="Package.ConnectionManagers[.,1422.Datamart_northwind.sa1]"
+                  description="La conexión de tiempo de ejecución OLE DB usada para obtener acceso a la base de datos."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\DimShippers\Comando de OLE DB.Inputs[Entrada de comando de OLE DB]"
+                  errorOrTruncationOperation="Ejecución de comando"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="Entrada de comando de OLE DB">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\DimShippers\Comando de OLE DB.Inputs[Entrada de comando de OLE DB].Columns[Shipper_Compania]"
+                      cachedDataType="wstr"
+                      cachedLength="40"
+                      cachedName="Shipper_Compania"
+                      externalMetadataColumnId="Package\DimShippers\Comando de OLE DB.Inputs[Entrada de comando de OLE DB].ExternalColumns[Param_0]"
+                      lineageId="Package\DimShippers\OLE DB Source 1.Outputs[OLE DB Source Output].Columns[Shipper_Compania]" />
+                    <inputColumn
+                      refId="Package\DimShippers\Comando de OLE DB.Inputs[Entrada de comando de OLE DB].Columns[Shipper_Codigo]"
+                      cachedDataType="i4"
+                      cachedName="Shipper_Codigo"
+                      externalMetadataColumnId="Package\DimShippers\Comando de OLE DB.Inputs[Entrada de comando de OLE DB].ExternalColumns[Param_1]"
+                      lineageId="Package\DimShippers\OLE DB Source 1.Outputs[OLE DB Source Output].Columns[Shipper_Codigo]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\DimShippers\Comando de OLE DB.Inputs[Entrada de comando de OLE DB].ExternalColumns[Param_0]"
+                      dataType="wstr"
+                      length="40"
+                      name="Param_0">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Información de parámetros. Coincide con los valores de DBPARAMFLAGSENUM de OLE DB."
+                          name="DBParamInfoFlags">65</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\DimShippers\Comando de OLE DB.Inputs[Entrada de comando de OLE DB].ExternalColumns[Param_1]"
+                      dataType="i4"
+                      name="Param_1">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Información de parámetros. Coincide con los valores de DBPARAMFLAGSENUM de OLE DB."
+                          name="DBParamInfoFlags">81</property>
+                      </properties>
+                    </externalMetadataColumn>
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\DimShippers\Comando de OLE DB.Outputs[Salida de comando de OLE DB]"
+                  exclusionGroup="1"
+                  name="Salida de comando de OLE DB"
+                  synchronousInputId="Package\DimShippers\Comando de OLE DB.Inputs[Entrada de comando de OLE DB]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\DimShippers\Comando de OLE DB.Outputs[Salida de error de comando de OLE DB]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Salida de error de comando de OLE DB"
+                  synchronousInputId="Package\DimShippers\Comando de OLE DB.Inputs[Entrada de comando de OLE DB]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DimShippers\Comando de OLE DB.Outputs[Salida de error de comando de OLE DB].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DimShippers\Comando de OLE DB.Outputs[Salida de error de comando de OLE DB].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DimShippers\Comando de OLE DB.Outputs[Salida de error de comando de OLE DB].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DimShippers\Comando de OLE DB.Outputs[Salida de error de comando de OLE DB].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\DimShippers\Comando de OLE DB 1"
+              componentClassID="Microsoft.OLEDBCommand"
+              contactInfo="Comando de OLE DB;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos los derechos reservados; http://www.microsoft.com/sql/support;2"
+              description="Ejecuta una instrucción SQL para cada fila de un flujo de datos. Por ejemplo, se usa para llamar al procedimiento almacenado de configuración de nuevo empleado para cada fila de la tabla de nuevos empleados. Nota: la ejecución de una instrucción SQL para cada fila de un flujo de datos de gran tamaño puede tardar mucho tiempo."
+              name="Comando de OLE DB 1"
+              usesDispositions="true"
+              version="2">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="Número de segundos antes de que se agote el tiempo de espera de un comando. Un valor de 0 indica un tiempo de espera infinito."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Comando SQL para ejecutar."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">UPDATE dbo.dim_shipper
+SET company_name = ?
+WHERE shipperid_nk = ?</property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica la página de códigos de columna para utilizar cuando la información de página de códigos no está disponible en el origen de datos."
+                  name="DefaultCodePage">1252</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\DimShippers\Comando de OLE DB 1.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[.,1422.Datamart_northwind.sa1]"
+                  connectionManagerRefId="Package.ConnectionManagers[.,1422.Datamart_northwind.sa1]"
+                  description="La conexión de tiempo de ejecución OLE DB usada para obtener acceso a la base de datos."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\DimShippers\Comando de OLE DB 1.Inputs[Entrada de comando de OLE DB]"
+                  errorOrTruncationOperation="Ejecución de comando"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="Entrada de comando de OLE DB">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\DimShippers\Comando de OLE DB 1.Inputs[Entrada de comando de OLE DB].Columns[Shipper_Compania]"
+                      cachedDataType="wstr"
+                      cachedLength="40"
+                      cachedName="Shipper_Compania"
+                      externalMetadataColumnId="Package\DimShippers\Comando de OLE DB 1.Inputs[Entrada de comando de OLE DB].ExternalColumns[Param_0]"
+                      lineageId="Package\DimShippers\OLE DB Source 1.Outputs[OLE DB Source Output].Columns[Shipper_Compania]" />
+                    <inputColumn
+                      refId="Package\DimShippers\Comando de OLE DB 1.Inputs[Entrada de comando de OLE DB].Columns[Shipper_Codigo]"
+                      cachedDataType="i4"
+                      cachedName="Shipper_Codigo"
+                      externalMetadataColumnId="Package\DimShippers\Comando de OLE DB 1.Inputs[Entrada de comando de OLE DB].ExternalColumns[Param_1]"
+                      lineageId="Package\DimShippers\OLE DB Source 1.Outputs[OLE DB Source Output].Columns[Shipper_Codigo]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\DimShippers\Comando de OLE DB 1.Inputs[Entrada de comando de OLE DB].ExternalColumns[Param_0]"
+                      dataType="wstr"
+                      length="40"
+                      name="Param_0">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Información de parámetros. Coincide con los valores de DBPARAMFLAGSENUM de OLE DB."
+                          name="DBParamInfoFlags">65</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\DimShippers\Comando de OLE DB 1.Inputs[Entrada de comando de OLE DB].ExternalColumns[Param_1]"
+                      dataType="i4"
+                      name="Param_1">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Información de parámetros. Coincide con los valores de DBPARAMFLAGSENUM de OLE DB."
+                          name="DBParamInfoFlags">81</property>
+                      </properties>
+                    </externalMetadataColumn>
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\DimShippers\Comando de OLE DB 1.Outputs[Salida de comando de OLE DB]"
+                  exclusionGroup="1"
+                  name="Salida de comando de OLE DB"
+                  synchronousInputId="Package\DimShippers\Comando de OLE DB 1.Inputs[Entrada de comando de OLE DB]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\DimShippers\Comando de OLE DB 1.Outputs[Salida de error de comando de OLE DB]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Salida de error de comando de OLE DB"
+                  synchronousInputId="Package\DimShippers\Comando de OLE DB 1.Inputs[Entrada de comando de OLE DB]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DimShippers\Comando de OLE DB 1.Outputs[Salida de error de comando de OLE DB].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DimShippers\Comando de OLE DB 1.Outputs[Salida de error de comando de OLE DB].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DimShippers\Comando de OLE DB 1.Outputs[Salida de error de comando de OLE DB].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DimShippers\Comando de OLE DB 1.Outputs[Salida de error de comando de OLE DB].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\DimShippers\Insertar destino"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="Destino de OLE DB;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos los derechos reservados; http://www.microsoft.com/sql/support;4"
+              description="Destino de OLE DB"
+              name="Insertar destino"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="Número de segundos antes de que se agote el tiempo de espera de un comando. Un valor de 0 indica un tiempo de espera infinito."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Especifica el nombre del objeto de base de datos usado para abrir un conjunto de filas."
+                  name="OpenRowset">[dbo].[dim_shipper]</property>
+                <property
+                  dataType="System.String"
+                  description="Especifica la variable que contiene el nombre del objeto de base de datos usado para abrir un conjunto de filas."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="Comando SQL para ejecutar."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica la página de códigos de columna para utilizar cuando la información de página de códigos no está disponible en el origen de datos."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Fuerza el uso del valor de la propiedad DefaultCodePage al describir datos de caracteres."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica el modo utilizado para obtener acceso a la base de datos."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indica si los valores proporcionados para columnas de identidad se van a copiar al destino. Si es False, los valores de las columnas de identidad se generan automáticamente en el destino. Solo se aplica si está activada la carga rápida."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indica si las columnas que contienen NULL tendrán NULL insertado en el destino. Si es False, las columnas que contienen NULL tendrán sus valores predeterminados insertados en el destino. Solo se aplica si está activada la carga rápida."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Especifica opciones para usar con la carga rápida. Solo se aplica si está activada la carga rápida."
+                  name="FastLoadOptions"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica cuándo se emiten confirmaciones durante la inserción de datos. El valor 0 especifica que se emitirá una confirmación al final de la inserción de datos. Solo se aplica si está activada la carga rápida."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\DimShippers\Insertar destino.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[.,1422.Datamart_northwind.sa1]"
+                  connectionManagerRefId="Package.ConnectionManagers[.,1422.Datamart_northwind.sa1]"
+                  description="La conexión de tiempo de ejecución OLE DB usada para obtener acceso a la base de datos."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\DimShippers\Insertar destino.Inputs[Entrada de destino de OLE DB]"
+                  errorOrTruncationOperation="Insertar"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="Entrada de destino de OLE DB">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\DimShippers\Insertar destino.Inputs[Entrada de destino de OLE DB].Columns[Shipper_Codigo]"
+                      cachedDataType="i4"
+                      cachedName="Shipper_Codigo"
+                      externalMetadataColumnId="Package\DimShippers\Insertar destino.Inputs[Entrada de destino de OLE DB].ExternalColumns[shipperid_nk]"
+                      lineageId="Package\DimShippers\OLE DB Source 1.Outputs[OLE DB Source Output].Columns[Shipper_Codigo]" />
+                    <inputColumn
+                      refId="Package\DimShippers\Insertar destino.Inputs[Entrada de destino de OLE DB].Columns[Shipper_Compania]"
+                      cachedDataType="wstr"
+                      cachedLength="40"
+                      cachedName="Shipper_Compania"
+                      externalMetadataColumnId="Package\DimShippers\Insertar destino.Inputs[Entrada de destino de OLE DB].ExternalColumns[company_name]"
+                      lineageId="Package\DimShippers\OLE DB Source 1.Outputs[OLE DB Source Output].Columns[Shipper_Compania]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\DimShippers\Insertar destino.Inputs[Entrada de destino de OLE DB].ExternalColumns[shipper_key]"
+                      dataType="i4"
+                      name="shipper_key" />
+                    <externalMetadataColumn
+                      refId="Package\DimShippers\Insertar destino.Inputs[Entrada de destino de OLE DB].ExternalColumns[shipperid_nk]"
+                      dataType="i4"
+                      name="shipperid_nk" />
+                    <externalMetadataColumn
+                      refId="Package\DimShippers\Insertar destino.Inputs[Entrada de destino de OLE DB].ExternalColumns[company_name]"
+                      dataType="wstr"
+                      length="40"
+                      name="company_name" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\DimShippers\Insertar destino.Outputs[Salida de error de destino de OLE DB]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Salida de error de destino de OLE DB"
+                  synchronousInputId="Package\DimShippers\Insertar destino.Inputs[Entrada de destino de OLE DB]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DimShippers\Insertar destino.Outputs[Salida de error de destino de OLE DB].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DimShippers\Insertar destino.Outputs[Salida de error de destino de OLE DB].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DimShippers\Insertar destino.Outputs[Salida de error de destino de OLE DB].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DimShippers\Insertar destino.Outputs[Salida de error de destino de OLE DB].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\DimShippers\OLE DB Source 1"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="OLE DB Source 1"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[Stage_Transportista]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\DimShippers\OLE DB Source 1.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[.,1422.Stage_Northwind.sa1]"
+                  connectionManagerRefId="Package.ConnectionManagers[.,1422.Stage_Northwind.sa1]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\DimShippers\OLE DB Source 1.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DimShippers\OLE DB Source 1.Outputs[OLE DB Source Output].Columns[Shipper_Codigo]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DimShippers\OLE DB Source 1.Outputs[OLE DB Source Output].ExternalColumns[Shipper_Codigo]"
+                      lineageId="Package\DimShippers\OLE DB Source 1.Outputs[OLE DB Source Output].Columns[Shipper_Codigo]"
+                      name="Shipper_Codigo"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DimShippers\OLE DB Source 1.Outputs[OLE DB Source Output].Columns[Shipper_Compania]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DimShippers\OLE DB Source 1.Outputs[OLE DB Source Output].ExternalColumns[Shipper_Compania]"
+                      length="40"
+                      lineageId="Package\DimShippers\OLE DB Source 1.Outputs[OLE DB Source Output].Columns[Shipper_Compania]"
+                      name="Shipper_Compania"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DimShippers\OLE DB Source 1.Outputs[OLE DB Source Output].Columns[Shipper_Telefono]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DimShippers\OLE DB Source 1.Outputs[OLE DB Source Output].ExternalColumns[Shipper_Telefono]"
+                      length="24"
+                      lineageId="Package\DimShippers\OLE DB Source 1.Outputs[OLE DB Source Output].Columns[Shipper_Telefono]"
+                      name="Shipper_Telefono"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DimShippers\OLE DB Source 1.Outputs[OLE DB Source Output].Columns[ETLLoad]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DimShippers\OLE DB Source 1.Outputs[OLE DB Source Output].ExternalColumns[ETLLoad]"
+                      lineageId="Package\DimShippers\OLE DB Source 1.Outputs[OLE DB Source Output].Columns[ETLLoad]"
+                      name="ETLLoad"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DimShippers\OLE DB Source 1.Outputs[OLE DB Source Output].Columns[ETLExecution]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DimShippers\OLE DB Source 1.Outputs[OLE DB Source Output].ExternalColumns[ETLExecution]"
+                      lineageId="Package\DimShippers\OLE DB Source 1.Outputs[OLE DB Source Output].Columns[ETLExecution]"
+                      name="ETLExecution"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\DimShippers\OLE DB Source 1.Outputs[OLE DB Source Output].ExternalColumns[Shipper_Codigo]"
+                      dataType="i4"
+                      name="Shipper_Codigo" />
+                    <externalMetadataColumn
+                      refId="Package\DimShippers\OLE DB Source 1.Outputs[OLE DB Source Output].ExternalColumns[Shipper_Compania]"
+                      dataType="wstr"
+                      length="40"
+                      name="Shipper_Compania" />
+                    <externalMetadataColumn
+                      refId="Package\DimShippers\OLE DB Source 1.Outputs[OLE DB Source Output].ExternalColumns[Shipper_Telefono]"
+                      dataType="wstr"
+                      length="24"
+                      name="Shipper_Telefono" />
+                    <externalMetadataColumn
+                      refId="Package\DimShippers\OLE DB Source 1.Outputs[OLE DB Source Output].ExternalColumns[ETLLoad]"
+                      dataType="dbTimeStamp"
+                      name="ETLLoad" />
+                    <externalMetadataColumn
+                      refId="Package\DimShippers\OLE DB Source 1.Outputs[OLE DB Source Output].ExternalColumns[ETLExecution]"
+                      dataType="i4"
+                      name="ETLExecution" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\DimShippers\OLE DB Source 1.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DimShippers\OLE DB Source 1.Outputs[OLE DB Source Error Output].Columns[Shipper_Codigo]"
+                      dataType="i4"
+                      lineageId="Package\DimShippers\OLE DB Source 1.Outputs[OLE DB Source Error Output].Columns[Shipper_Codigo]"
+                      name="Shipper_Codigo" />
+                    <outputColumn
+                      refId="Package\DimShippers\OLE DB Source 1.Outputs[OLE DB Source Error Output].Columns[Shipper_Compania]"
+                      dataType="wstr"
+                      length="40"
+                      lineageId="Package\DimShippers\OLE DB Source 1.Outputs[OLE DB Source Error Output].Columns[Shipper_Compania]"
+                      name="Shipper_Compania" />
+                    <outputColumn
+                      refId="Package\DimShippers\OLE DB Source 1.Outputs[OLE DB Source Error Output].Columns[Shipper_Telefono]"
+                      dataType="wstr"
+                      length="24"
+                      lineageId="Package\DimShippers\OLE DB Source 1.Outputs[OLE DB Source Error Output].Columns[Shipper_Telefono]"
+                      name="Shipper_Telefono" />
+                    <outputColumn
+                      refId="Package\DimShippers\OLE DB Source 1.Outputs[OLE DB Source Error Output].Columns[ETLLoad]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\DimShippers\OLE DB Source 1.Outputs[OLE DB Source Error Output].Columns[ETLLoad]"
+                      name="ETLLoad" />
+                    <outputColumn
+                      refId="Package\DimShippers\OLE DB Source 1.Outputs[OLE DB Source Error Output].Columns[ETLExecution]"
+                      dataType="i4"
+                      lineageId="Package\DimShippers\OLE DB Source 1.Outputs[OLE DB Source Error Output].Columns[ETLExecution]"
+                      name="ETLExecution" />
+                    <outputColumn
+                      refId="Package\DimShippers\OLE DB Source 1.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DimShippers\OLE DB Source 1.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DimShippers\OLE DB Source 1.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DimShippers\OLE DB Source 1.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\DimShippers\Recuento de filas"
+              componentClassID="Microsoft.RowCount"
+              contactInfo="Recuento de filas;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos los derechos reservados; http://www.microsoft.com/sql/support;0"
+              description="Cuenta las filas a medida que pasan por un flujo de datos. Por ejemplo, se usa el número de filas procesadas para determinar si deben o no realizarse operaciones de limpieza o actualizar el texto de un mensaje de correo electrónico para comunicar el estado de procesamiento."
+              name="Recuento de filas">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Especifica la variable que contiene el recuento de filas."
+                  name="VariableName">User::ETLCantidadRegistrosNuevos</property>
+              </properties>
+              <inputs>
+                <input
+                  refId="Package\DimShippers\Recuento de filas.Inputs[Entrada de Recuento de filas 1]"
+                  hasSideEffects="true"
+                  name="Entrada de Recuento de filas 1">
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\DimShippers\Recuento de filas.Outputs[Salida de Recuento de filas 1]"
+                  name="Salida de Recuento de filas 1"
+                  synchronousInputId="Package\DimShippers\Recuento de filas.Inputs[Entrada de Recuento de filas 1]">
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\DimShippers\Recuento de filas 1"
+              componentClassID="Microsoft.RowCount"
+              contactInfo="Recuento de filas;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos los derechos reservados; http://www.microsoft.com/sql/support;0"
+              description="Cuenta las filas a medida que pasan por un flujo de datos. Por ejemplo, se usa el número de filas procesadas para determinar si deben o no realizarse operaciones de limpieza o actualizar el texto de un mensaje de correo electrónico para comunicar el estado de procesamiento."
+              name="Recuento de filas 1">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Especifica la variable que contiene el recuento de filas."
+                  name="VariableName">User::ETLCantidadRegistrosModificados</property>
+              </properties>
+              <inputs>
+                <input
+                  refId="Package\DimShippers\Recuento de filas 1.Inputs[Entrada de Recuento de filas 1]"
+                  hasSideEffects="true"
+                  name="Entrada de Recuento de filas 1">
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\DimShippers\Recuento de filas 1.Outputs[Salida de Recuento de filas 1]"
+                  name="Salida de Recuento de filas 1"
+                  synchronousInputId="Package\DimShippers\Recuento de filas 1.Inputs[Entrada de Recuento de filas 1]">
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\DimShippers\Slowly Changing Dimension"
+              componentClassID="Microsoft.SCD"
+              contactInfo="Slowly Changing Dimension;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;3"
+              description="Updates a SQL Server Analysis Services data warehouse dimension. Update dimension records that are already present and  insert dimension records that aren't. For example, update the DimProduct table of the AdventureWorksDW OLAP database with data from the Products table in the AdventureWorks OLTP database."
+              name="Slowly Changing Dimension"
+              version="3">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Specifies the SELECT statement used to create a schema rowset."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT [company_name], [shipperid_nk] FROM [dbo].[dim_shipper]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the WHERE clause in the SELECT statement that selects the current row among rows with identical business keys."
+                  name="CurrentRowWhere"></property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether historical attribute updates are directed to the transformation output for changing attribute updates."
+                  name="UpdateChangingAttributeHistory">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the transformation fails when columns with fixed attributes contain changes."
+                  name="FailOnFixedAttributeChange">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the column name for the inferred member."
+                  name="InferredMemberIndicator"></property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether inferred member updates are detected."
+                  name="EnableInferredMember">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the transformation fails when a lookup of an existing record fails."
+                  name="FailOnLookupFailure">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies that all rows in the input are new or the transformation detects the change type."
+                  name="IncomingRowChangeType"
+                  typeConverter="IncomingRowChangeType">1</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\DimShippers\Slowly Changing Dimension.Connections[LookupConnection]"
+                  connectionManagerID="Package.ConnectionManagers[.,1422.Datamart_northwind.sa1]"
+                  connectionManagerRefId="Package.ConnectionManagers[.,1422.Datamart_northwind.sa1]"
+                  description="Defines the connection to use for lookups in the dimension table"
+                  name="LookupConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\DimShippers\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input]"
+                  name="Slowly Changing Dimension Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\DimShippers\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].Columns[Shipper_Compania]"
+                      cachedDataType="wstr"
+                      cachedLength="40"
+                      cachedName="Shipper_Compania"
+                      externalMetadataColumnId="Package\DimShippers\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[company_name]"
+                      lineageId="Package\DimShippers\OLE DB Source 1.Outputs[OLE DB Source Output].Columns[Shipper_Compania]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          name="ColumnType"
+                          typeConverter="ColumnType">4</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DimShippers\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].Columns[Shipper_Codigo]"
+                      cachedDataType="i4"
+                      cachedName="Shipper_Codigo"
+                      externalMetadataColumnId="Package\DimShippers\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[shipperid_nk]"
+                      lineageId="Package\DimShippers\OLE DB Source 1.Outputs[OLE DB Source Output].Columns[Shipper_Codigo]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          name="ColumnType"
+                          typeConverter="ColumnType">1</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\DimShippers\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[company_name]"
+                      dataType="wstr"
+                      length="40"
+                      name="company_name" />
+                    <externalMetadataColumn
+                      refId="Package\DimShippers\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[shipperid_nk]"
+                      dataType="i4"
+                      name="shipperid_nk" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\DimShippers\Slowly Changing Dimension.Outputs[Unchanged Output]"
+                  description="Unchanged rows"
+                  exclusionGroup="1"
+                  name="Unchanged Output"
+                  synchronousInputId="Package\DimShippers\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\DimShippers\Slowly Changing Dimension.Outputs[New Output]"
+                  description="New rows"
+                  exclusionGroup="1"
+                  name="New Output"
+                  synchronousInputId="Package\DimShippers\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\DimShippers\Slowly Changing Dimension.Outputs[Fixed Attribute Output]"
+                  description="Rows with changes in columns tagged FixedAttribute"
+                  exclusionGroup="1"
+                  name="Fixed Attribute Output"
+                  synchronousInputId="Package\DimShippers\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\DimShippers\Slowly Changing Dimension.Outputs[Changing Attribute Updates Output]"
+                  description="These rows contain new information for ChangingAttribute (Type 1) column changes"
+                  exclusionGroup="1"
+                  name="Changing Attribute Updates Output"
+                  synchronousInputId="Package\DimShippers\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\DimShippers\Slowly Changing Dimension.Outputs[Historical Attribute Inserts Output]"
+                  description="HistoricalAttribute (Type 2) changes result in these new rows"
+                  exclusionGroup="2"
+                  name="Historical Attribute Inserts Output"
+                  synchronousInputId="Package\DimShippers\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\DimShippers\Slowly Changing Dimension.Outputs[Inferred Member Updates Output]"
+                  description="Information to update unpopulated initial dimension row"
+                  exclusionGroup="1"
+                  name="Inferred Member Updates Output"
+                  synchronousInputId="Package\DimShippers\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input]">
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\DimShippers.Paths[New Output]"
+              endId="Package\DimShippers\Recuento de filas.Inputs[Entrada de Recuento de filas 1]"
+              name="New Output"
+              startId="Package\DimShippers\Slowly Changing Dimension.Outputs[New Output]" />
+            <path
+              refId="Package\DimShippers.Paths[OLE DB Source Output]"
+              endId="Package\DimShippers\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input]"
+              name="OLE DB Source Output"
+              startId="Package\DimShippers\OLE DB Source 1.Outputs[OLE DB Source Output]" />
+            <path
+              refId="Package\DimShippers.Paths[Salida de comando de OLE DB]"
+              endId="Package\DimShippers\Comando de OLE DB 1.Inputs[Entrada de comando de OLE DB]"
+              name="Salida de comando de OLE DB"
+              startId="Package\DimShippers\Comando de OLE DB.Outputs[Salida de comando de OLE DB]" />
+            <path
+              refId="Package\DimShippers.Paths[Salida de Recuento de filas 1]"
+              endId="Package\DimShippers\Insertar destino.Inputs[Entrada de destino de OLE DB]"
+              name="Salida de Recuento de filas 1"
+              startId="Package\DimShippers\Recuento de filas.Outputs[Salida de Recuento de filas 1]" />
+            <path
+              refId="Package\DimShippers.Paths[Salida de Recuento de filas 11]"
+              endId="Package\DimShippers\Comando de OLE DB.Inputs[Entrada de comando de OLE DB]"
+              name="Salida de Recuento de filas 1"
+              startId="Package\DimShippers\Recuento de filas 1.Outputs[Salida de Recuento de filas 1]" />
+            <path
+              refId="Package\DimShippers.Paths[Unchanged Output]"
+              endId="Package\DimShippers\Recuento de filas 1.Inputs[Entrada de Recuento de filas 1]"
+              name="Unchanged Output"
+              startId="Package\DimShippers\Slowly Changing Dimension.Outputs[Unchanged Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Insertar cantidad registros nuevos"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Tarea Ejecutar SQL"
+      DTS:DTSID="{0afb14cb-1606-4069-bf59-bbd7ec8f0abd}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Insertar cantidad registros nuevos"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{F1024EDE-D492-47F5-818A-828A00E63D51}"
+          SQLTask:SqlStatementSource="UPDATE ETLExecution&#xA;SET [ETLCountNewRegister] = ?,&#xA;    [ETLCountModifyRegister] = ?&#xA;WHERE ID = ?" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="0"
+            SQLTask:DtsVariableName="User::ETLCantidadRegistrosNuevos"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="3"
+            SQLTask:ParameterSize="-1" />
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="1"
+            SQLTask:DtsVariableName="User::ETLCantidadRegistrosModificados"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="3"
+            SQLTask:ParameterSize="-1" />
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="2"
+            SQLTask:DtsVariableName="User::ETLExecution"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="3"
+            SQLTask:ParameterSize="-1" />
+        </SQLTask:SqlTaskData>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Insertar cantidad total"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Tarea Ejecutar SQL"
+      DTS:DTSID="{4fdb1086-8cb9-4271-9746-83c59bf89c9d}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Insertar cantidad total"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{F1024EDE-D492-47F5-818A-828A00E63D51}"
+          SQLTask:SqlStatementSource="UPDATE ETLExecution&#xA;SET [ETLCountRows]=([ETLCountNewRegister]+[ETLCountModifyRegister])&#xA;WHERE ID = ?" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="0"
+            SQLTask:DtsVariableName="User::ETLExecution"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="3"
+            SQLTask:ParameterSize="-1" />
+        </SQLTask:SqlTaskData>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Insertar registro en el metadata"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Tarea Ejecutar SQL"
+      DTS:DTSID="{ed9e9cea-4de7-452a-ad09-9e872972f7ae}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Insertar registro en el metadata"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{F1024EDE-D492-47F5-818A-828A00E63D51}"
+          SQLTask:SqlStatementSource="INSERT INTO ETLExecution(UserName, MachineName, PackageName, ETLLoad)&#xA;VALUES(?,?,?,GETDATE())" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="0"
+            SQLTask:DtsVariableName="System::UserName"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="130"
+            SQLTask:ParameterSize="-1" />
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="1"
+            SQLTask:DtsVariableName="System::MachineName"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="130"
+            SQLTask:ParameterSize="-1" />
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="2"
+            SQLTask:DtsVariableName="System::PackageName"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="130"
+            SQLTask:ParameterSize="-1" />
+        </SQLTask:SqlTaskData>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Obtener ID"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Tarea Ejecutar SQL"
+      DTS:DTSID="{c04d86ee-2f8a-459d-bcc4-41b1e8fe2117}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Obtener ID"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{F1024EDE-D492-47F5-818A-828A00E63D51}"
+          SQLTask:SqlStatementSource="SELECT TOP(1) ID FROM ETLExecution&#xA;WHERE PackageName = ?&#xA;ORDER BY ID DESC"
+          SQLTask:ResultType="ResultSetType_SingleRow" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+          <SQLTask:ResultBinding
+            SQLTask:ResultName="0"
+            SQLTask:DtsVariableName="User::ETLExecution" />
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="0"
+            SQLTask:DtsVariableName="System::PackageName"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="130"
+            SQLTask:ParameterSize="-1" />
+        </SQLTask:SqlTaskData>
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Restricción]"
+      DTS:CreationName=""
+      DTS:DTSID="{82DD2831-E749-475D-A0C4-2B3D12F59568}"
+      DTS:From="Package\Insertar registro en el metadata"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Restricción"
+      DTS:To="Package\Obtener ID" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Restricción 1]"
+      DTS:CreationName=""
+      DTS:DTSID="{62B21C8E-6364-454C-B45C-6DF544540622}"
+      DTS:From="Package\Obtener ID"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Restricción 1"
+      DTS:To="Package\DimShippers" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Restricción 2]"
+      DTS:CreationName=""
+      DTS:DTSID="{CF6D429F-6A31-46CF-83EC-02EB590F3905}"
+      DTS:From="Package\DimShippers"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Restricción 2"
+      DTS:To="Package\Insertar cantidad registros nuevos" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Restricción 3]"
+      DTS:CreationName=""
+      DTS:DTSID="{ECDEE303-11C3-4C05-9A6C-771AB9F97275}"
+      DTS:From="Package\Insertar cantidad registros nuevos"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Restricción 3"
+      DTS:To="Package\Insertar cantidad total" />
+  </DTS:PrecedenceConstraints>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--Esta sección CDATA contiene la información de diseño del paquete. Esta sección incluye información como, por ejemplo, las coordenadas (x,y), el ancho y el alto.-->
+<!--Si edita manualmente esta sección y comete un error, puede eliminarlo. -->
+<!--El paquete podrá cargarse normalmente, pero se perderá la información de diseño anterior y el diseñador reorganizará los elementos automáticamente en la superficie de diseño.-->
+<Objects
+  Version="8">
+  <!--Cada uno de los nodos siguientes contiene propiedades que no afectan al comportamiento en tiempo de ejecución.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="138.4,41.6"
+          Id="Package\DimShippers"
+          TopLeft="262.499988935888,204.733332326876" />
+        <NodeLayout
+          Size="233.6,41.6"
+          Id="Package\Insertar cantidad registros nuevos"
+          TopLeft="225.8333242726,286.199998427034" />
+        <NodeLayout
+          Size="177.6,41.6"
+          Id="Package\Insertar cantidad total"
+          TopLeft="327.499985384445,384.99999773999" />
+        <NodeLayout
+          Size="231.2,41.6"
+          Id="Package\Insertar registro en el metadata"
+          TopLeft="254.166656057868,66.9333332851198" />
+        <NodeLayout
+          Size="128.8,41.6"
+          Id="Package\Obtener ID"
+          TopLeft="294.166653872365,137.133332796958" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Restricción]"
+          TopLeft="369.666656057868,108.93333328512">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-11.000002185503,28.1999995118382"
+              Start="0,0"
+              End="-11.000002185503,20.6999995118382">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,10.0999997559191" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,10.0999997559191"
+                    Point2="0,14.0999997559191"
+                    Point3="-4,14.0999997559191" />
+                  <mssgle:LineSegment
+                    End="-7.00000218550304,14.0999997559191" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-7.00000218550304,14.0999997559191"
+                    Point2="-11.000002185503,14.0999997559191"
+                    Point3="-11.000002185503,18.0999997559191" />
+                  <mssgle:LineSegment
+                    End="-11.000002185503,20.6999995118382" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Restricción 1]"
+          TopLeft="358.566653872365,178.733332796958">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-26.866664936477,25.999999529918"
+              Start="0,0"
+              End="-26.866664936477,18.499999529918">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,8.999999764959" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,8.999999764959"
+                    Point2="0,12.999999764959"
+                    Point3="-4,12.999999764959" />
+                  <mssgle:LineSegment
+                    End="-22.866664936477,12.999999764959" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-22.866664936477,12.999999764959"
+                    Point2="-26.866664936477,12.999999764959"
+                    Point3="-26.866664936477,16.999999764959" />
+                  <mssgle:LineSegment
+                    End="-26.866664936477,18.499999529918" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Restricción 2]"
+          TopLeft="331.699988935888,246.333332326876">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="10.933335336712,39.866666100158"
+              Start="0,0"
+              End="10.933335336712,32.366666100158">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,15.933333050079" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,15.933333050079"
+                    Point2="0,19.933333050079"
+                    Point3="4,19.933333050079" />
+                  <mssgle:LineSegment
+                    End="6.93333533671205,19.933333050079" />
+                  <mssgle:CubicBezierSegment
+                    Point1="6.93333533671205,19.933333050079"
+                    Point2="10.933335336712,19.933333050079"
+                    Point3="10.933335336712,23.933333050079" />
+                  <mssgle:LineSegment
+                    End="10.933335336712,32.366666100158" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Restricción 3]"
+          TopLeft="343.0333242726,327.799998427034">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="73.666661111845,57.1999993129559"
+              Start="0,0"
+              End="73.666661111845,49.6999993129559">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,24.599999656478" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,24.599999656478"
+                    Point2="0,28.599999656478"
+                    Point3="4,28.599999656478" />
+                  <mssgle:LineSegment
+                    End="69.666661111845,28.599999656478" />
+                  <mssgle:CubicBezierSegment
+                    Point1="69.666661111845,28.599999656478"
+                    Point2="73.666661111845,28.599999656478"
+                    Point3="73.666661111845,32.599999656478" />
+                  <mssgle:LineSegment
+                    End="73.666661111845,49.6999993129559" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\DimShippers">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="158.4,41.6"
+          Id="Package\DimShippers\Recuento de filas"
+          TopLeft="112.499993853271,214.599998535514" />
+        <NodeLayout
+          Size="216,41.6"
+          Id="Package\DimShippers\Slowly Changing Dimension"
+          TopLeft="228.833321130939,119.23333324896" />
+        <NodeLayout
+          Size="167.2,41.6"
+          Id="Package\DimShippers\Recuento de filas 1"
+          TopLeft="500.833305969008,163.466665557755" />
+        <NodeLayout
+          Size="166.4,41.6"
+          Id="Package\DimShippers\OLE DB Source 1"
+          TopLeft="253.633321130939,17.6333332489596" />
+        <NodeLayout
+          Size="178.4,41.6"
+          Id="Package\DimShippers\Comando de OLE DB"
+          TopLeft="499.166639393404,227.066665087673" />
+        <NodeLayout
+          Size="187.2,41.6"
+          Id="Package\DimShippers\Comando de OLE DB 1"
+          TopLeft="485.833306788571,305.066664545271" />
+        <NodeLayout
+          Size="150.4,41.6"
+          Id="Package\DimShippers\Insertar destino"
+          TopLeft="112.466662614379,310.966665955517" />
+        <EdgeLayout
+          Id="Package\DimShippers.Paths[New Output]"
+          TopLeft="336.833321130939,160.83333324896">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-145.133327277667,53.7666652865543"
+              Start="0,0"
+              End="-145.133327277667,46.2666652865543">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,22.8833326432771" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,22.8833326432771"
+                    Point2="0,26.8833326432771"
+                    Point3="-4,26.8833326432771" />
+                  <mssgle:LineSegment
+                    End="-141.133327277667,26.8833326432771" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-141.133327277667,26.8833326432771"
+                    Point2="-145.133327277667,26.8833326432771"
+                    Point3="-145.133327277667,30.8833326432771" />
+                  <mssgle:LineSegment
+                    End="-145.133327277667,46.2666652865543" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-99.6580503575836,31.8833326432771,54.1827734375,11.43359375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\DimShippers.Paths[Unchanged Output]"
+          TopLeft="444.833321130939,140.03333324896">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="55.9999848380691,44.2333323087959"
+              Start="0,0"
+              End="48.4999848380691,44.2333323087959">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="23.9999924190346,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="23.9999924190346,0"
+                    Point2="27.9999924190346,0"
+                    Point3="27.9999924190346,4" />
+                  <mssgle:LineSegment
+                    End="27.9999924190346,40.2333323087959" />
+                  <mssgle:CubicBezierSegment
+                    Point1="27.9999924190346,40.2333323087959"
+                    Point2="27.9999924190346,44.2333323087959"
+                    Point3="31.9999924190346,44.2333323087959" />
+                  <mssgle:LineSegment
+                    End="48.4999848380691,44.2333323087959" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-14.2003396122154,-17.6630859375,84.4006640625,11.6630859375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\DimShippers.Paths[Salida de Recuento de filas 11]"
+          TopLeft="500.833305969008,189.866665557755">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-1.66666657560398,57.999999529918"
+              Start="0,0"
+              End="-9.16666657560398,57.999999529918">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="-20.166666575604,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-20.166666575604,0"
+                    Point2="-24.166666575604,0"
+                    Point3="-24.166666575604,4" />
+                  <mssgle:LineSegment
+                    End="-24.166666575604,53.999999529918" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-24.166666575604,53.999999529918"
+                    Point2="-24.166666575604,57.999999529918"
+                    Point3="-20.166666575604,57.999999529918" />
+                  <mssgle:LineSegment
+                    End="-9.16666657560398,57.999999529918" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\DimShippers.Paths[Salida de Recuento de filas 1]"
+          TopLeft="189.683328233825,256.199998535514">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,54.7666674200031"
+              Start="0,0"
+              End="0,47.2666674200031">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,47.2666674200031" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\DimShippers.Paths[Salida de comando de OLE DB]"
+          TopLeft="588.366639393404,268.666665087673">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-8.93333260483234,36.3999994575979"
+              Start="0,0"
+              End="-8.93333260483234,28.8999994575979">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,14.1999997287989" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,14.1999997287989"
+                    Point2="0,18.1999997287989"
+                    Point3="-4,18.1999997287989" />
+                  <mssgle:LineSegment
+                    End="-4.93333260483234,18.1999997287989" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-4.93333260483234,18.1999997287989"
+                    Point2="-8.93333260483234,18.1999997287989"
+                    Point3="-8.93333260483234,22.1999997287989" />
+                  <mssgle:LineSegment
+                    End="-8.93333260483234,28.8999994575979" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\DimShippers.Paths[OLE DB Source Output]"
+          TopLeft="336.833321130939,59.2333332489596">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60"
+              Start="0,0"
+              End="0,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\DimShippers\Slowly Changing Dimension">
+    <Properties>
+      <Property>
+        <Name>SCDMetadata</Name>
+        <Value
+          type="q2:string">&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;SCDWizardMetadata xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"&gt;
+  &lt;ConnectionID&gt;{542C275C-0B23-4EDA-BD65-DA55E1B764C4}&lt;/ConnectionID&gt;
+  &lt;TableName&gt;[dbo].[dim_shipper]&lt;/TableName&gt;
+  &lt;InputToColumnsCollection&gt;
+    &lt;InputColumnToDBColumn&gt;
+      &lt;IdentificationString&gt;OLE DB Source 1.Salidas[OLE DB Source Output].Columnas[Shipper_Compania]&lt;/IdentificationString&gt;
+      &lt;ColumnName&gt;company_name&lt;/ColumnName&gt;
+      &lt;KeyType&gt;None&lt;/KeyType&gt;
+      &lt;ChangeType&gt;FixedAttribute&lt;/ChangeType&gt;
+    &lt;/InputColumnToDBColumn&gt;
+    &lt;InputColumnToDBColumn&gt;
+      &lt;IdentificationString&gt;OLE DB Source 1.Salidas[OLE DB Source Output].Columnas[Shipper_Codigo]&lt;/IdentificationString&gt;
+      &lt;ColumnName&gt;shipperid_nk&lt;/ColumnName&gt;
+      &lt;KeyType&gt;BusinessKey&lt;/KeyType&gt;
+      &lt;ChangeType&gt;None&lt;/ChangeType&gt;
+    &lt;/InputColumnToDBColumn&gt;
+  &lt;/InputToColumnsCollection&gt;
+  &lt;GeneratedComponentsIdentificationStrings&gt;
+    &lt;anyType xsi:type="xsd:string"&gt;Insertar destino&lt;/anyType&gt;
+  &lt;/GeneratedComponentsIdentificationStrings&gt;
+  &lt;FailFixedAttribute&gt;false&lt;/FailFixedAttribute&gt;
+  &lt;FailChangeAttribute&gt;false&lt;/FailChangeAttribute&gt;
+  &lt;UseStartEndDate&gt;false&lt;/UseStartEndDate&gt;
+  &lt;CurrentIndicatorColumn /&gt;
+  &lt;InferredIndicatorColumn /&gt;
+  &lt;ValueCurrent /&gt;
+  &lt;ValueExpired /&gt;
+  &lt;StartDateColumn /&gt;
+  &lt;EndDateColumn /&gt;
+  &lt;DateVariable /&gt;
+  &lt;EnableInferredSupport&gt;false&lt;/EnableInferredSupport&gt;
+&lt;/SCDWizardMetadata&gt;</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\DimShippers\OLE DB Source 1">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

@@ -1,0 +1,2497 @@
+<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="11/11/2025 7:19:05 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="MSI"
+  DTS:CreatorName="MSI\gusta"
+  DTS:DTSID="{514B3B58-1802-40A0-82E2-49F158C946BC}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="16.0.5685.0"
+  DTS:LocaleID="2058"
+  DTS:ObjectName="DimEmpleado"
+  DTS:PackageType="5"
+  DTS:VersionBuild="23"
+  DTS:VersionGUID="{BA4B0E2D-3C79-472F-BF0A-E64268D406B7}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[.,1422.Datamart_northwind.sa]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{9030C477-AA5E-4163-8E4E-40CDA20B720E}"
+      DTS:ObjectName=".,1422.Datamart_northwind.sa">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=.,1422;User ID=sa;Initial Catalog=Datamart_northwind;Provider=MSOLEDBSQL.1;Persist Security Info=True;Application Name=SSIS-DimEmpleado-{9030C477-AA5E-4163-8E4E-40CDA20B720E}.,1422.Datamart_northwind.sa;Auto Translate=False;">
+          <DTS:Password
+            DTS:Name="Password"
+            Sensitive="1"
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAxkPZQf2+b06WS1sIs1Z74AAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAADanXPy6UTgjzJ9AKJ0nKDYpYkRzd5iut0mXH4AvUwgVQAAAAAOgAAAAAIAACAAAACXuveV74zB7/K3arEc90fLYMXZlmJWy65iuvUdLlii0SAAAABm+Z53CUevhQ8dRjbtyzdXckL8ca0pi1jM7L5xmGz3jkAAAACuLi67/s8s/93se0ZrZeErmix1hypJwmBbpYHwCQgVpHenjuqSX33TvfpPzjC5WKqzIEJNiqZDRF8JfLuowYnb</DTS:Password>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[.,1422.NORTHWIND_METADATA.sa]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{AC01CC48-728B-4E42-A03A-1CEF47094F86}"
+      DTS:ObjectName=".,1422.NORTHWIND_METADATA.sa">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=.,1422;User ID=sa;Initial Catalog=NORTHWIND_METADATA;Provider=MSOLEDBSQL.1;Application Name=SSIS-DimEmpleado-{AC01CC48-728B-4E42-A03A-1CEF47094F86}.,1422.NORTHWIND_METADATA.sa;Auto Translate=False;">
+          <DTS:Password
+            DTS:Name="Password"
+            Sensitive="1"
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAxkPZQf2+b06WS1sIs1Z74AAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAAB9/OPhmK6paIEuAQJ87Zkon/ZRI53oJndFiUOGakIKuwAAAAAOgAAAAAIAACAAAAAn0cttewBp5wVnCfCg3wZLHjPQk4nXiT5Ui56yg9JTQCAAAABVoEJ+evWv/lIprI7CLdec6I7PxPKJrHiy3wgY1ddqrkAAAACj7CG5a7sXVYAQLjqvnKJjXmnewpJFGSl5HLj4rF7ptdNxvkMKqGRwdmTjzv9bCSuCVpMjJ4dHXv9fI3YFDyyZ</DTS:Password>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[.,1422.Stage_Northwind.sa]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{C690EB25-51C2-497C-A2E6-C7D782FB2626}"
+      DTS:ObjectName=".,1422.Stage_Northwind.sa">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=.,1422;User ID=sa;Initial Catalog=Stage_Northwind;Provider=MSOLEDBSQL.1;Application Name=SSIS-DimEmpleado-{C690EB25-51C2-497C-A2E6-C7D782FB2626}.,1422.Stage_Northwind.sa;Auto Translate=False;">
+          <DTS:Password
+            DTS:Name="Password"
+            Sensitive="1"
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAxkPZQf2+b06WS1sIs1Z74AAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAAA1Pf6+s+S1RygOWXcI7nvqdhU/o/yCtBIC1LIfI5S70QAAAAAOgAAAAAIAACAAAAAeDGNIb5Zu2KsaItazVRulR7hptnbEXFCwRsXrO1WRtSAAAABVV95UwHFvBRVILzJDGajmIDhdrrgzoNBgMmI/td8eh0AAAAAhz5KQptMH97KwqvJQtWMyLtNwnnFpFu7aYroBsK+3Z+JapKCzmHZwnG076ZkYn79VcW/Ii4qetqEIy8RsLOKb</DTS:Password>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{55EA8211-8ACB-4FCB-AFAF-60CFA020C0BF}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="ETLCantidadRegistrosModificados">
+      <DTS:VariableValue
+        DTS:DataType="3">0</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{3123AA9B-B452-4558-8AB0-BD59DB4A47A3}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="ETLCantidadRegistrosNuevos">
+      <DTS:VariableValue
+        DTS:DataType="3">0</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{4FA63831-1BA5-4550-9B35-70BD499D24CE}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="ETLExecution">
+      <DTS:VariableValue
+        DTS:DataType="3">0</DTS:VariableValue>
+    </DTS:Variable>
+  </DTS:Variables>
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\DF Dim Empleado"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Tarea Flujo de datos"
+      DTS:DTSID="{D78D12BA-A8C9-4A66-8F4C-284B397EE6EE}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="DF Dim Empleado"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\DF Dim Empleado\Cantidad Registros Modificados"
+              componentClassID="Microsoft.RowCount"
+              contactInfo="Recuento de filas;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos los derechos reservados; http://www.microsoft.com/sql/support;0"
+              description="Cuenta las filas a medida que pasan por un flujo de datos. Por ejemplo, se usa el número de filas procesadas para determinar si deben o no realizarse operaciones de limpieza o actualizar el texto de un mensaje de correo electrónico para comunicar el estado de procesamiento."
+              name="Cantidad Registros Modificados">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Especifica la variable que contiene el recuento de filas."
+                  name="VariableName">User::ETLCantidadRegistrosModificados</property>
+              </properties>
+              <inputs>
+                <input
+                  refId="Package\DF Dim Empleado\Cantidad Registros Modificados.Inputs[Entrada de Recuento de filas 1]"
+                  hasSideEffects="true"
+                  name="Entrada de Recuento de filas 1">
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\DF Dim Empleado\Cantidad Registros Modificados.Outputs[Salida de Recuento de filas 1]"
+                  name="Salida de Recuento de filas 1"
+                  synchronousInputId="Package\DF Dim Empleado\Cantidad Registros Modificados.Inputs[Entrada de Recuento de filas 1]">
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\DF Dim Empleado\Cantidad Registros Nuevos"
+              componentClassID="Microsoft.RowCount"
+              contactInfo="Recuento de filas;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos los derechos reservados; http://www.microsoft.com/sql/support;0"
+              description="Cuenta las filas a medida que pasan por un flujo de datos. Por ejemplo, se usa el número de filas procesadas para determinar si deben o no realizarse operaciones de limpieza o actualizar el texto de un mensaje de correo electrónico para comunicar el estado de procesamiento."
+              name="Cantidad Registros Nuevos">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Especifica la variable que contiene el recuento de filas."
+                  name="VariableName">User::ETLCantidadRegistrosNuevos</property>
+              </properties>
+              <inputs>
+                <input
+                  refId="Package\DF Dim Empleado\Cantidad Registros Nuevos.Inputs[Entrada de Recuento de filas 1]"
+                  hasSideEffects="true"
+                  name="Entrada de Recuento de filas 1">
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\DF Dim Empleado\Cantidad Registros Nuevos.Outputs[Salida de Recuento de filas 1]"
+                  name="Salida de Recuento de filas 1"
+                  synchronousInputId="Package\DF Dim Empleado\Cantidad Registros Nuevos.Inputs[Entrada de Recuento de filas 1]">
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\DF Dim Empleado\Comando de OLE DB"
+              componentClassID="Microsoft.OLEDBCommand"
+              contactInfo="Comando de OLE DB;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos los derechos reservados; http://www.microsoft.com/sql/support;2"
+              description="Ejecuta una instrucción SQL para cada fila de un flujo de datos. Por ejemplo, se usa para llamar al procedimiento almacenado de configuración de nuevo empleado para cada fila de la tabla de nuevos empleados. Nota: la ejecución de una instrucción SQL para cada fila de un flujo de datos de gran tamaño puede tardar mucho tiempo."
+              name="Comando de OLE DB"
+              usesDispositions="true"
+              version="2">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="Número de segundos antes de que se agote el tiempo de espera de un comando. Un valor de 0 indica un tiempo de espera infinito."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Comando SQL para ejecutar."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=16.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">UPDATE [DATAMART_NORTHWIND].[dbo].[Dim_Employee]
+SET [DATAMART_NORTHWIND].[dbo].[Dim_Employee].full_name = S.Empleado_NombreCompleto,
+	[DATAMART_NORTHWiND].[dbo].[Dim_Employee].region = S.Empleado_Region,
+	[DATAMART_NORTHWiND].[dbo].[Dim_Employee].city = S.Empleado_Ciudad,
+	[DATAMART_NORTHWiND].[dbo].[Dim_Employee].country = S.Empleado_Pais
+FROM [DATAMART_NORTHWiND].[dbo].[Dim_Employee]
+JOIN
+	[STAGE_NORTHWIND].[dbo].[Stage_Empleado] AS S
+	ON [DATAMART_NORTHWIND].[dbo].[Dim_Employee].employee_key = S.Empleado_Codigo
+WHERE [DATAMART_NORTHWIND].[dbo].[Dim_Employee].employeeid_nk = ?</property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica la página de códigos de columna para utilizar cuando la información de página de códigos no está disponible en el origen de datos."
+                  name="DefaultCodePage">1252</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\DF Dim Empleado\Comando de OLE DB.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[.,1422.Datamart_northwind.sa]"
+                  connectionManagerRefId="Package.ConnectionManagers[.,1422.Datamart_northwind.sa]"
+                  description="La conexión de tiempo de ejecución OLE DB usada para obtener acceso a la base de datos."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\DF Dim Empleado\Comando de OLE DB.Inputs[Entrada de comando de OLE DB]"
+                  errorOrTruncationOperation="Ejecución de comando"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="Entrada de comando de OLE DB">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\DF Dim Empleado\Comando de OLE DB.Inputs[Entrada de comando de OLE DB].Columns[employee_key]"
+                      cachedDataType="i4"
+                      cachedName="employee_key"
+                      externalMetadataColumnId="Package\DF Dim Empleado\Comando de OLE DB.Inputs[Entrada de comando de OLE DB].ExternalColumns[Param_0]"
+                      lineageId="Package\DF Dim Empleado\Combinación de mezcla.Outputs[Salida de combinación de mezcla].Columns[employee_key]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\DF Dim Empleado\Comando de OLE DB.Inputs[Entrada de comando de OLE DB].ExternalColumns[Param_0]"
+                      dataType="i4"
+                      name="Param_0">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Información de parámetros. Coincide con los valores de DBPARAMFLAGSENUM de OLE DB."
+                          name="DBParamInfoFlags">81</property>
+                      </properties>
+                    </externalMetadataColumn>
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\DF Dim Empleado\Comando de OLE DB.Outputs[Salida de comando de OLE DB]"
+                  exclusionGroup="1"
+                  name="Salida de comando de OLE DB"
+                  synchronousInputId="Package\DF Dim Empleado\Comando de OLE DB.Inputs[Entrada de comando de OLE DB]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\DF Dim Empleado\Comando de OLE DB.Outputs[Salida de error de comando de OLE DB]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Salida de error de comando de OLE DB"
+                  synchronousInputId="Package\DF Dim Empleado\Comando de OLE DB.Inputs[Entrada de comando de OLE DB]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DF Dim Empleado\Comando de OLE DB.Outputs[Salida de error de comando de OLE DB].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DF Dim Empleado\Comando de OLE DB.Outputs[Salida de error de comando de OLE DB].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DF Dim Empleado\Comando de OLE DB.Outputs[Salida de error de comando de OLE DB].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DF Dim Empleado\Comando de OLE DB.Outputs[Salida de error de comando de OLE DB].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\DF Dim Empleado\Combinación de mezcla"
+              componentClassID="Microsoft.MergeJoin"
+              contactInfo="Combinación de mezcla;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos los derechos reservados; http://www.microsoft.com/sql/support;1"
+              description="Combina dos flujos de datos ordenados en uno solo mediante la combinación FULL, LEFT o INNER. Se recomienda esta transformación cuando se pueden ordenar los flujos de datos en sus orígenes."
+              name="Combinación de mezcla"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica el tipo de combinación que se debe realizar."
+                  name="JoinType"
+                  typeConverter="JoinType">1</property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica el número de columnas de la clave de ordenación."
+                  name="NumKeyColumns">1</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indica si los valores NULL se tratan como valores iguales."
+                  name="TreatNullsAsEqual">true</property>
+                <property
+                  dataType="System.Int32"
+                  description="Indica la cantidad máxima solicitada de búferes por entrada antes del bloqueo."
+                  name="MaxBuffersPerInput">5</property>
+              </properties>
+              <inputs>
+                <input
+                  refId="Package\DF Dim Empleado\Combinación de mezcla.Inputs[Entrada izquierda de combinación de mezcla]"
+                  hasSideEffects="true"
+                  name="Entrada izquierda de combinación de mezcla">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\DF Dim Empleado\Combinación de mezcla.Inputs[Entrada izquierda de combinación de mezcla].Columns[Empleado_Codigo]"
+                      cachedDataType="i4"
+                      cachedName="Empleado_Codigo"
+                      cachedSortKeyPosition="1"
+                      lineageId="Package\DF Dim Empleado\Ordenar Stage Empleado.Outputs[Salida de ordenación].Columns[Empleado_Codigo]" />
+                    <inputColumn
+                      refId="Package\DF Dim Empleado\Combinación de mezcla.Inputs[Entrada izquierda de combinación de mezcla].Columns[Empleado_NombreCompleto]"
+                      cachedDataType="wstr"
+                      cachedLength="61"
+                      cachedName="Empleado_NombreCompleto"
+                      lineageId="Package\DF Dim Empleado\Ordenar Stage Empleado.Outputs[Salida de ordenación].Columns[Empleado_NombreCompleto]" />
+                    <inputColumn
+                      refId="Package\DF Dim Empleado\Combinación de mezcla.Inputs[Entrada izquierda de combinación de mezcla].Columns[Empleado_Region]"
+                      cachedDataType="wstr"
+                      cachedLength="15"
+                      cachedName="Empleado_Region"
+                      lineageId="Package\DF Dim Empleado\Ordenar Stage Empleado.Outputs[Salida de ordenación].Columns[Empleado_Region]" />
+                    <inputColumn
+                      refId="Package\DF Dim Empleado\Combinación de mezcla.Inputs[Entrada izquierda de combinación de mezcla].Columns[Empleado_Ciudad]"
+                      cachedDataType="wstr"
+                      cachedLength="15"
+                      cachedName="Empleado_Ciudad"
+                      lineageId="Package\DF Dim Empleado\Ordenar Stage Empleado.Outputs[Salida de ordenación].Columns[Empleado_Ciudad]" />
+                    <inputColumn
+                      refId="Package\DF Dim Empleado\Combinación de mezcla.Inputs[Entrada izquierda de combinación de mezcla].Columns[Empleado_Pais]"
+                      cachedDataType="wstr"
+                      cachedLength="15"
+                      cachedName="Empleado_Pais"
+                      lineageId="Package\DF Dim Empleado\Ordenar Stage Empleado.Outputs[Salida de ordenación].Columns[Empleado_Pais]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+                <input
+                  refId="Package\DF Dim Empleado\Combinación de mezcla.Inputs[Entrada derecha de combinación de mezcla]"
+                  hasSideEffects="true"
+                  name="Entrada derecha de combinación de mezcla">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\DF Dim Empleado\Combinación de mezcla.Inputs[Entrada derecha de combinación de mezcla].Columns[employeeid_nk]"
+                      cachedDataType="i4"
+                      cachedName="employeeid_nk"
+                      cachedSortKeyPosition="1"
+                      lineageId="Package\DF Dim Empleado\Ordenar Dim Empleado.Outputs[Salida de ordenación].Columns[employeeid_nk]" />
+                    <inputColumn
+                      refId="Package\DF Dim Empleado\Combinación de mezcla.Inputs[Entrada derecha de combinación de mezcla].Columns[employee_key]"
+                      cachedDataType="i4"
+                      cachedName="employee_key"
+                      lineageId="Package\DF Dim Empleado\Ordenar Dim Empleado.Outputs[Salida de ordenación].Columns[employee_key]" />
+                    <inputColumn
+                      refId="Package\DF Dim Empleado\Combinación de mezcla.Inputs[Entrada derecha de combinación de mezcla].Columns[full_name]"
+                      cachedDataType="wstr"
+                      cachedLength="61"
+                      cachedName="full_name"
+                      lineageId="Package\DF Dim Empleado\Ordenar Dim Empleado.Outputs[Salida de ordenación].Columns[full_name]" />
+                    <inputColumn
+                      refId="Package\DF Dim Empleado\Combinación de mezcla.Inputs[Entrada derecha de combinación de mezcla].Columns[region]"
+                      cachedDataType="wstr"
+                      cachedLength="15"
+                      cachedName="region"
+                      lineageId="Package\DF Dim Empleado\Ordenar Dim Empleado.Outputs[Salida de ordenación].Columns[region]" />
+                    <inputColumn
+                      refId="Package\DF Dim Empleado\Combinación de mezcla.Inputs[Entrada derecha de combinación de mezcla].Columns[city]"
+                      cachedDataType="wstr"
+                      cachedLength="15"
+                      cachedName="city"
+                      lineageId="Package\DF Dim Empleado\Ordenar Dim Empleado.Outputs[Salida de ordenación].Columns[city]" />
+                    <inputColumn
+                      refId="Package\DF Dim Empleado\Combinación de mezcla.Inputs[Entrada derecha de combinación de mezcla].Columns[country]"
+                      cachedDataType="wstr"
+                      cachedLength="15"
+                      cachedName="country"
+                      lineageId="Package\DF Dim Empleado\Ordenar Dim Empleado.Outputs[Salida de ordenación].Columns[country]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\DF Dim Empleado\Combinación de mezcla.Outputs[Salida de combinación de mezcla]"
+                  isSorted="true"
+                  name="Salida de combinación de mezcla">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DF Dim Empleado\Combinación de mezcla.Outputs[Salida de combinación de mezcla].Columns[Empleado_Codigo]"
+                      dataType="i4"
+                      lineageId="Package\DF Dim Empleado\Combinación de mezcla.Outputs[Salida de combinación de mezcla].Columns[Empleado_Codigo]"
+                      name="Empleado_Codigo"
+                      sortKeyPosition="1">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="La columna de entrada asociada a esta columna de salida"
+                          name="InputColumnID">#{Package\DF Dim Empleado\Combinación de mezcla.Inputs[Entrada izquierda de combinación de mezcla].Columns[Empleado_Codigo]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\DF Dim Empleado\Combinación de mezcla.Outputs[Salida de combinación de mezcla].Columns[Empleado_NombreCompleto]"
+                      dataType="wstr"
+                      length="61"
+                      lineageId="Package\DF Dim Empleado\Combinación de mezcla.Outputs[Salida de combinación de mezcla].Columns[Empleado_NombreCompleto]"
+                      name="Empleado_NombreCompleto">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="La columna de entrada asociada a esta columna de salida"
+                          name="InputColumnID">#{Package\DF Dim Empleado\Combinación de mezcla.Inputs[Entrada izquierda de combinación de mezcla].Columns[Empleado_NombreCompleto]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\DF Dim Empleado\Combinación de mezcla.Outputs[Salida de combinación de mezcla].Columns[Empleado_Region]"
+                      dataType="wstr"
+                      length="15"
+                      lineageId="Package\DF Dim Empleado\Combinación de mezcla.Outputs[Salida de combinación de mezcla].Columns[Empleado_Region]"
+                      name="Empleado_Region">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="La columna de entrada asociada a esta columna de salida"
+                          name="InputColumnID">#{Package\DF Dim Empleado\Combinación de mezcla.Inputs[Entrada izquierda de combinación de mezcla].Columns[Empleado_Region]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\DF Dim Empleado\Combinación de mezcla.Outputs[Salida de combinación de mezcla].Columns[Empleado_Ciudad]"
+                      dataType="wstr"
+                      length="15"
+                      lineageId="Package\DF Dim Empleado\Combinación de mezcla.Outputs[Salida de combinación de mezcla].Columns[Empleado_Ciudad]"
+                      name="Empleado_Ciudad">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="La columna de entrada asociada a esta columna de salida"
+                          name="InputColumnID">#{Package\DF Dim Empleado\Combinación de mezcla.Inputs[Entrada izquierda de combinación de mezcla].Columns[Empleado_Ciudad]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\DF Dim Empleado\Combinación de mezcla.Outputs[Salida de combinación de mezcla].Columns[Empleado_Pais]"
+                      dataType="wstr"
+                      length="15"
+                      lineageId="Package\DF Dim Empleado\Combinación de mezcla.Outputs[Salida de combinación de mezcla].Columns[Empleado_Pais]"
+                      name="Empleado_Pais">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="La columna de entrada asociada a esta columna de salida"
+                          name="InputColumnID">#{Package\DF Dim Empleado\Combinación de mezcla.Inputs[Entrada izquierda de combinación de mezcla].Columns[Empleado_Pais]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\DF Dim Empleado\Combinación de mezcla.Outputs[Salida de combinación de mezcla].Columns[employee_key]"
+                      dataType="i4"
+                      lineageId="Package\DF Dim Empleado\Combinación de mezcla.Outputs[Salida de combinación de mezcla].Columns[employee_key]"
+                      name="employee_key">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="La columna de entrada asociada a esta columna de salida"
+                          name="InputColumnID">#{Package\DF Dim Empleado\Combinación de mezcla.Inputs[Entrada derecha de combinación de mezcla].Columns[employee_key]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\DF Dim Empleado\Combinación de mezcla.Outputs[Salida de combinación de mezcla].Columns[employeeid_nk]"
+                      dataType="i4"
+                      lineageId="Package\DF Dim Empleado\Combinación de mezcla.Outputs[Salida de combinación de mezcla].Columns[employeeid_nk]"
+                      name="employeeid_nk">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="La columna de entrada asociada a esta columna de salida"
+                          name="InputColumnID">#{Package\DF Dim Empleado\Combinación de mezcla.Inputs[Entrada derecha de combinación de mezcla].Columns[employeeid_nk]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\DF Dim Empleado\Combinación de mezcla.Outputs[Salida de combinación de mezcla].Columns[full_name]"
+                      dataType="wstr"
+                      length="61"
+                      lineageId="Package\DF Dim Empleado\Combinación de mezcla.Outputs[Salida de combinación de mezcla].Columns[full_name]"
+                      name="full_name">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="La columna de entrada asociada a esta columna de salida"
+                          name="InputColumnID">#{Package\DF Dim Empleado\Combinación de mezcla.Inputs[Entrada derecha de combinación de mezcla].Columns[full_name]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\DF Dim Empleado\Combinación de mezcla.Outputs[Salida de combinación de mezcla].Columns[region]"
+                      dataType="wstr"
+                      length="15"
+                      lineageId="Package\DF Dim Empleado\Combinación de mezcla.Outputs[Salida de combinación de mezcla].Columns[region]"
+                      name="region">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="La columna de entrada asociada a esta columna de salida"
+                          name="InputColumnID">#{Package\DF Dim Empleado\Combinación de mezcla.Inputs[Entrada derecha de combinación de mezcla].Columns[region]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\DF Dim Empleado\Combinación de mezcla.Outputs[Salida de combinación de mezcla].Columns[city]"
+                      dataType="wstr"
+                      length="15"
+                      lineageId="Package\DF Dim Empleado\Combinación de mezcla.Outputs[Salida de combinación de mezcla].Columns[city]"
+                      name="city">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="La columna de entrada asociada a esta columna de salida"
+                          name="InputColumnID">#{Package\DF Dim Empleado\Combinación de mezcla.Inputs[Entrada derecha de combinación de mezcla].Columns[city]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\DF Dim Empleado\Combinación de mezcla.Outputs[Salida de combinación de mezcla].Columns[country]"
+                      dataType="wstr"
+                      length="15"
+                      lineageId="Package\DF Dim Empleado\Combinación de mezcla.Outputs[Salida de combinación de mezcla].Columns[country]"
+                      name="country">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="La columna de entrada asociada a esta columna de salida"
+                          name="InputColumnID">#{Package\DF Dim Empleado\Combinación de mezcla.Inputs[Entrada derecha de combinación de mezcla].Columns[country]}</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\DF Dim Empleado\DatamartEmployee"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="Origen de OLE DB;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos los derechos reservados; http://www.microsoft.com/sql/support;7"
+              description="Origen de OLE DB"
+              name="DatamartEmployee"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="Número de segundos antes de que se agote el tiempo de espera de un comando. Un valor de 0 indica un tiempo de espera infinito."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Especifica el nombre del objeto de base de datos usado para abrir un conjunto de filas."
+                  name="OpenRowset">[dbo].[dim_employee]</property>
+                <property
+                  dataType="System.String"
+                  description="Especifica la variable que contiene el nombre del objeto de base de datos usado para abrir un conjunto de filas."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="Comando SQL para ejecutar."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=16.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                <property
+                  dataType="System.String"
+                  description="Variable que contiene el comando SQL para ejecutar."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica la página de códigos de columna para utilizar cuando la información de página de códigos no está disponible en el origen de datos."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Fuerza el uso del valor de la propiedad DefaultCodePage al describir datos de caracteres."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica el modo utilizado para obtener acceso a la base de datos."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.String"
+                  description="Asignaciones entre los parámetros del comando SQL y las variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\DF Dim Empleado\DatamartEmployee.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[.,1422.Datamart_northwind.sa]"
+                  connectionManagerRefId="Package.ConnectionManagers[.,1422.Datamart_northwind.sa]"
+                  description="La conexión de tiempo de ejecución OLE DB usada para obtener acceso a la base de datos."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\DF Dim Empleado\DatamartEmployee.Outputs[Salida de origen de OLE DB]"
+                  name="Salida de origen de OLE DB">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DF Dim Empleado\DatamartEmployee.Outputs[Salida de origen de OLE DB].Columns[employee_key]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF Dim Empleado\DatamartEmployee.Outputs[Salida de origen de OLE DB].ExternalColumns[employee_key]"
+                      lineageId="Package\DF Dim Empleado\DatamartEmployee.Outputs[Salida de origen de OLE DB].Columns[employee_key]"
+                      name="employee_key"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DF Dim Empleado\DatamartEmployee.Outputs[Salida de origen de OLE DB].Columns[employeeid_nk]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF Dim Empleado\DatamartEmployee.Outputs[Salida de origen de OLE DB].ExternalColumns[employeeid_nk]"
+                      lineageId="Package\DF Dim Empleado\DatamartEmployee.Outputs[Salida de origen de OLE DB].Columns[employeeid_nk]"
+                      name="employeeid_nk"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DF Dim Empleado\DatamartEmployee.Outputs[Salida de origen de OLE DB].Columns[full_name]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF Dim Empleado\DatamartEmployee.Outputs[Salida de origen de OLE DB].ExternalColumns[full_name]"
+                      length="61"
+                      lineageId="Package\DF Dim Empleado\DatamartEmployee.Outputs[Salida de origen de OLE DB].Columns[full_name]"
+                      name="full_name"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DF Dim Empleado\DatamartEmployee.Outputs[Salida de origen de OLE DB].Columns[region]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF Dim Empleado\DatamartEmployee.Outputs[Salida de origen de OLE DB].ExternalColumns[region]"
+                      length="15"
+                      lineageId="Package\DF Dim Empleado\DatamartEmployee.Outputs[Salida de origen de OLE DB].Columns[region]"
+                      name="region"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DF Dim Empleado\DatamartEmployee.Outputs[Salida de origen de OLE DB].Columns[city]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF Dim Empleado\DatamartEmployee.Outputs[Salida de origen de OLE DB].ExternalColumns[city]"
+                      length="15"
+                      lineageId="Package\DF Dim Empleado\DatamartEmployee.Outputs[Salida de origen de OLE DB].Columns[city]"
+                      name="city"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DF Dim Empleado\DatamartEmployee.Outputs[Salida de origen de OLE DB].Columns[country]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF Dim Empleado\DatamartEmployee.Outputs[Salida de origen de OLE DB].ExternalColumns[country]"
+                      length="15"
+                      lineageId="Package\DF Dim Empleado\DatamartEmployee.Outputs[Salida de origen de OLE DB].Columns[country]"
+                      name="country"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\DF Dim Empleado\DatamartEmployee.Outputs[Salida de origen de OLE DB].ExternalColumns[employee_key]"
+                      dataType="i4"
+                      name="employee_key" />
+                    <externalMetadataColumn
+                      refId="Package\DF Dim Empleado\DatamartEmployee.Outputs[Salida de origen de OLE DB].ExternalColumns[employeeid_nk]"
+                      dataType="i4"
+                      name="employeeid_nk" />
+                    <externalMetadataColumn
+                      refId="Package\DF Dim Empleado\DatamartEmployee.Outputs[Salida de origen de OLE DB].ExternalColumns[full_name]"
+                      dataType="wstr"
+                      length="61"
+                      name="full_name" />
+                    <externalMetadataColumn
+                      refId="Package\DF Dim Empleado\DatamartEmployee.Outputs[Salida de origen de OLE DB].ExternalColumns[region]"
+                      dataType="wstr"
+                      length="15"
+                      name="region" />
+                    <externalMetadataColumn
+                      refId="Package\DF Dim Empleado\DatamartEmployee.Outputs[Salida de origen de OLE DB].ExternalColumns[city]"
+                      dataType="wstr"
+                      length="15"
+                      name="city" />
+                    <externalMetadataColumn
+                      refId="Package\DF Dim Empleado\DatamartEmployee.Outputs[Salida de origen de OLE DB].ExternalColumns[country]"
+                      dataType="wstr"
+                      length="15"
+                      name="country" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\DF Dim Empleado\DatamartEmployee.Outputs[Salida de error de origen de OLE DB]"
+                  isErrorOut="true"
+                  name="Salida de error de origen de OLE DB">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DF Dim Empleado\DatamartEmployee.Outputs[Salida de error de origen de OLE DB].Columns[employee_key]"
+                      dataType="i4"
+                      lineageId="Package\DF Dim Empleado\DatamartEmployee.Outputs[Salida de error de origen de OLE DB].Columns[employee_key]"
+                      name="employee_key" />
+                    <outputColumn
+                      refId="Package\DF Dim Empleado\DatamartEmployee.Outputs[Salida de error de origen de OLE DB].Columns[employeeid_nk]"
+                      dataType="i4"
+                      lineageId="Package\DF Dim Empleado\DatamartEmployee.Outputs[Salida de error de origen de OLE DB].Columns[employeeid_nk]"
+                      name="employeeid_nk" />
+                    <outputColumn
+                      refId="Package\DF Dim Empleado\DatamartEmployee.Outputs[Salida de error de origen de OLE DB].Columns[full_name]"
+                      dataType="wstr"
+                      length="61"
+                      lineageId="Package\DF Dim Empleado\DatamartEmployee.Outputs[Salida de error de origen de OLE DB].Columns[full_name]"
+                      name="full_name" />
+                    <outputColumn
+                      refId="Package\DF Dim Empleado\DatamartEmployee.Outputs[Salida de error de origen de OLE DB].Columns[region]"
+                      dataType="wstr"
+                      length="15"
+                      lineageId="Package\DF Dim Empleado\DatamartEmployee.Outputs[Salida de error de origen de OLE DB].Columns[region]"
+                      name="region" />
+                    <outputColumn
+                      refId="Package\DF Dim Empleado\DatamartEmployee.Outputs[Salida de error de origen de OLE DB].Columns[city]"
+                      dataType="wstr"
+                      length="15"
+                      lineageId="Package\DF Dim Empleado\DatamartEmployee.Outputs[Salida de error de origen de OLE DB].Columns[city]"
+                      name="city" />
+                    <outputColumn
+                      refId="Package\DF Dim Empleado\DatamartEmployee.Outputs[Salida de error de origen de OLE DB].Columns[country]"
+                      dataType="wstr"
+                      length="15"
+                      lineageId="Package\DF Dim Empleado\DatamartEmployee.Outputs[Salida de error de origen de OLE DB].Columns[country]"
+                      name="country" />
+                    <outputColumn
+                      refId="Package\DF Dim Empleado\DatamartEmployee.Outputs[Salida de error de origen de OLE DB].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DF Dim Empleado\DatamartEmployee.Outputs[Salida de error de origen de OLE DB].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DF Dim Empleado\DatamartEmployee.Outputs[Salida de error de origen de OLE DB].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DF Dim Empleado\DatamartEmployee.Outputs[Salida de error de origen de OLE DB].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\DF Dim Empleado\Destino DatamartEmployee"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="Destino de OLE DB;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos los derechos reservados; http://www.microsoft.com/sql/support;4"
+              description="Destino de OLE DB"
+              name="Destino DatamartEmployee"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="Número de segundos antes de que se agote el tiempo de espera de un comando. Un valor de 0 indica un tiempo de espera infinito."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Especifica el nombre del objeto de base de datos usado para abrir un conjunto de filas."
+                  name="OpenRowset">[dbo].[dim_employee]</property>
+                <property
+                  dataType="System.String"
+                  description="Especifica la variable que contiene el nombre del objeto de base de datos usado para abrir un conjunto de filas."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="Comando SQL para ejecutar."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=16.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica la página de códigos de columna para utilizar cuando la información de página de códigos no está disponible en el origen de datos."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Fuerza el uso del valor de la propiedad DefaultCodePage al describir datos de caracteres."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica el modo utilizado para obtener acceso a la base de datos."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indica si los valores proporcionados para columnas de identidad se van a copiar al destino. Si es False, los valores de las columnas de identidad se generan automáticamente en el destino. Solo se aplica si está activada la carga rápida."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indica si las columnas que contienen NULL tendrán NULL insertado en el destino. Si es False, las columnas que contienen NULL tendrán sus valores predeterminados insertados en el destino. Solo se aplica si está activada la carga rápida."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Especifica opciones para usar con la carga rápida. Solo se aplica si está activada la carga rápida."
+                  name="FastLoadOptions"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica cuándo se emiten confirmaciones durante la inserción de datos. El valor 0 especifica que se emitirá una confirmación al final de la inserción de datos. Solo se aplica si está activada la carga rápida."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\DF Dim Empleado\Destino DatamartEmployee.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[.,1422.Datamart_northwind.sa]"
+                  connectionManagerRefId="Package.ConnectionManagers[.,1422.Datamart_northwind.sa]"
+                  description="La conexión de tiempo de ejecución OLE DB usada para obtener acceso a la base de datos."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\DF Dim Empleado\Destino DatamartEmployee.Inputs[Entrada de destino de OLE DB]"
+                  errorOrTruncationOperation="Insertar"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="Entrada de destino de OLE DB">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\DF Dim Empleado\Destino DatamartEmployee.Inputs[Entrada de destino de OLE DB].Columns[Empleado_Codigo]"
+                      cachedDataType="i4"
+                      cachedName="Empleado_Codigo"
+                      cachedSortKeyPosition="1"
+                      externalMetadataColumnId="Package\DF Dim Empleado\Destino DatamartEmployee.Inputs[Entrada de destino de OLE DB].ExternalColumns[employeeid_nk]"
+                      lineageId="Package\DF Dim Empleado\Combinación de mezcla.Outputs[Salida de combinación de mezcla].Columns[Empleado_Codigo]" />
+                    <inputColumn
+                      refId="Package\DF Dim Empleado\Destino DatamartEmployee.Inputs[Entrada de destino de OLE DB].Columns[Empleado_NombreCompleto]"
+                      cachedDataType="wstr"
+                      cachedLength="61"
+                      cachedName="Empleado_NombreCompleto"
+                      externalMetadataColumnId="Package\DF Dim Empleado\Destino DatamartEmployee.Inputs[Entrada de destino de OLE DB].ExternalColumns[full_name]"
+                      lineageId="Package\DF Dim Empleado\Combinación de mezcla.Outputs[Salida de combinación de mezcla].Columns[Empleado_NombreCompleto]" />
+                    <inputColumn
+                      refId="Package\DF Dim Empleado\Destino DatamartEmployee.Inputs[Entrada de destino de OLE DB].Columns[Empleado_Region]"
+                      cachedDataType="wstr"
+                      cachedLength="15"
+                      cachedName="Empleado_Region"
+                      externalMetadataColumnId="Package\DF Dim Empleado\Destino DatamartEmployee.Inputs[Entrada de destino de OLE DB].ExternalColumns[region]"
+                      lineageId="Package\DF Dim Empleado\Combinación de mezcla.Outputs[Salida de combinación de mezcla].Columns[Empleado_Region]" />
+                    <inputColumn
+                      refId="Package\DF Dim Empleado\Destino DatamartEmployee.Inputs[Entrada de destino de OLE DB].Columns[Empleado_Ciudad]"
+                      cachedDataType="wstr"
+                      cachedLength="15"
+                      cachedName="Empleado_Ciudad"
+                      externalMetadataColumnId="Package\DF Dim Empleado\Destino DatamartEmployee.Inputs[Entrada de destino de OLE DB].ExternalColumns[city]"
+                      lineageId="Package\DF Dim Empleado\Combinación de mezcla.Outputs[Salida de combinación de mezcla].Columns[Empleado_Ciudad]" />
+                    <inputColumn
+                      refId="Package\DF Dim Empleado\Destino DatamartEmployee.Inputs[Entrada de destino de OLE DB].Columns[Empleado_Pais]"
+                      cachedDataType="wstr"
+                      cachedLength="15"
+                      cachedName="Empleado_Pais"
+                      externalMetadataColumnId="Package\DF Dim Empleado\Destino DatamartEmployee.Inputs[Entrada de destino de OLE DB].ExternalColumns[country]"
+                      lineageId="Package\DF Dim Empleado\Combinación de mezcla.Outputs[Salida de combinación de mezcla].Columns[Empleado_Pais]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\DF Dim Empleado\Destino DatamartEmployee.Inputs[Entrada de destino de OLE DB].ExternalColumns[employee_key]"
+                      dataType="i4"
+                      name="employee_key" />
+                    <externalMetadataColumn
+                      refId="Package\DF Dim Empleado\Destino DatamartEmployee.Inputs[Entrada de destino de OLE DB].ExternalColumns[employeeid_nk]"
+                      dataType="i4"
+                      name="employeeid_nk" />
+                    <externalMetadataColumn
+                      refId="Package\DF Dim Empleado\Destino DatamartEmployee.Inputs[Entrada de destino de OLE DB].ExternalColumns[full_name]"
+                      dataType="wstr"
+                      length="61"
+                      name="full_name" />
+                    <externalMetadataColumn
+                      refId="Package\DF Dim Empleado\Destino DatamartEmployee.Inputs[Entrada de destino de OLE DB].ExternalColumns[region]"
+                      dataType="wstr"
+                      length="15"
+                      name="region" />
+                    <externalMetadataColumn
+                      refId="Package\DF Dim Empleado\Destino DatamartEmployee.Inputs[Entrada de destino de OLE DB].ExternalColumns[city]"
+                      dataType="wstr"
+                      length="15"
+                      name="city" />
+                    <externalMetadataColumn
+                      refId="Package\DF Dim Empleado\Destino DatamartEmployee.Inputs[Entrada de destino de OLE DB].ExternalColumns[country]"
+                      dataType="wstr"
+                      length="15"
+                      name="country" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\DF Dim Empleado\Destino DatamartEmployee.Outputs[Salida de error de destino de OLE DB]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Salida de error de destino de OLE DB"
+                  synchronousInputId="Package\DF Dim Empleado\Destino DatamartEmployee.Inputs[Entrada de destino de OLE DB]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DF Dim Empleado\Destino DatamartEmployee.Outputs[Salida de error de destino de OLE DB].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DF Dim Empleado\Destino DatamartEmployee.Outputs[Salida de error de destino de OLE DB].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DF Dim Empleado\Destino DatamartEmployee.Outputs[Salida de error de destino de OLE DB].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DF Dim Empleado\Destino DatamartEmployee.Outputs[Salida de error de destino de OLE DB].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\DF Dim Empleado\División condicional"
+              componentClassID="Microsoft.ConditionalSplit"
+              contactInfo="División condicional;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos los derechos reservados; http://www.microsoft.com/sql/support;0"
+              description="Enruta filas de datos a diferentes salidas según el contenido de los datos. Se usan condiciones (expresiones de SSIS) para especificar las filas que se van a enrutar. Por ejemplo, se usa para separar los registros que deben limpiarse de los registros listos para ser cargados o para enrutar solamente un subconjunto de registros."
+              name="División condicional"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\DF Dim Empleado\División condicional.Inputs[Entrada de división condicional]"
+                  description="Entrada en la transformación División condicional"
+                  name="Entrada de división condicional">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\DF Dim Empleado\División condicional.Inputs[Entrada de división condicional].Columns[Empleado_Codigo]"
+                      cachedDataType="i4"
+                      cachedName="Empleado_Codigo"
+                      cachedSortKeyPosition="1"
+                      lineageId="Package\DF Dim Empleado\Combinación de mezcla.Outputs[Salida de combinación de mezcla].Columns[Empleado_Codigo]" />
+                    <inputColumn
+                      refId="Package\DF Dim Empleado\División condicional.Inputs[Entrada de división condicional].Columns[employeeid_nk]"
+                      cachedDataType="i4"
+                      cachedName="employeeid_nk"
+                      lineageId="Package\DF Dim Empleado\Combinación de mezcla.Outputs[Salida de combinación de mezcla].Columns[employeeid_nk]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\DF Dim Empleado\División condicional.Outputs[Empleados_Nuevos]"
+                  description="Salida 1 de la transformación División condicional"
+                  errorOrTruncationOperation="Cálculo"
+                  errorRowDisposition="FailComponent"
+                  exclusionGroup="1"
+                  name="Empleados_Nuevos"
+                  synchronousInputId="Package\DF Dim Empleado\División condicional.Inputs[Entrada de división condicional]"
+                  truncationRowDisposition="FailComponent">
+                  <properties>
+                    <property
+                      containsID="true"
+                      dataType="System.String"
+                      description="Especifica la expresión. Esta versión de expresión usa identificadores de linaje en lugar de nombres de columna."
+                      name="Expression">[ISNULL](#{Package\DF Dim Empleado\Combinación de mezcla.Outputs[Salida de combinación de mezcla].Columns[employeeid_nk]})</property>
+                    <property
+                      containsID="true"
+                      dataType="System.String"
+                      description="Especifica la versión descriptiva de la expresión. Esta versión de expresión usa nombres de columna."
+                      expressionType="Notify"
+                      name="FriendlyExpression">ISNULL(employeeid_nk)</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Especifica la posición de la condición en la lista de condiciones que evalúa la transformación. El orden de evaluación es del menor al mayor valor."
+                      name="EvaluationOrder">0</property>
+                  </properties>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\DF Dim Empleado\División condicional.Outputs[Empleados_Modificados]"
+                  description="Salida 2 de la transformación División condicional"
+                  errorOrTruncationOperation="Cálculo"
+                  errorRowDisposition="FailComponent"
+                  exclusionGroup="1"
+                  name="Empleados_Modificados"
+                  synchronousInputId="Package\DF Dim Empleado\División condicional.Inputs[Entrada de división condicional]"
+                  truncationRowDisposition="FailComponent">
+                  <properties>
+                    <property
+                      containsID="true"
+                      dataType="System.String"
+                      description="Especifica la expresión. Esta versión de expresión usa identificadores de linaje en lugar de nombres de columna."
+                      name="Expression">#{Package\DF Dim Empleado\Combinación de mezcla.Outputs[Salida de combinación de mezcla].Columns[Empleado_Codigo]} != #{Package\DF Dim Empleado\Combinación de mezcla.Outputs[Salida de combinación de mezcla].Columns[employeeid_nk]}</property>
+                    <property
+                      containsID="true"
+                      dataType="System.String"
+                      description="Especifica la versión descriptiva de la expresión. Esta versión de expresión usa nombres de columna."
+                      expressionType="Notify"
+                      name="FriendlyExpression">Empleado_Codigo != employeeid_nk</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Especifica la posición de la condición en la lista de condiciones que evalúa la transformación. El orden de evaluación es del menor al mayor valor."
+                      name="EvaluationOrder">1</property>
+                  </properties>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\DF Dim Empleado\División condicional.Outputs[Salida predeterminada de división condicional]"
+                  description="Salida predeterminada de la transformación División condicional"
+                  exclusionGroup="1"
+                  name="Salida predeterminada de división condicional"
+                  synchronousInputId="Package\DF Dim Empleado\División condicional.Inputs[Entrada de división condicional]">
+                  <properties>
+                    <property
+                      dataType="System.Boolean"
+                      name="IsDefaultOut">true</property>
+                  </properties>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\DF Dim Empleado\División condicional.Outputs[Salida de error de división condicional]"
+                  description="Salida de error de la transformación División condicional"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Salida de error de división condicional"
+                  synchronousInputId="Package\DF Dim Empleado\División condicional.Inputs[Entrada de división condicional]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DF Dim Empleado\División condicional.Outputs[Salida de error de división condicional].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DF Dim Empleado\División condicional.Outputs[Salida de error de división condicional].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DF Dim Empleado\División condicional.Outputs[Salida de error de división condicional].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DF Dim Empleado\División condicional.Outputs[Salida de error de división condicional].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\DF Dim Empleado\Insertar registros DimEmpleado Mod"
+              componentClassID="Microsoft.OLEDBCommand"
+              contactInfo="Comando de OLE DB;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos los derechos reservados; http://www.microsoft.com/sql/support;2"
+              description="Ejecuta una instrucción SQL para cada fila de un flujo de datos. Por ejemplo, se usa para llamar al procedimiento almacenado de configuración de nuevo empleado para cada fila de la tabla de nuevos empleados. Nota: la ejecución de una instrucción SQL para cada fila de un flujo de datos de gran tamaño puede tardar mucho tiempo."
+              name="Insertar registros DimEmpleado Mod"
+              usesDispositions="true"
+              version="2">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="Número de segundos antes de que se agote el tiempo de espera de un comando. Un valor de 0 indica un tiempo de espera infinito."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Comando SQL para ejecutar."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=16.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">INSERT INTO [STAGE_NORTHWIND].[dbo].[Dim_Empleado_Mod]
+([Empleado_Codigo], [Empleado_NombreCompleto], [Empleado_Ciudad], [Empleado_Region], [Empleado_Pais], [ETLLoad])
+VALUES
+(?, ?, ?, ?, ?, GETDATE())</property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica la página de códigos de columna para utilizar cuando la información de página de códigos no está disponible en el origen de datos."
+                  name="DefaultCodePage">1252</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\DF Dim Empleado\Insertar registros DimEmpleado Mod.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[.,1422.Stage_Northwind.sa]"
+                  connectionManagerRefId="Package.ConnectionManagers[.,1422.Stage_Northwind.sa]"
+                  description="La conexión de tiempo de ejecución OLE DB usada para obtener acceso a la base de datos."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\DF Dim Empleado\Insertar registros DimEmpleado Mod.Inputs[Entrada de comando de OLE DB]"
+                  errorOrTruncationOperation="Ejecución de comando"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="Entrada de comando de OLE DB">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\DF Dim Empleado\Insertar registros DimEmpleado Mod.Inputs[Entrada de comando de OLE DB].Columns[full_name]"
+                      cachedDataType="wstr"
+                      cachedLength="61"
+                      cachedName="full_name"
+                      externalMetadataColumnId="Package\DF Dim Empleado\Insertar registros DimEmpleado Mod.Inputs[Entrada de comando de OLE DB].ExternalColumns[Param_1]"
+                      lineageId="Package\DF Dim Empleado\Combinación de mezcla.Outputs[Salida de combinación de mezcla].Columns[full_name]" />
+                    <inputColumn
+                      refId="Package\DF Dim Empleado\Insertar registros DimEmpleado Mod.Inputs[Entrada de comando de OLE DB].Columns[region]"
+                      cachedDataType="wstr"
+                      cachedLength="15"
+                      cachedName="region"
+                      externalMetadataColumnId="Package\DF Dim Empleado\Insertar registros DimEmpleado Mod.Inputs[Entrada de comando de OLE DB].ExternalColumns[Param_2]"
+                      lineageId="Package\DF Dim Empleado\Combinación de mezcla.Outputs[Salida de combinación de mezcla].Columns[region]" />
+                    <inputColumn
+                      refId="Package\DF Dim Empleado\Insertar registros DimEmpleado Mod.Inputs[Entrada de comando de OLE DB].Columns[city]"
+                      cachedDataType="wstr"
+                      cachedLength="15"
+                      cachedName="city"
+                      externalMetadataColumnId="Package\DF Dim Empleado\Insertar registros DimEmpleado Mod.Inputs[Entrada de comando de OLE DB].ExternalColumns[Param_3]"
+                      lineageId="Package\DF Dim Empleado\Combinación de mezcla.Outputs[Salida de combinación de mezcla].Columns[city]" />
+                    <inputColumn
+                      refId="Package\DF Dim Empleado\Insertar registros DimEmpleado Mod.Inputs[Entrada de comando de OLE DB].Columns[country]"
+                      cachedDataType="wstr"
+                      cachedLength="15"
+                      cachedName="country"
+                      externalMetadataColumnId="Package\DF Dim Empleado\Insertar registros DimEmpleado Mod.Inputs[Entrada de comando de OLE DB].ExternalColumns[Param_4]"
+                      lineageId="Package\DF Dim Empleado\Combinación de mezcla.Outputs[Salida de combinación de mezcla].Columns[country]" />
+                    <inputColumn
+                      refId="Package\DF Dim Empleado\Insertar registros DimEmpleado Mod.Inputs[Entrada de comando de OLE DB].Columns[employee_key]"
+                      cachedDataType="i4"
+                      cachedName="employee_key"
+                      externalMetadataColumnId="Package\DF Dim Empleado\Insertar registros DimEmpleado Mod.Inputs[Entrada de comando de OLE DB].ExternalColumns[Param_0]"
+                      lineageId="Package\DF Dim Empleado\Combinación de mezcla.Outputs[Salida de combinación de mezcla].Columns[employee_key]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\DF Dim Empleado\Insertar registros DimEmpleado Mod.Inputs[Entrada de comando de OLE DB].ExternalColumns[Param_0]"
+                      dataType="i4"
+                      name="Param_0">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Información de parámetros. Coincide con los valores de DBPARAMFLAGSENUM de OLE DB."
+                          name="DBParamInfoFlags">81</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\DF Dim Empleado\Insertar registros DimEmpleado Mod.Inputs[Entrada de comando de OLE DB].ExternalColumns[Param_1]"
+                      dataType="wstr"
+                      length="70"
+                      name="Param_1">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Información de parámetros. Coincide con los valores de DBPARAMFLAGSENUM de OLE DB."
+                          name="DBParamInfoFlags">65</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\DF Dim Empleado\Insertar registros DimEmpleado Mod.Inputs[Entrada de comando de OLE DB].ExternalColumns[Param_2]"
+                      dataType="wstr"
+                      length="50"
+                      name="Param_2">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Información de parámetros. Coincide con los valores de DBPARAMFLAGSENUM de OLE DB."
+                          name="DBParamInfoFlags">65</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\DF Dim Empleado\Insertar registros DimEmpleado Mod.Inputs[Entrada de comando de OLE DB].ExternalColumns[Param_3]"
+                      dataType="wstr"
+                      length="50"
+                      name="Param_3">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Información de parámetros. Coincide con los valores de DBPARAMFLAGSENUM de OLE DB."
+                          name="DBParamInfoFlags">65</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\DF Dim Empleado\Insertar registros DimEmpleado Mod.Inputs[Entrada de comando de OLE DB].ExternalColumns[Param_4]"
+                      dataType="wstr"
+                      length="50"
+                      name="Param_4">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Información de parámetros. Coincide con los valores de DBPARAMFLAGSENUM de OLE DB."
+                          name="DBParamInfoFlags">65</property>
+                      </properties>
+                    </externalMetadataColumn>
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\DF Dim Empleado\Insertar registros DimEmpleado Mod.Outputs[Salida de comando de OLE DB]"
+                  exclusionGroup="1"
+                  name="Salida de comando de OLE DB"
+                  synchronousInputId="Package\DF Dim Empleado\Insertar registros DimEmpleado Mod.Inputs[Entrada de comando de OLE DB]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\DF Dim Empleado\Insertar registros DimEmpleado Mod.Outputs[Salida de error de comando de OLE DB]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Salida de error de comando de OLE DB"
+                  synchronousInputId="Package\DF Dim Empleado\Insertar registros DimEmpleado Mod.Inputs[Entrada de comando de OLE DB]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DF Dim Empleado\Insertar registros DimEmpleado Mod.Outputs[Salida de error de comando de OLE DB].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DF Dim Empleado\Insertar registros DimEmpleado Mod.Outputs[Salida de error de comando de OLE DB].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DF Dim Empleado\Insertar registros DimEmpleado Mod.Outputs[Salida de error de comando de OLE DB].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DF Dim Empleado\Insertar registros DimEmpleado Mod.Outputs[Salida de error de comando de OLE DB].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\DF Dim Empleado\Ordenar Dim Empleado"
+              componentClassID="Microsoft.Sort"
+              contactInfo="Ordenar;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos los derechos reservados; http://www.microsoft.com/sql/support;1"
+              description="Ordena los datos de entrada de manera ascendente o descendente cuando no es posible ordenarlos en su origen. Por ejemplo, se ordenan los datos de ventas por 'id. de cliente' antes de que se escriban en un archivo plano y se entreguen a otro departamento. Nota: no se recomienda realizar esta transformación para grandes flujos de datos."
+              name="Ordenar Dim Empleado"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Indica si la transformación Ordenar quita filas con valores de ordenación duplicados."
+                  name="EliminateDuplicates">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica el número máximo de subprocesos que se deben usar para la ordenación."
+                  expressionType="Notify"
+                  name="MaximumThreads">-1</property>
+              </properties>
+              <inputs>
+                <input
+                  refId="Package\DF Dim Empleado\Ordenar Dim Empleado.Inputs[Entrada de ordenación]"
+                  name="Entrada de ordenación">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\DF Dim Empleado\Ordenar Dim Empleado.Inputs[Entrada de ordenación].Columns[employee_key]"
+                      cachedDataType="i4"
+                      cachedName="employee_key"
+                      lineageId="Package\DF Dim Empleado\DatamartEmployee.Outputs[Salida de origen de OLE DB].Columns[employee_key]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Especifica las opciones de comparación para datos de caracteres."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Especifica el criterio de ordenación de la columna."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DF Dim Empleado\Ordenar Dim Empleado.Inputs[Entrada de ordenación].Columns[employeeid_nk]"
+                      cachedDataType="i4"
+                      cachedName="employeeid_nk"
+                      lineageId="Package\DF Dim Empleado\DatamartEmployee.Outputs[Salida de origen de OLE DB].Columns[employeeid_nk]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Especifica las opciones de comparación para datos de caracteres."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Especifica el criterio de ordenación de la columna."
+                          name="NewSortKeyPosition">1</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DF Dim Empleado\Ordenar Dim Empleado.Inputs[Entrada de ordenación].Columns[full_name]"
+                      cachedDataType="wstr"
+                      cachedLength="61"
+                      cachedName="full_name"
+                      lineageId="Package\DF Dim Empleado\DatamartEmployee.Outputs[Salida de origen de OLE DB].Columns[full_name]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Especifica las opciones de comparación para datos de caracteres."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Especifica el criterio de ordenación de la columna."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DF Dim Empleado\Ordenar Dim Empleado.Inputs[Entrada de ordenación].Columns[region]"
+                      cachedDataType="wstr"
+                      cachedLength="15"
+                      cachedName="region"
+                      lineageId="Package\DF Dim Empleado\DatamartEmployee.Outputs[Salida de origen de OLE DB].Columns[region]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Especifica las opciones de comparación para datos de caracteres."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Especifica el criterio de ordenación de la columna."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DF Dim Empleado\Ordenar Dim Empleado.Inputs[Entrada de ordenación].Columns[city]"
+                      cachedDataType="wstr"
+                      cachedLength="15"
+                      cachedName="city"
+                      lineageId="Package\DF Dim Empleado\DatamartEmployee.Outputs[Salida de origen de OLE DB].Columns[city]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Especifica las opciones de comparación para datos de caracteres."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Especifica el criterio de ordenación de la columna."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DF Dim Empleado\Ordenar Dim Empleado.Inputs[Entrada de ordenación].Columns[country]"
+                      cachedDataType="wstr"
+                      cachedLength="15"
+                      cachedName="country"
+                      lineageId="Package\DF Dim Empleado\DatamartEmployee.Outputs[Salida de origen de OLE DB].Columns[country]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Especifica las opciones de comparación para datos de caracteres."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Especifica el criterio de ordenación de la columna."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\DF Dim Empleado\Ordenar Dim Empleado.Outputs[Salida de ordenación]"
+                  isSorted="true"
+                  name="Salida de ordenación">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DF Dim Empleado\Ordenar Dim Empleado.Outputs[Salida de ordenación].Columns[employee_key]"
+                      dataType="i4"
+                      lineageId="Package\DF Dim Empleado\Ordenar Dim Empleado.Outputs[Salida de ordenación].Columns[employee_key]"
+                      name="employee_key">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Especifica el identificador de linaje de la columna de entrada que está asociada a esta columna de salida."
+                          name="SortColumnId">#{Package\DF Dim Empleado\DatamartEmployee.Outputs[Salida de origen de OLE DB].Columns[employee_key]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\DF Dim Empleado\Ordenar Dim Empleado.Outputs[Salida de ordenación].Columns[employeeid_nk]"
+                      dataType="i4"
+                      lineageId="Package\DF Dim Empleado\Ordenar Dim Empleado.Outputs[Salida de ordenación].Columns[employeeid_nk]"
+                      name="employeeid_nk"
+                      sortKeyPosition="1">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Especifica el identificador de linaje de la columna de entrada que está asociada a esta columna de salida."
+                          name="SortColumnId">#{Package\DF Dim Empleado\DatamartEmployee.Outputs[Salida de origen de OLE DB].Columns[employeeid_nk]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\DF Dim Empleado\Ordenar Dim Empleado.Outputs[Salida de ordenación].Columns[full_name]"
+                      dataType="wstr"
+                      length="61"
+                      lineageId="Package\DF Dim Empleado\Ordenar Dim Empleado.Outputs[Salida de ordenación].Columns[full_name]"
+                      name="full_name">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Especifica el identificador de linaje de la columna de entrada que está asociada a esta columna de salida."
+                          name="SortColumnId">#{Package\DF Dim Empleado\DatamartEmployee.Outputs[Salida de origen de OLE DB].Columns[full_name]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\DF Dim Empleado\Ordenar Dim Empleado.Outputs[Salida de ordenación].Columns[region]"
+                      dataType="wstr"
+                      length="15"
+                      lineageId="Package\DF Dim Empleado\Ordenar Dim Empleado.Outputs[Salida de ordenación].Columns[region]"
+                      name="region">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Especifica el identificador de linaje de la columna de entrada que está asociada a esta columna de salida."
+                          name="SortColumnId">#{Package\DF Dim Empleado\DatamartEmployee.Outputs[Salida de origen de OLE DB].Columns[region]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\DF Dim Empleado\Ordenar Dim Empleado.Outputs[Salida de ordenación].Columns[city]"
+                      dataType="wstr"
+                      length="15"
+                      lineageId="Package\DF Dim Empleado\Ordenar Dim Empleado.Outputs[Salida de ordenación].Columns[city]"
+                      name="city">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Especifica el identificador de linaje de la columna de entrada que está asociada a esta columna de salida."
+                          name="SortColumnId">#{Package\DF Dim Empleado\DatamartEmployee.Outputs[Salida de origen de OLE DB].Columns[city]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\DF Dim Empleado\Ordenar Dim Empleado.Outputs[Salida de ordenación].Columns[country]"
+                      dataType="wstr"
+                      length="15"
+                      lineageId="Package\DF Dim Empleado\Ordenar Dim Empleado.Outputs[Salida de ordenación].Columns[country]"
+                      name="country">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Especifica el identificador de linaje de la columna de entrada que está asociada a esta columna de salida."
+                          name="SortColumnId">#{Package\DF Dim Empleado\DatamartEmployee.Outputs[Salida de origen de OLE DB].Columns[country]}</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\DF Dim Empleado\Ordenar Stage Empleado"
+              componentClassID="Microsoft.Sort"
+              contactInfo="Ordenar;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos los derechos reservados; http://www.microsoft.com/sql/support;1"
+              description="Ordena los datos de entrada de manera ascendente o descendente cuando no es posible ordenarlos en su origen. Por ejemplo, se ordenan los datos de ventas por 'id. de cliente' antes de que se escriban en un archivo plano y se entreguen a otro departamento. Nota: no se recomienda realizar esta transformación para grandes flujos de datos."
+              name="Ordenar Stage Empleado"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Indica si la transformación Ordenar quita filas con valores de ordenación duplicados."
+                  name="EliminateDuplicates">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica el número máximo de subprocesos que se deben usar para la ordenación."
+                  expressionType="Notify"
+                  name="MaximumThreads">-1</property>
+              </properties>
+              <inputs>
+                <input
+                  refId="Package\DF Dim Empleado\Ordenar Stage Empleado.Inputs[Entrada de ordenación]"
+                  name="Entrada de ordenación">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\DF Dim Empleado\Ordenar Stage Empleado.Inputs[Entrada de ordenación].Columns[Empleado_Codigo]"
+                      cachedDataType="i4"
+                      cachedName="Empleado_Codigo"
+                      lineageId="Package\DF Dim Empleado\StageEmpleado.Outputs[Salida de origen de OLE DB].Columns[Empleado_Codigo]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Especifica las opciones de comparación para datos de caracteres."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Especifica el criterio de ordenación de la columna."
+                          name="NewSortKeyPosition">1</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DF Dim Empleado\Ordenar Stage Empleado.Inputs[Entrada de ordenación].Columns[Empleado_NombreCompleto]"
+                      cachedDataType="wstr"
+                      cachedLength="61"
+                      cachedName="Empleado_NombreCompleto"
+                      lineageId="Package\DF Dim Empleado\StageEmpleado.Outputs[Salida de origen de OLE DB].Columns[Empleado_NombreCompleto]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Especifica las opciones de comparación para datos de caracteres."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Especifica el criterio de ordenación de la columna."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DF Dim Empleado\Ordenar Stage Empleado.Inputs[Entrada de ordenación].Columns[Empleado_Region]"
+                      cachedDataType="wstr"
+                      cachedLength="15"
+                      cachedName="Empleado_Region"
+                      lineageId="Package\DF Dim Empleado\StageEmpleado.Outputs[Salida de origen de OLE DB].Columns[Empleado_Region]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Especifica las opciones de comparación para datos de caracteres."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Especifica el criterio de ordenación de la columna."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DF Dim Empleado\Ordenar Stage Empleado.Inputs[Entrada de ordenación].Columns[Empleado_Ciudad]"
+                      cachedDataType="wstr"
+                      cachedLength="15"
+                      cachedName="Empleado_Ciudad"
+                      lineageId="Package\DF Dim Empleado\StageEmpleado.Outputs[Salida de origen de OLE DB].Columns[Empleado_Ciudad]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Especifica las opciones de comparación para datos de caracteres."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Especifica el criterio de ordenación de la columna."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DF Dim Empleado\Ordenar Stage Empleado.Inputs[Entrada de ordenación].Columns[Empleado_Pais]"
+                      cachedDataType="wstr"
+                      cachedLength="15"
+                      cachedName="Empleado_Pais"
+                      lineageId="Package\DF Dim Empleado\StageEmpleado.Outputs[Salida de origen de OLE DB].Columns[Empleado_Pais]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Especifica las opciones de comparación para datos de caracteres."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Especifica el criterio de ordenación de la columna."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\DF Dim Empleado\Ordenar Stage Empleado.Outputs[Salida de ordenación]"
+                  isSorted="true"
+                  name="Salida de ordenación">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DF Dim Empleado\Ordenar Stage Empleado.Outputs[Salida de ordenación].Columns[Empleado_Codigo]"
+                      dataType="i4"
+                      lineageId="Package\DF Dim Empleado\Ordenar Stage Empleado.Outputs[Salida de ordenación].Columns[Empleado_Codigo]"
+                      name="Empleado_Codigo"
+                      sortKeyPosition="1">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Especifica el identificador de linaje de la columna de entrada que está asociada a esta columna de salida."
+                          name="SortColumnId">#{Package\DF Dim Empleado\StageEmpleado.Outputs[Salida de origen de OLE DB].Columns[Empleado_Codigo]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\DF Dim Empleado\Ordenar Stage Empleado.Outputs[Salida de ordenación].Columns[Empleado_NombreCompleto]"
+                      dataType="wstr"
+                      length="61"
+                      lineageId="Package\DF Dim Empleado\Ordenar Stage Empleado.Outputs[Salida de ordenación].Columns[Empleado_NombreCompleto]"
+                      name="Empleado_NombreCompleto">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Especifica el identificador de linaje de la columna de entrada que está asociada a esta columna de salida."
+                          name="SortColumnId">#{Package\DF Dim Empleado\StageEmpleado.Outputs[Salida de origen de OLE DB].Columns[Empleado_NombreCompleto]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\DF Dim Empleado\Ordenar Stage Empleado.Outputs[Salida de ordenación].Columns[Empleado_Region]"
+                      dataType="wstr"
+                      length="15"
+                      lineageId="Package\DF Dim Empleado\Ordenar Stage Empleado.Outputs[Salida de ordenación].Columns[Empleado_Region]"
+                      name="Empleado_Region">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Especifica el identificador de linaje de la columna de entrada que está asociada a esta columna de salida."
+                          name="SortColumnId">#{Package\DF Dim Empleado\StageEmpleado.Outputs[Salida de origen de OLE DB].Columns[Empleado_Region]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\DF Dim Empleado\Ordenar Stage Empleado.Outputs[Salida de ordenación].Columns[Empleado_Ciudad]"
+                      dataType="wstr"
+                      length="15"
+                      lineageId="Package\DF Dim Empleado\Ordenar Stage Empleado.Outputs[Salida de ordenación].Columns[Empleado_Ciudad]"
+                      name="Empleado_Ciudad">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Especifica el identificador de linaje de la columna de entrada que está asociada a esta columna de salida."
+                          name="SortColumnId">#{Package\DF Dim Empleado\StageEmpleado.Outputs[Salida de origen de OLE DB].Columns[Empleado_Ciudad]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\DF Dim Empleado\Ordenar Stage Empleado.Outputs[Salida de ordenación].Columns[Empleado_Pais]"
+                      dataType="wstr"
+                      length="15"
+                      lineageId="Package\DF Dim Empleado\Ordenar Stage Empleado.Outputs[Salida de ordenación].Columns[Empleado_Pais]"
+                      name="Empleado_Pais">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Especifica el identificador de linaje de la columna de entrada que está asociada a esta columna de salida."
+                          name="SortColumnId">#{Package\DF Dim Empleado\StageEmpleado.Outputs[Salida de origen de OLE DB].Columns[Empleado_Pais]}</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\DF Dim Empleado\StageEmpleado"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="Origen de OLE DB;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos los derechos reservados; http://www.microsoft.com/sql/support;7"
+              description="Origen de OLE DB"
+              name="StageEmpleado"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="Número de segundos antes de que se agote el tiempo de espera de un comando. Un valor de 0 indica un tiempo de espera infinito."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Especifica el nombre del objeto de base de datos usado para abrir un conjunto de filas."
+                  name="OpenRowset"></property>
+                <property
+                  dataType="System.String"
+                  description="Especifica la variable que contiene el nombre del objeto de base de datos usado para abrir un conjunto de filas."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="Comando SQL para ejecutar."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=16.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select se.Empleado_Codigo,
+cast (Empleado_NombreCompleto as nvarchar (61)) as Empleado_NombreCompleto,
+cast (se.Empleado_Region as nvarchar (15)) as Empleado_Region,
+cast (se.Empleado_Ciudad as nvarchar (15)) as Empleado_Ciudad,
+CAST (se.Empleado_Pais as nvarchar (15)) as Empleado_Pais
+from Stage_Northwind.dbo.Stage_Empleado as se</property>
+                <property
+                  dataType="System.String"
+                  description="Variable que contiene el comando SQL para ejecutar."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica la página de códigos de columna para utilizar cuando la información de página de códigos no está disponible en el origen de datos."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Fuerza el uso del valor de la propiedad DefaultCodePage al describir datos de caracteres."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica el modo utilizado para obtener acceso a la base de datos."
+                  name="AccessMode"
+                  typeConverter="AccessMode">2</property>
+                <property
+                  dataType="System.String"
+                  description="Asignaciones entre los parámetros del comando SQL y las variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\DF Dim Empleado\StageEmpleado.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[.,1422.Stage_Northwind.sa]"
+                  connectionManagerRefId="Package.ConnectionManagers[.,1422.Stage_Northwind.sa]"
+                  description="La conexión de tiempo de ejecución OLE DB usada para obtener acceso a la base de datos."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\DF Dim Empleado\StageEmpleado.Outputs[Salida de origen de OLE DB]"
+                  name="Salida de origen de OLE DB">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DF Dim Empleado\StageEmpleado.Outputs[Salida de origen de OLE DB].Columns[Empleado_Codigo]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF Dim Empleado\StageEmpleado.Outputs[Salida de origen de OLE DB].ExternalColumns[Empleado_Codigo]"
+                      lineageId="Package\DF Dim Empleado\StageEmpleado.Outputs[Salida de origen de OLE DB].Columns[Empleado_Codigo]"
+                      name="Empleado_Codigo"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DF Dim Empleado\StageEmpleado.Outputs[Salida de origen de OLE DB].Columns[Empleado_NombreCompleto]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF Dim Empleado\StageEmpleado.Outputs[Salida de origen de OLE DB].ExternalColumns[Empleado_NombreCompleto]"
+                      length="61"
+                      lineageId="Package\DF Dim Empleado\StageEmpleado.Outputs[Salida de origen de OLE DB].Columns[Empleado_NombreCompleto]"
+                      name="Empleado_NombreCompleto"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DF Dim Empleado\StageEmpleado.Outputs[Salida de origen de OLE DB].Columns[Empleado_Region]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF Dim Empleado\StageEmpleado.Outputs[Salida de origen de OLE DB].ExternalColumns[Empleado_Region]"
+                      length="15"
+                      lineageId="Package\DF Dim Empleado\StageEmpleado.Outputs[Salida de origen de OLE DB].Columns[Empleado_Region]"
+                      name="Empleado_Region"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DF Dim Empleado\StageEmpleado.Outputs[Salida de origen de OLE DB].Columns[Empleado_Ciudad]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF Dim Empleado\StageEmpleado.Outputs[Salida de origen de OLE DB].ExternalColumns[Empleado_Ciudad]"
+                      length="15"
+                      lineageId="Package\DF Dim Empleado\StageEmpleado.Outputs[Salida de origen de OLE DB].Columns[Empleado_Ciudad]"
+                      name="Empleado_Ciudad"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DF Dim Empleado\StageEmpleado.Outputs[Salida de origen de OLE DB].Columns[Empleado_Pais]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF Dim Empleado\StageEmpleado.Outputs[Salida de origen de OLE DB].ExternalColumns[Empleado_Pais]"
+                      length="15"
+                      lineageId="Package\DF Dim Empleado\StageEmpleado.Outputs[Salida de origen de OLE DB].Columns[Empleado_Pais]"
+                      name="Empleado_Pais"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\DF Dim Empleado\StageEmpleado.Outputs[Salida de origen de OLE DB].ExternalColumns[Empleado_Codigo]"
+                      dataType="i4"
+                      name="Empleado_Codigo" />
+                    <externalMetadataColumn
+                      refId="Package\DF Dim Empleado\StageEmpleado.Outputs[Salida de origen de OLE DB].ExternalColumns[Empleado_NombreCompleto]"
+                      dataType="wstr"
+                      length="61"
+                      name="Empleado_NombreCompleto" />
+                    <externalMetadataColumn
+                      refId="Package\DF Dim Empleado\StageEmpleado.Outputs[Salida de origen de OLE DB].ExternalColumns[Empleado_Region]"
+                      dataType="wstr"
+                      length="15"
+                      name="Empleado_Region" />
+                    <externalMetadataColumn
+                      refId="Package\DF Dim Empleado\StageEmpleado.Outputs[Salida de origen de OLE DB].ExternalColumns[Empleado_Ciudad]"
+                      dataType="wstr"
+                      length="15"
+                      name="Empleado_Ciudad" />
+                    <externalMetadataColumn
+                      refId="Package\DF Dim Empleado\StageEmpleado.Outputs[Salida de origen de OLE DB].ExternalColumns[Empleado_Pais]"
+                      dataType="wstr"
+                      length="15"
+                      name="Empleado_Pais" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\DF Dim Empleado\StageEmpleado.Outputs[Salida de error de origen de OLE DB]"
+                  isErrorOut="true"
+                  name="Salida de error de origen de OLE DB">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DF Dim Empleado\StageEmpleado.Outputs[Salida de error de origen de OLE DB].Columns[Empleado_Codigo]"
+                      dataType="i4"
+                      lineageId="Package\DF Dim Empleado\StageEmpleado.Outputs[Salida de error de origen de OLE DB].Columns[Empleado_Codigo]"
+                      name="Empleado_Codigo" />
+                    <outputColumn
+                      refId="Package\DF Dim Empleado\StageEmpleado.Outputs[Salida de error de origen de OLE DB].Columns[Empleado_NombreCompleto]"
+                      dataType="wstr"
+                      length="61"
+                      lineageId="Package\DF Dim Empleado\StageEmpleado.Outputs[Salida de error de origen de OLE DB].Columns[Empleado_NombreCompleto]"
+                      name="Empleado_NombreCompleto" />
+                    <outputColumn
+                      refId="Package\DF Dim Empleado\StageEmpleado.Outputs[Salida de error de origen de OLE DB].Columns[Empleado_Region]"
+                      dataType="wstr"
+                      length="15"
+                      lineageId="Package\DF Dim Empleado\StageEmpleado.Outputs[Salida de error de origen de OLE DB].Columns[Empleado_Region]"
+                      name="Empleado_Region" />
+                    <outputColumn
+                      refId="Package\DF Dim Empleado\StageEmpleado.Outputs[Salida de error de origen de OLE DB].Columns[Empleado_Ciudad]"
+                      dataType="wstr"
+                      length="15"
+                      lineageId="Package\DF Dim Empleado\StageEmpleado.Outputs[Salida de error de origen de OLE DB].Columns[Empleado_Ciudad]"
+                      name="Empleado_Ciudad" />
+                    <outputColumn
+                      refId="Package\DF Dim Empleado\StageEmpleado.Outputs[Salida de error de origen de OLE DB].Columns[Empleado_Pais]"
+                      dataType="wstr"
+                      length="15"
+                      lineageId="Package\DF Dim Empleado\StageEmpleado.Outputs[Salida de error de origen de OLE DB].Columns[Empleado_Pais]"
+                      name="Empleado_Pais" />
+                    <outputColumn
+                      refId="Package\DF Dim Empleado\StageEmpleado.Outputs[Salida de error de origen de OLE DB].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DF Dim Empleado\StageEmpleado.Outputs[Salida de error de origen de OLE DB].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DF Dim Empleado\StageEmpleado.Outputs[Salida de error de origen de OLE DB].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DF Dim Empleado\StageEmpleado.Outputs[Salida de error de origen de OLE DB].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\DF Dim Empleado.Paths[Empleados_Modificados]"
+              endId="Package\DF Dim Empleado\Cantidad Registros Modificados.Inputs[Entrada de Recuento de filas 1]"
+              name="Empleados_Modificados"
+              startId="Package\DF Dim Empleado\División condicional.Outputs[Empleados_Modificados]" />
+            <path
+              refId="Package\DF Dim Empleado.Paths[Empleados_Nuevos]"
+              endId="Package\DF Dim Empleado\Cantidad Registros Nuevos.Inputs[Entrada de Recuento de filas 1]"
+              name="Empleados_Nuevos"
+              startId="Package\DF Dim Empleado\División condicional.Outputs[Empleados_Nuevos]" />
+            <path
+              refId="Package\DF Dim Empleado.Paths[Salida de comando de OLE DB]"
+              endId="Package\DF Dim Empleado\Comando de OLE DB.Inputs[Entrada de comando de OLE DB]"
+              name="Salida de comando de OLE DB"
+              startId="Package\DF Dim Empleado\Insertar registros DimEmpleado Mod.Outputs[Salida de comando de OLE DB]" />
+            <path
+              refId="Package\DF Dim Empleado.Paths[Salida de combinación de mezcla]"
+              endId="Package\DF Dim Empleado\División condicional.Inputs[Entrada de división condicional]"
+              name="Salida de combinación de mezcla"
+              startId="Package\DF Dim Empleado\Combinación de mezcla.Outputs[Salida de combinación de mezcla]" />
+            <path
+              refId="Package\DF Dim Empleado.Paths[Salida de ordenación]"
+              endId="Package\DF Dim Empleado\Combinación de mezcla.Inputs[Entrada izquierda de combinación de mezcla]"
+              name="Salida de ordenación"
+              startId="Package\DF Dim Empleado\Ordenar Stage Empleado.Outputs[Salida de ordenación]" />
+            <path
+              refId="Package\DF Dim Empleado.Paths[Salida de ordenación1]"
+              endId="Package\DF Dim Empleado\Combinación de mezcla.Inputs[Entrada derecha de combinación de mezcla]"
+              name="Salida de ordenación"
+              startId="Package\DF Dim Empleado\Ordenar Dim Empleado.Outputs[Salida de ordenación]" />
+            <path
+              refId="Package\DF Dim Empleado.Paths[Salida de origen de OLE DB]"
+              endId="Package\DF Dim Empleado\Ordenar Stage Empleado.Inputs[Entrada de ordenación]"
+              name="Salida de origen de OLE DB"
+              startId="Package\DF Dim Empleado\StageEmpleado.Outputs[Salida de origen de OLE DB]" />
+            <path
+              refId="Package\DF Dim Empleado.Paths[Salida de origen de OLE DB1]"
+              endId="Package\DF Dim Empleado\Ordenar Dim Empleado.Inputs[Entrada de ordenación]"
+              name="Salida de origen de OLE DB"
+              startId="Package\DF Dim Empleado\DatamartEmployee.Outputs[Salida de origen de OLE DB]" />
+            <path
+              refId="Package\DF Dim Empleado.Paths[Salida de Recuento de filas 1]"
+              endId="Package\DF Dim Empleado\Destino DatamartEmployee.Inputs[Entrada de destino de OLE DB]"
+              name="Salida de Recuento de filas 1"
+              startId="Package\DF Dim Empleado\Cantidad Registros Nuevos.Outputs[Salida de Recuento de filas 1]" />
+            <path
+              refId="Package\DF Dim Empleado.Paths[Salida de Recuento de filas 11]"
+              endId="Package\DF Dim Empleado\Insertar registros DimEmpleado Mod.Inputs[Entrada de comando de OLE DB]"
+              name="Salida de Recuento de filas 1"
+              startId="Package\DF Dim Empleado\Cantidad Registros Modificados.Outputs[Salida de Recuento de filas 1]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Insertar cantidad registros nuevos y modificados"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Tarea Ejecutar SQL"
+      DTS:DTSID="{2B683588-88BB-4992-82CC-FB103879CE6D}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Insertar cantidad registros nuevos y modificados"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{AC01CC48-728B-4E42-A03A-1CEF47094F86}"
+          SQLTask:SqlStatementSource="UPDATE ETLExecution&#xA;SET [ETLCountNewRegister] = ?,&#xA;    [ETLCountModifiedRegister] = ?&#xA;WHERE ID = ?" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="0"
+            SQLTask:DtsVariableName="User::ETLCantidadRegistrosNuevos"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="3"
+            SQLTask:ParameterSize="-1" />
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="1"
+            SQLTask:DtsVariableName="User::ETLCantidadRegistrosModificados"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="3"
+            SQLTask:ParameterSize="-1" />
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="2"
+            SQLTask:DtsVariableName="User::ETLExecution"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="3"
+            SQLTask:ParameterSize="-1" />
+        </SQLTask:SqlTaskData>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Insertar cantidad total"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Tarea Ejecutar SQL"
+      DTS:DTSID="{BB01EA1E-AC7C-4B43-A1F1-70024402DCEA}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Insertar cantidad total"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{AC01CC48-728B-4E42-A03A-1CEF47094F86}"
+          SQLTask:SqlStatementSource="UPDATE ETLExecution&#xA;SET [ETLCountRows]=([ETLCountNewRegister]+[ETLCountModifiedRegister])&#xA;WHERE ID = ?" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="0"
+            SQLTask:DtsVariableName="User::ETLExecution"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="3"
+            SQLTask:ParameterSize="-1" />
+        </SQLTask:SqlTaskData>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Insertar Registro en el Metadata"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Tarea Ejecutar SQL"
+      DTS:DTSID="{F84AFBF8-869B-4893-B8FD-4BDDFCB6D7DB}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Insertar Registro en el Metadata"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{AC01CC48-728B-4E42-A03A-1CEF47094F86}"
+          SQLTask:SqlStatementSource="INSERT INTO ETLExecution(UserName, MachineName, PackageName, ETLLoad)&#xA; VALUES(?,?,?,GETDATE())" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="0"
+            SQLTask:DtsVariableName="System::UserName"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="130"
+            SQLTask:ParameterSize="-1" />
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="1"
+            SQLTask:DtsVariableName="System::MachineName"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="130"
+            SQLTask:ParameterSize="-1" />
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="2"
+            SQLTask:DtsVariableName="System::PackageName"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="130"
+            SQLTask:ParameterSize="-1" />
+        </SQLTask:SqlTaskData>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Obtener id"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Tarea Ejecutar SQL"
+      DTS:DTSID="{5F4E89A6-47F2-41B4-A95C-9C63AEEA32CD}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Obtener id"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{AC01CC48-728B-4E42-A03A-1CEF47094F86}"
+          SQLTask:SqlStatementSource="SELECT TOP(1) ID FROM ETLExecution&#xA;WHERE PackageName = ?&#xA;ORDER BY ID DESC"
+          SQLTask:ResultType="ResultSetType_SingleRow" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+          <SQLTask:ResultBinding
+            SQLTask:ResultName="0"
+            SQLTask:DtsVariableName="User::ETLExecution" />
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="0"
+            SQLTask:DtsVariableName="System::PackageName"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="130"
+            SQLTask:ParameterSize="-1" />
+        </SQLTask:SqlTaskData>
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Restricción]"
+      DTS:CreationName=""
+      DTS:DTSID="{55F07FE0-54F4-4FA4-B6A5-FC1A0926710F}"
+      DTS:From="Package\Insertar Registro en el Metadata"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Restricción"
+      DTS:To="Package\Obtener id" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Restricción 1]"
+      DTS:CreationName=""
+      DTS:DTSID="{C4335680-2EFC-46F2-8268-8223A8586D35}"
+      DTS:From="Package\Obtener id"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Restricción 1"
+      DTS:To="Package\DF Dim Empleado" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Restricción 2]"
+      DTS:CreationName=""
+      DTS:DTSID="{18BD2DA7-8923-4D7C-95AE-7A8095D9B638}"
+      DTS:From="Package\DF Dim Empleado"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Restricción 2"
+      DTS:To="Package\Insertar cantidad registros nuevos y modificados" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Restricción 3]"
+      DTS:CreationName=""
+      DTS:DTSID="{273F9205-23B0-4048-AD19-65D30B7255D4}"
+      DTS:From="Package\Insertar cantidad registros nuevos y modificados"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Restricción 3"
+      DTS:To="Package\Insertar cantidad total" />
+  </DTS:PrecedenceConstraints>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--Esta sección CDATA contiene la información de diseño del paquete. Esta sección incluye información como, por ejemplo, las coordenadas (x,y), el ancho y el alto.-->
+<!--Si edita manualmente esta sección y comete un error, puede eliminarlo. -->
+<!--El paquete podrá cargarse normalmente, pero se perderá la información de diseño anterior y el diseñador reorganizará los elementos automáticamente en la superficie de diseño.-->
+<Objects
+  Version="8">
+  <!--Cada uno de los nodos siguientes contiene propiedades que no afectan al comportamiento en tiempo de ejecución.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="163.2,41.6"
+          Id="Package\DF Dim Empleado"
+          TopLeft="203.33332222369,192.399998662074" />
+        <NodeLayout
+          Size="127.2,41.6"
+          Id="Package\Obtener id"
+          TopLeft="222.499987843137,121.333332489597" />
+        <NodeLayout
+          Size="226.4,41.6"
+          Id="Package\Insertar Registro en el Metadata"
+          TopLeft="172.499990575016,55.4666662809584" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Restricción]"
+          TopLeft="285.899989209076,97.0666662809584">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,24.2666662086381"
+              Start="0,0"
+              End="0,16.7666662086381">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,16.7666662086381" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Restricción 1]"
+          TopLeft="285.516655033413,162.933332489597">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,29.4666661724778"
+              Start="0,0"
+              End="0,21.9666661724778">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,21.9666661724778" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="300.8,41.6"
+          Id="Package\Insertar cantidad registros nuevos y modificados"
+          TopLeft="128.333326321509,263.466664834552" />
+        <NodeLayout
+          Size="178.4,41.6"
+          Id="Package\Insertar cantidad total"
+          TopLeft="181.666656740838,330.19999770383" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Restricción 2]"
+          TopLeft="281.8333242726,233.999998662074">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,29.466666172478"
+              Start="0,0"
+              End="0,21.966666172478">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,21.966666172478" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Restricción 3]"
+          TopLeft="274.799991531174,305.066664834552">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,25.133332869278"
+              Start="0,0"
+              End="0,17.633332869278">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,17.633332869278" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\DF Dim Empleado">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="196,41.6"
+          Id="Package\DF Dim Empleado\Ordenar Stage Empleado"
+          TopLeft="275.297604006021,70.3857137962601" />
+        <NodeLayout
+          Size="187.2,41.6"
+          Id="Package\DF Dim Empleado\Ordenar Dim Empleado"
+          TopLeft="529.464256785634,66.9190471537011" />
+        <NodeLayout
+          Size="167.2,41.6"
+          Id="Package\DF Dim Empleado\DatamartEmployee"
+          TopLeft="740.922578565394,63.4523805111408" />
+        <NodeLayout
+          Size="205.6,41.6"
+          Id="Package\DF Dim Empleado\Destino DatamartEmployee"
+          TopLeft="178.862424089821,279.644971945269" />
+        <NodeLayout
+          Size="152.8,41.6"
+          Id="Package\DF Dim Empleado\StageEmpleado"
+          TopLeft="97.3809470602918,69.3023804704608" />
+        <NodeLayout
+          Size="178.4,41.6"
+          Id="Package\DF Dim Empleado\Comando de OLE DB"
+          TopLeft="621.339251765806,345.702379711098" />
+        <NodeLayout
+          Size="169.6,41.6"
+          Id="Package\DF Dim Empleado\División condicional"
+          TopLeft="409.464263342145,208.402379503177" />
+        <NodeLayout
+          Size="189.6,41.6"
+          Id="Package\DF Dim Empleado\Combinación de mezcla"
+          TopLeft="399.46426388852,138.852379986819" />
+        <NodeLayout
+          Size="204.8,41.6"
+          Id="Package\DF Dim Empleado\Cantidad Registros Nuevos"
+          TopLeft="180.922609162444,212.820898052164" />
+        <NodeLayout
+          Size="247.2,41.6"
+          Id="Package\DF Dim Empleado\Insertar registros DimEmpleado Mod"
+          TopLeft="590.112401620113,275.563490567581" />
+        <NodeLayout
+          Size="225.6,41.6"
+          Id="Package\DF Dim Empleado\Cantidad Registros Modificados"
+          TopLeft="601.917956530642,208.165343017917" />
+        <EdgeLayout
+          Id="Package\DF Dim Empleado.Paths[Salida de Recuento de filas 11]"
+          TopLeft="714.215179075378,249.765343017917">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,25.7981475496642"
+              Start="0,0"
+              End="0,18.2981475496642">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,18.2981475496642" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\DF Dim Empleado.Paths[Salida de Recuento de filas 1]"
+          TopLeft="282.492516626132,254.420898052164">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,25.2240738931053"
+              Start="0,0"
+              End="0,17.7240738931053">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,17.7240738931053" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\DF Dim Empleado.Paths[Salida de origen de OLE DB1]"
+          TopLeft="740.922578565394,85.985713832421">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-24.25832177976,0"
+              Start="0,0"
+              End="-16.75832177976,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="-16.75832177976,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\DF Dim Empleado.Paths[Salida de origen de OLE DB]"
+          TopLeft="250.180947060292,90.6440471333605">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="25.1166569457292,0"
+              Start="0,0"
+              End="17.6166569457292,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="17.6166569457292,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\DF Dim Empleado.Paths[Salida de ordenación1]"
+          TopLeft="623.064256785634,108.519047153701">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-98.5333262304478,30.3333328331175"
+              Start="0,0"
+              End="-98.5333262304478,22.8333328331175">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,14.0476984471519" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,14.0476984471519"
+                    Point2="0,18.0476984471519"
+                    Point3="-4,18.0476984471519" />
+                  <mssgle:LineSegment
+                    End="-94.5333262304478,18.0476984471519" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-94.5333262304478,18.0476984471519"
+                    Point2="-98.5333262304478,18.0476984471519"
+                    Point3="-98.5333262304478,22.0476984471519" />
+                  <mssgle:LineSegment
+                    End="-98.5333262304478,22.8333328331175" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\DF Dim Empleado.Paths[Salida de ordenación]"
+          TopLeft="373.297604006021,111.98571379626">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="90.699993215832,26.8666661905584"
+              Start="0,0"
+              End="90.699993215832,19.3666661905584">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,11.985104319236" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,11.985104319236"
+                    Point2="0,15.985104319236"
+                    Point3="4,15.985104319236" />
+                  <mssgle:LineSegment
+                    End="86.699993215832,15.985104319236" />
+                  <mssgle:CubicBezierSegment
+                    Point1="86.699993215832,15.985104319236"
+                    Point2="90.699993215832,15.985104319236"
+                    Point3="90.699993215832,19.985104319236" />
+                  <mssgle:LineSegment
+                    End="90.699993215832,19.3666661905584" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\DF Dim Empleado.Paths[Salida de combinación de mezcla]"
+          TopLeft="494.264263615332,180.452379986819">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,27.9499995163585"
+              Start="0,0"
+              End="0,20.4499995163585">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,20.4499995163585" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\DF Dim Empleado.Paths[Salida de comando de OLE DB]"
+          TopLeft="712.12582669296,317.163490567582">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,28.5388891435168"
+              Start="0,0"
+              End="0,21.0388891435168">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,21.0388891435168" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\DF Dim Empleado.Paths[Empleados_Nuevos]"
+          TopLeft="409.464263342145,231.411638777671">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-23.7416541797014,0"
+              Start="0,0"
+              End="-16.2416541797014,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="-16.2416541797014,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-51.4584052148507,5,86.67515625,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\DF Dim Empleado.Paths[Empleados_Modificados]"
+          TopLeft="579.064263342145,229.083861260547">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="22.8536931884968,0"
+              Start="0,0"
+              End="15.3536931884968,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="15.3536931884968,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-45.3257315307516,5,106.00515625,11.658203125"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\DF Dim Empleado\DatamartEmployee">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\DF Dim Empleado\Destino DatamartEmployee">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\DF Dim Empleado\StageEmpleado">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

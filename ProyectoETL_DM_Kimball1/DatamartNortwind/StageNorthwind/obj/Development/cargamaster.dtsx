@@ -1,0 +1,283 @@
+<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="11/18/2025 11:31:52 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="DESKTOP-E6RKQKD"
+  DTS:CreatorName="DESKTOP-E6RKQKD\cuent"
+  DTS:DTSID="{469D6F56-9028-4A39-90BF-662EA75BA165}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="16.0.5685.0"
+  DTS:LocaleID="2058"
+  DTS:ObjectName="Package1"
+  DTS:PackageType="5"
+  DTS:VersionBuild="1"
+  DTS:VersionGUID="{A3746E5A-6F92-49B9-9E82-0787C0BF4292}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Carga Master Stage"
+      DTS:CreationName="STOCK:SEQUENCE"
+      DTS:Description="Contenedor de secuencias"
+      DTS:DTSID="{DCDFDA66-1331-4150-8744-D6C2316F63A3}"
+      DTS:ExecutableType="STOCK:SEQUENCE"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Carga Master Stage">
+      <DTS:Variables />
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package\Carga Master Stage\Stagecliente"
+          DTS:CreationName="Microsoft.ExecutePackageTask"
+          DTS:Description="Tarea Ejecutar paquete"
+          DTS:DTSID="{5E5E9661-71C1-4A58-BAAA-BA97CB856444}"
+          DTS:ExecutableType="Microsoft.ExecutePackageTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Stagecliente"
+          DTS:TaskContact="Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <ExecutePackageTask>
+              <UseProjectReference>True</UseProjectReference>
+              <PackageName>stagecliente.dtsx</PackageName>
+            </ExecutePackageTask>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Carga Master Stage\stageempleados"
+          DTS:CreationName="Microsoft.ExecutePackageTask"
+          DTS:Description="Tarea Ejecutar paquete"
+          DTS:DTSID="{82CB7EA9-1CAC-43C1-B1DC-20E864DDCF05}"
+          DTS:ExecutableType="Microsoft.ExecutePackageTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="stageempleados"
+          DTS:TaskContact="Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <ExecutePackageTask>
+              <UseProjectReference>True</UseProjectReference>
+              <PackageName>stageempleados.dtsx</PackageName>
+            </ExecutePackageTask>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Carga Master Stage\stageproducto"
+          DTS:CreationName="Microsoft.ExecutePackageTask"
+          DTS:Description="Tarea Ejecutar paquete"
+          DTS:DTSID="{A261E856-267E-4EFE-9439-8FD40326B8C7}"
+          DTS:ExecutableType="Microsoft.ExecutePackageTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="stageproducto"
+          DTS:TaskContact="Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <ExecutePackageTask>
+              <UseProjectReference>True</UseProjectReference>
+              <PackageName>stageproducto.dtsx</PackageName>
+            </ExecutePackageTask>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Carga Master Stage\stagetransportista"
+          DTS:CreationName="Microsoft.ExecutePackageTask"
+          DTS:Description="Tarea Ejecutar paquete"
+          DTS:DTSID="{BC40B040-B509-4071-B7E2-6BB53518B163}"
+          DTS:ExecutableType="Microsoft.ExecutePackageTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="stagetransportista"
+          DTS:TaskContact="Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <ExecutePackageTask>
+              <UseProjectReference>True</UseProjectReference>
+              <PackageName>stagetransportista.dtsx</PackageName>
+            </ExecutePackageTask>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Carga Master Stage\stageventas"
+          DTS:CreationName="Microsoft.ExecutePackageTask"
+          DTS:Description="Tarea Ejecutar paquete"
+          DTS:DTSID="{D3A4B2E5-29E8-47B7-9844-3F6182D170EF}"
+          DTS:ExecutableType="Microsoft.ExecutePackageTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="stageventas"
+          DTS:TaskContact="Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <ExecutePackageTask>
+              <UseProjectReference>True</UseProjectReference>
+              <PackageName>stageventas.dtsx</PackageName>
+            </ExecutePackageTask>
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+      <DTS:PrecedenceConstraints>
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Carga Master Stage.PrecedenceConstraints[Restricción]"
+          DTS:CreationName=""
+          DTS:DTSID="{AA0E50F2-7819-44C2-B970-951E14B164EB}"
+          DTS:From="Package\Carga Master Stage\stageempleados"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Restricción"
+          DTS:To="Package\Carga Master Stage\stageproducto" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Carga Master Stage.PrecedenceConstraints[Restricción 1]"
+          DTS:CreationName=""
+          DTS:DTSID="{172C890C-5644-4561-B155-5F4E7C5E2805}"
+          DTS:From="Package\Carga Master Stage\stageproducto"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Restricción 1"
+          DTS:To="Package\Carga Master Stage\Stagecliente" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Carga Master Stage.PrecedenceConstraints[Restricción 2]"
+          DTS:CreationName=""
+          DTS:DTSID="{D7A6BD11-3BF3-46D3-8825-F9CD62C916A6}"
+          DTS:From="Package\Carga Master Stage\Stagecliente"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Restricción 2"
+          DTS:To="Package\Carga Master Stage\stagetransportista" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Carga Master Stage.PrecedenceConstraints[Restricción 3]"
+          DTS:CreationName=""
+          DTS:DTSID="{D49902D8-17CF-417F-A3B5-EDABE818CBC7}"
+          DTS:From="Package\Carga Master Stage\stagetransportista"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Restricción 3"
+          DTS:To="Package\Carga Master Stage\stageventas" />
+      </DTS:PrecedenceConstraints>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--Esta sección CDATA contiene la información de diseño del paquete. Esta sección incluye información como, por ejemplo, las coordenadas (x,y), el ancho y el alto.-->
+<!--Si edita manualmente esta sección y comete un error, puede eliminarlo. -->
+<!--El paquete podrá cargarse normalmente, pero se perderá la información de diseño anterior y el diseñador reorganizará los elementos automáticamente en la superficie de diseño.-->
+<Objects
+  Version="8">
+  <!--Cada uno de los nodos siguientes contiene propiedades que no afectan al comportamiento en tiempo de ejecución.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="136,41.6"
+          Id="Package\Carga Master Stage\Stagecliente"
+          TopLeft="217.166655101711,101.699999331037" />
+        <NodeLayout
+          Size="154.4,41.6"
+          Id="Package\Carga Master Stage\stageempleados"
+          TopLeft="11.3333330146144,28.0333331766394" />
+        <NodeLayout
+          Size="144,41.6"
+          Id="Package\Carga Master Stage\stageproducto"
+          TopLeft="212.9999886627,28.8999998372793" />
+        <NodeLayout
+          Size="160.8,41.6"
+          Id="Package\Carga Master Stage\stagetransportista"
+          TopLeft="12.1666663024162,99.9666660097574" />
+        <NodeLayout
+          Size="134.4,41.6"
+          Id="Package\Carga Master Stage\stageventas"
+          TopLeft="25.4999989072483,164.099998897115" />
+        <EdgeLayout
+          Id="Package\Carga Master Stage.PrecedenceConstraints[Restricción]"
+          TopLeft="165.733333014614,49.2666665069593">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="47.2666556480859,0"
+              Start="0,0"
+              End="39.7666556480859,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="39.7666556480859,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Carga Master Stage.PrecedenceConstraints[Restricción 1]"
+          TopLeft="285.083321882205,70.4999998372793">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,31.199999493758"
+              Start="0,0"
+              End="0,23.699999493758">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,23.699999493758" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Carga Master Stage.PrecedenceConstraints[Restricción 2]"
+          TopLeft="217.166655101711,121.633332670397">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-44.1999887992944,0"
+              Start="0,0"
+              End="-36.6999887992944,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="-36.6999887992944,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Carga Master Stage.PrecedenceConstraints[Restricción 3]"
+          TopLeft="92.6333326048322,141.566666009757">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,22.5333328873581"
+              Start="0,0"
+              End="0,15.0333328873581">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,15.0333328873581" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="391.2,260.8"
+          Size="391.2,304"
+          Id="Package\Carga Master Stage"
+          TopLeft="255.833319355217,98.7999993129572" />
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

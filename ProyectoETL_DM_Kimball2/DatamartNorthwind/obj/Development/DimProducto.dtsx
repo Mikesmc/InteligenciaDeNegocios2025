@@ -1,0 +1,1627 @@
+<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="11/27/2025 6:12:52 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="DESKTOP-E6RKQKD"
+  DTS:CreatorName="DESKTOP-E6RKQKD\cuent"
+  DTS:DTSID="{AF161276-82F0-43F2-B4CA-7EC25A7B6210}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="16.0.5685.0"
+  DTS:LocaleID="2058"
+  DTS:ObjectName="DimProducto"
+  DTS:PackageType="5"
+  DTS:VersionBuild="25"
+  DTS:VersionGUID="{B61A5D4D-6A56-42C5-BD04-0FB3A1126060}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[.,1422.Datamart_northwind.sa]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{492B2500-90F3-4291-8026-6EBCC9F224D8}"
+      DTS:ObjectName=".,1422.Datamart_northwind.sa">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=.,1422;User ID=sa;Initial Catalog=Datamart_northwind;Provider=MSOLEDBSQL.1;Persist Security Info=True;Application Name=SSIS-DimProducto-{492B2500-90F3-4291-8026-6EBCC9F224D8}.,1422.Datamart_northwind.sa;Auto Translate=False;">
+          <DTS:Password
+            DTS:Name="Password"
+            Sensitive="1"
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAxkPZQf2+b06WS1sIs1Z74AAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAADarE5Y0joPHRT3BPMu4f0ir5sAsj90yGmxTI55lcJj2wAAAAAOgAAAAAIAACAAAACvFdlc6qmZ48R14DqP7/u7PmNcSFQngbU6PK5Sf2L6iSAAAABb6PhkrZDKYQeKghYCh/wsYox2B5BVHXc//cJ7rNrA/EAAAABxSzfRqRabFuEmR00l+4RS5XdhIehaLnXiYFevfgqYRE8pEWKxfjhKvfkiQ5fhIRvBQHInVA0lP84RDg+JZp/t</DTS:Password>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[.,1422.NORTHWIND_METADATA.sa]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{296C0307-B771-49F3-822F-CFA559743017}"
+      DTS:ObjectName=".,1422.NORTHWIND_METADATA.sa">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=.,1422;User ID=sa;Initial Catalog=NORTHWIND_METADATA;Provider=MSOLEDBSQL.1;Application Name=SSIS-DimProducto-{296C0307-B771-49F3-822F-CFA559743017}.,1422.NORTHWIND_METADATA.sa;Auto Translate=False;">
+          <DTS:Password
+            DTS:Name="Password"
+            Sensitive="1"
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAxkPZQf2+b06WS1sIs1Z74AAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAABjQdbzELT3zX1ztiPN3J0bkKdr4s8MIP+m5EHaNJF5VQAAAAAOgAAAAAIAACAAAAC5/fMhJD20JplA4FIf7JptU9iyyQxLBynZeUjHh62ZyCAAAADdAHZkd5BgBGWepJJebF9bIY14U6WbFD0GEWlfBvLsH0AAAABvHCsf74yxEUcgO0Y9Sg8MTB+qleCtUUudUbhsS2+75mN3TuQnZEvP3I5BwiH8NH2GZoLRmBK72nocDuviIIxO</DTS:Password>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[.,1422.NORTHWIND_METADATA.sa 1]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{920C4A99-D38A-4455-821F-097EB5C690A1}"
+      DTS:ObjectName=".,1422.NORTHWIND_METADATA.sa 1">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=.,1422;User ID=sa;Initial Catalog=NORTHWIND_METADATA;Provider=MSOLEDBSQL.1;Application Name=SSIS-DimProducto-{920C4A99-D38A-4455-821F-097EB5C690A1}.,1422.NORTHWIND_METADATA.sa 1;Auto Translate=False;">
+          <DTS:Password
+            DTS:Name="Password"
+            Sensitive="1"
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAxkPZQf2+b06WS1sIs1Z74AAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAABubcwx7hWTPweXwMvQdo/mjJGIT5TxC1bm5N/TEOUS5AAAAAAOgAAAAAIAACAAAACQ2r1XAgW40JbkmdOtys7SLOb3FW+JrQz+zMr+lqBwryAAAABK85gac3lNnms8bdZTO6Q9lBvy/N3ENeG4EMh2tEoL8UAAAADnKDHYPn2SWfX3+O11F0gSky/3Lf2Cfdnhv/VYL1HCeW7xlA6KMkWfCdjzFkrDDdVqbrlT+3cpjPR8zZfvjmsE</DTS:Password>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[.,1422.Stage_Northwind.sa]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{0683DD71-61B6-42B2-A366-35E025BFB564}"
+      DTS:ObjectName=".,1422.Stage_Northwind.sa">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=.,1422;User ID=sa;Initial Catalog=Stage_Northwind;Provider=MSOLEDBSQL.1;Application Name=SSIS-DimProducto-{0683DD71-61B6-42B2-A366-35E025BFB564}.,1422.Stage_Northwind.sa;Auto Translate=False;">
+          <DTS:Password
+            DTS:Name="Password"
+            Sensitive="1"
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAxkPZQf2+b06WS1sIs1Z74AAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAACLHo8/JhC++sChlKxwYom0K4M/yyFXEo8YKDODwZqymgAAAAAOgAAAAAIAACAAAACcYwjmtv44r46C7ZiKuQCNtFWpZh51sQqTlTqYHsOGniAAAACGvVViCRECZ04FHJ+F/ZAQM75iyW6IBdV+/f8MAi2U60AAAAB9t4KDy6z2NzhonKL/7vm1I2sbLOaEf9+LGTAKJxUQb2SNUGCVDisJdJPO6SQBavb/t0JtEBwI+1P5AV4AqPLR</DTS:Password>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{A04B3248-3A8C-4F3E-9836-3673BD354E14}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="ETLCantidadRegistroModificados">
+      <DTS:VariableValue
+        DTS:DataType="3">0</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{10CD8B3A-448E-4410-8DDE-90B8FFDB1884}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="ETLCantidadRegistroNuevos">
+      <DTS:VariableValue
+        DTS:DataType="3">0</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{A80695B6-81B7-47D0-8EF3-C33A602741F0}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="ETlExecution">
+      <DTS:VariableValue
+        DTS:DataType="3">0</DTS:VariableValue>
+    </DTS:Variable>
+  </DTS:Variables>
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Dim producto"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Tarea Flujo de datos"
+      DTS:DTSID="{1C467E27-835B-4479-B119-27C17C4A78B9}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Dim producto"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Dim producto\Cantidad Registros Modificados"
+              componentClassID="Microsoft.RowCount"
+              contactInfo="Recuento de filas;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos los derechos reservados; http://www.microsoft.com/sql/support;0"
+              description="Cuenta las filas a medida que pasan por un flujo de datos. Por ejemplo, se usa el número de filas procesadas para determinar si deben o no realizarse operaciones de limpieza o actualizar el texto de un mensaje de correo electrónico para comunicar el estado de procesamiento."
+              name="Cantidad Registros Modificados">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Especifica la variable que contiene el recuento de filas."
+                  name="VariableName">User::ETLCantidadRegistroModificados</property>
+              </properties>
+              <inputs>
+                <input
+                  refId="Package\Dim producto\Cantidad Registros Modificados.Inputs[Entrada de Recuento de filas 1]"
+                  hasSideEffects="true"
+                  name="Entrada de Recuento de filas 1">
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Dim producto\Cantidad Registros Modificados.Outputs[Salida de Recuento de filas 1]"
+                  name="Salida de Recuento de filas 1"
+                  synchronousInputId="Package\Dim producto\Cantidad Registros Modificados.Inputs[Entrada de Recuento de filas 1]">
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Dim producto\CantidadRegistrosNuevos"
+              componentClassID="Microsoft.RowCount"
+              contactInfo="Recuento de filas;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos los derechos reservados; http://www.microsoft.com/sql/support;0"
+              description="Cuenta las filas a medida que pasan por un flujo de datos. Por ejemplo, se usa el número de filas procesadas para determinar si deben o no realizarse operaciones de limpieza o actualizar el texto de un mensaje de correo electrónico para comunicar el estado de procesamiento."
+              name="CantidadRegistrosNuevos">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Especifica la variable que contiene el recuento de filas."
+                  name="VariableName">User::ETLCantidadRegistroNuevos</property>
+              </properties>
+              <inputs>
+                <input
+                  refId="Package\Dim producto\CantidadRegistrosNuevos.Inputs[Entrada de Recuento de filas 1]"
+                  hasSideEffects="true"
+                  name="Entrada de Recuento de filas 1">
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Dim producto\CantidadRegistrosNuevos.Outputs[Salida de Recuento de filas 1]"
+                  name="Salida de Recuento de filas 1"
+                  synchronousInputId="Package\Dim producto\CantidadRegistrosNuevos.Inputs[Entrada de Recuento de filas 1]">
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Dim producto\Comando de OLE DB"
+              componentClassID="Microsoft.OLEDBCommand"
+              contactInfo="Comando de OLE DB;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos los derechos reservados; http://www.microsoft.com/sql/support;2"
+              description="Ejecuta una instrucción SQL para cada fila de un flujo de datos. Por ejemplo, se usa para llamar al procedimiento almacenado de configuración de nuevo empleado para cada fila de la tabla de nuevos empleados. Nota: la ejecución de una instrucción SQL para cada fila de un flujo de datos de gran tamaño puede tardar mucho tiempo."
+              name="Comando de OLE DB"
+              usesDispositions="true"
+              version="2">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="Número de segundos antes de que se agote el tiempo de espera de un comando. Un valor de 0 indica un tiempo de espera infinito."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Comando SQL para ejecutar."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=16.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">UPDATE [dbo].[dim_product] SET [category_name] = ?,[product_name] = ?,[supplier_name] = ? WHERE [productid_nk] = ?</property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica la página de códigos de columna para utilizar cuando la información de página de códigos no está disponible en el origen de datos."
+                  name="DefaultCodePage">1252</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Dim producto\Comando de OLE DB.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[.,1422.Datamart_northwind.sa]"
+                  connectionManagerRefId="Package.ConnectionManagers[.,1422.Datamart_northwind.sa]"
+                  description="La conexión de tiempo de ejecución OLE DB usada para obtener acceso a la base de datos."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Dim producto\Comando de OLE DB.Inputs[Entrada de comando de OLE DB]"
+                  errorOrTruncationOperation="Ejecución de comando"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="Entrada de comando de OLE DB">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Dim producto\Comando de OLE DB.Inputs[Entrada de comando de OLE DB].Columns[Categoria_nombre]"
+                      cachedDataType="wstr"
+                      cachedLength="15"
+                      cachedName="Categoria_nombre"
+                      externalMetadataColumnId="Package\Dim producto\Comando de OLE DB.Inputs[Entrada de comando de OLE DB].ExternalColumns[Param_0]"
+                      lineageId="Package\Dim producto\Stage Northwind.Outputs[Salida de origen de OLE DB].Columns[Categoria_nombre]" />
+                    <inputColumn
+                      refId="Package\Dim producto\Comando de OLE DB.Inputs[Entrada de comando de OLE DB].Columns[Producto_Nombre]"
+                      cachedDataType="wstr"
+                      cachedLength="40"
+                      cachedName="Producto_Nombre"
+                      externalMetadataColumnId="Package\Dim producto\Comando de OLE DB.Inputs[Entrada de comando de OLE DB].ExternalColumns[Param_1]"
+                      lineageId="Package\Dim producto\Stage Northwind.Outputs[Salida de origen de OLE DB].Columns[Producto_Nombre]" />
+                    <inputColumn
+                      refId="Package\Dim producto\Comando de OLE DB.Inputs[Entrada de comando de OLE DB].Columns[Producto_Codigo]"
+                      cachedDataType="i4"
+                      cachedName="Producto_Codigo"
+                      externalMetadataColumnId="Package\Dim producto\Comando de OLE DB.Inputs[Entrada de comando de OLE DB].ExternalColumns[Param_3]"
+                      lineageId="Package\Dim producto\Stage Northwind.Outputs[Salida de origen de OLE DB].Columns[Producto_Codigo]" />
+                    <inputColumn
+                      refId="Package\Dim producto\Comando de OLE DB.Inputs[Entrada de comando de OLE DB].Columns[ProveedorNombre]"
+                      cachedDataType="wstr"
+                      cachedLength="40"
+                      cachedName="ProveedorNombre"
+                      externalMetadataColumnId="Package\Dim producto\Comando de OLE DB.Inputs[Entrada de comando de OLE DB].ExternalColumns[Param_2]"
+                      lineageId="Package\Dim producto\Stage Northwind.Outputs[Salida de origen de OLE DB].Columns[ProveedorNombre]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Dim producto\Comando de OLE DB.Inputs[Entrada de comando de OLE DB].ExternalColumns[Param_0]"
+                      dataType="wstr"
+                      length="15"
+                      name="Param_0">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Información de parámetros. Coincide con los valores de DBPARAMFLAGSENUM de OLE DB."
+                          name="DBParamInfoFlags">65</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Dim producto\Comando de OLE DB.Inputs[Entrada de comando de OLE DB].ExternalColumns[Param_1]"
+                      dataType="wstr"
+                      length="40"
+                      name="Param_1">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Información de parámetros. Coincide con los valores de DBPARAMFLAGSENUM de OLE DB."
+                          name="DBParamInfoFlags">65</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Dim producto\Comando de OLE DB.Inputs[Entrada de comando de OLE DB].ExternalColumns[Param_2]"
+                      dataType="wstr"
+                      length="40"
+                      name="Param_2">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Información de parámetros. Coincide con los valores de DBPARAMFLAGSENUM de OLE DB."
+                          name="DBParamInfoFlags">65</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Dim producto\Comando de OLE DB.Inputs[Entrada de comando de OLE DB].ExternalColumns[Param_3]"
+                      dataType="i4"
+                      name="Param_3">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Información de parámetros. Coincide con los valores de DBPARAMFLAGSENUM de OLE DB."
+                          name="DBParamInfoFlags">81</property>
+                      </properties>
+                    </externalMetadataColumn>
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Dim producto\Comando de OLE DB.Outputs[Salida de comando de OLE DB]"
+                  exclusionGroup="1"
+                  name="Salida de comando de OLE DB"
+                  synchronousInputId="Package\Dim producto\Comando de OLE DB.Inputs[Entrada de comando de OLE DB]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Dim producto\Comando de OLE DB.Outputs[Salida de error de comando de OLE DB]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Salida de error de comando de OLE DB"
+                  synchronousInputId="Package\Dim producto\Comando de OLE DB.Inputs[Entrada de comando de OLE DB]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Dim producto\Comando de OLE DB.Outputs[Salida de error de comando de OLE DB].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Dim producto\Comando de OLE DB.Outputs[Salida de error de comando de OLE DB].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Dim producto\Comando de OLE DB.Outputs[Salida de error de comando de OLE DB].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Dim producto\Comando de OLE DB.Outputs[Salida de error de comando de OLE DB].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Dim producto\Dimensión de variación lenta"
+              componentClassID="Microsoft.SCD"
+              contactInfo="Dimensión de variación lenta;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos los derechos reservados; http://www.microsoft.com/sql/support;3"
+              description="Actualiza una dimensión del almacenamiento de datos de SQL Server Analysis Services. Actualiza los registros de dimensión existentes e inserta los registros de dimensión que faltan. Por ejemplo, se actualiza la tabla DimProduct de la base de datos OLAP AdventureWorksDW con datos procedentes de la tabla Products de la base de datos OLTP AdventureWorks."
+              name="Dimensión de variación lenta"
+              version="3">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Especifica la instrucción SELECT utilizada para crear un conjunto de filas de esquema."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=16.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">SELECT [category_name], [product_name], [productid_nk], [supplier_name] FROM [dbo].[dim_product]</property>
+                <property
+                  dataType="System.String"
+                  description="Especifica la cláusula WHERE de la instrucción SELECT que selecciona la fila actual de entre filas con claves empresariales idénticas."
+                  name="CurrentRowWhere"></property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indica si las actualizaciones de atributos históricos se dirigen a la salida de transformación para actualizaciones de atributos variables."
+                  name="UpdateChangingAttributeHistory">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indica si se produce un error de transformación cuando las columnas con atributos fijos contienen cambios."
+                  name="FailOnFixedAttributeChange">false</property>
+                <property
+                  dataType="System.String"
+                  description="Especifica el nombre de columna para el miembro deducido."
+                  name="InferredMemberIndicator"></property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indica si se detectan las actualizaciones de miembros deducidos."
+                  name="EnableInferredMember">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indica si se produce un error de transformación cuando se produce un error de búsqueda de un registro existente."
+                  name="FailOnLookupFailure">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica que todas las filas de la entrada sean nuevas o que la transformación detecte el tipo de cambio."
+                  name="IncomingRowChangeType"
+                  typeConverter="IncomingRowChangeType">1</property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica la página de códigos de columna para utilizar cuando la información de página de códigos no está disponible en el origen de datos."
+                  name="DefaultCodePage">1252</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Dim producto\Dimensión de variación lenta.Connections[LookupConnection]"
+                  connectionManagerID="Package.ConnectionManagers[.,1422.Datamart_northwind.sa]"
+                  connectionManagerRefId="Package.ConnectionManagers[.,1422.Datamart_northwind.sa]"
+                  description="Define la conexión que se debe usar para búsquedas en la tabla de dimensiones"
+                  name="LookupConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Dim producto\Dimensión de variación lenta.Inputs[Entrada de dimensión de variación lenta]"
+                  name="Entrada de dimensión de variación lenta">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Dim producto\Dimensión de variación lenta.Inputs[Entrada de dimensión de variación lenta].Columns[Categoria_nombre]"
+                      cachedDataType="wstr"
+                      cachedLength="15"
+                      cachedName="Categoria_nombre"
+                      externalMetadataColumnId="Package\Dim producto\Dimensión de variación lenta.Inputs[Entrada de dimensión de variación lenta].ExternalColumns[category_name]"
+                      lineageId="Package\Dim producto\Stage Northwind.Outputs[Salida de origen de OLE DB].Columns[Categoria_nombre]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          name="ColumnType"
+                          typeConverter="ColumnType">2</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Dim producto\Dimensión de variación lenta.Inputs[Entrada de dimensión de variación lenta].Columns[Producto_Nombre]"
+                      cachedDataType="wstr"
+                      cachedLength="40"
+                      cachedName="Producto_Nombre"
+                      externalMetadataColumnId="Package\Dim producto\Dimensión de variación lenta.Inputs[Entrada de dimensión de variación lenta].ExternalColumns[product_name]"
+                      lineageId="Package\Dim producto\Stage Northwind.Outputs[Salida de origen de OLE DB].Columns[Producto_Nombre]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          name="ColumnType"
+                          typeConverter="ColumnType">2</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Dim producto\Dimensión de variación lenta.Inputs[Entrada de dimensión de variación lenta].Columns[Producto_Codigo]"
+                      cachedDataType="i4"
+                      cachedName="Producto_Codigo"
+                      externalMetadataColumnId="Package\Dim producto\Dimensión de variación lenta.Inputs[Entrada de dimensión de variación lenta].ExternalColumns[productid_nk]"
+                      lineageId="Package\Dim producto\Stage Northwind.Outputs[Salida de origen de OLE DB].Columns[Producto_Codigo]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          name="ColumnType"
+                          typeConverter="ColumnType">1</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Dim producto\Dimensión de variación lenta.Inputs[Entrada de dimensión de variación lenta].Columns[ProveedorNombre]"
+                      cachedDataType="wstr"
+                      cachedLength="40"
+                      cachedName="ProveedorNombre"
+                      externalMetadataColumnId="Package\Dim producto\Dimensión de variación lenta.Inputs[Entrada de dimensión de variación lenta].ExternalColumns[supplier_name]"
+                      lineageId="Package\Dim producto\Stage Northwind.Outputs[Salida de origen de OLE DB].Columns[ProveedorNombre]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          name="ColumnType"
+                          typeConverter="ColumnType">2</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Dim producto\Dimensión de variación lenta.Inputs[Entrada de dimensión de variación lenta].ExternalColumns[category_name]"
+                      dataType="wstr"
+                      length="15"
+                      name="category_name" />
+                    <externalMetadataColumn
+                      refId="Package\Dim producto\Dimensión de variación lenta.Inputs[Entrada de dimensión de variación lenta].ExternalColumns[product_name]"
+                      dataType="wstr"
+                      length="40"
+                      name="product_name" />
+                    <externalMetadataColumn
+                      refId="Package\Dim producto\Dimensión de variación lenta.Inputs[Entrada de dimensión de variación lenta].ExternalColumns[productid_nk]"
+                      dataType="i4"
+                      name="productid_nk" />
+                    <externalMetadataColumn
+                      refId="Package\Dim producto\Dimensión de variación lenta.Inputs[Entrada de dimensión de variación lenta].ExternalColumns[supplier_name]"
+                      dataType="wstr"
+                      length="40"
+                      name="supplier_name" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Dim producto\Dimensión de variación lenta.Outputs[Salida sin cambios]"
+                  description="Filas sin cambios"
+                  exclusionGroup="1"
+                  name="Salida sin cambios"
+                  synchronousInputId="Package\Dim producto\Dimensión de variación lenta.Inputs[Entrada de dimensión de variación lenta]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Dim producto\Dimensión de variación lenta.Outputs[Nueva salida]"
+                  description="Nuevas filas"
+                  exclusionGroup="1"
+                  name="Nueva salida"
+                  synchronousInputId="Package\Dim producto\Dimensión de variación lenta.Inputs[Entrada de dimensión de variación lenta]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Dim producto\Dimensión de variación lenta.Outputs[Salida de atributo fijo]"
+                  description="Filas con cambios en columnas etiquetadas FixedAttribute"
+                  exclusionGroup="1"
+                  name="Salida de atributo fijo"
+                  synchronousInputId="Package\Dim producto\Dimensión de variación lenta.Inputs[Entrada de dimensión de variación lenta]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Dim producto\Dimensión de variación lenta.Outputs[Salida de actualizaciones de atributos variables]"
+                  description="Estas filas contienen información nueva para cambios de columnas ChangingAttribute (tipo 1)"
+                  exclusionGroup="1"
+                  name="Salida de actualizaciones de atributos variables"
+                  synchronousInputId="Package\Dim producto\Dimensión de variación lenta.Inputs[Entrada de dimensión de variación lenta]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Dim producto\Dimensión de variación lenta.Outputs[Salida de inserciones de atributos históricos]"
+                  description="Los cambios de HistoricalAttribute (tipo 2) crean estas nuevas filas"
+                  exclusionGroup="2"
+                  name="Salida de inserciones de atributos históricos"
+                  synchronousInputId="Package\Dim producto\Dimensión de variación lenta.Inputs[Entrada de dimensión de variación lenta]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Dim producto\Dimensión de variación lenta.Outputs[Salida de actualizaciones de miembros deducidos]"
+                  description="Información para actualizar fila de dimensión inicial sin rellenar"
+                  exclusionGroup="1"
+                  name="Salida de actualizaciones de miembros deducidos"
+                  synchronousInputId="Package\Dim producto\Dimensión de variación lenta.Inputs[Entrada de dimensión de variación lenta]">
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Dim producto\DimProduct"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="Destino de OLE DB;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos los derechos reservados; http://www.microsoft.com/sql/support;4"
+              description="Destino de OLE DB"
+              name="DimProduct"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="Número de segundos antes de que se agote el tiempo de espera de un comando. Un valor de 0 indica un tiempo de espera infinito."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Especifica el nombre del objeto de base de datos usado para abrir un conjunto de filas."
+                  name="OpenRowset">[dbo].[dim_product]</property>
+                <property
+                  dataType="System.String"
+                  description="Especifica la variable que contiene el nombre del objeto de base de datos usado para abrir un conjunto de filas."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="Comando SQL para ejecutar."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=16.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica la página de códigos de columna para utilizar cuando la información de página de códigos no está disponible en el origen de datos."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Fuerza el uso del valor de la propiedad DefaultCodePage al describir datos de caracteres."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica el modo utilizado para obtener acceso a la base de datos."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indica si los valores proporcionados para columnas de identidad se van a copiar al destino. Si es False, los valores de las columnas de identidad se generan automáticamente en el destino. Solo se aplica si está activada la carga rápida."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indica si las columnas que contienen NULL tendrán NULL insertado en el destino. Si es False, las columnas que contienen NULL tendrán sus valores predeterminados insertados en el destino. Solo se aplica si está activada la carga rápida."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Especifica opciones para usar con la carga rápida. Solo se aplica si está activada la carga rápida."
+                  name="FastLoadOptions"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica cuándo se emiten confirmaciones durante la inserción de datos. El valor 0 especifica que se emitirá una confirmación al final de la inserción de datos. Solo se aplica si está activada la carga rápida."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Dim producto\DimProduct.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[.,1422.Datamart_northwind.sa]"
+                  connectionManagerRefId="Package.ConnectionManagers[.,1422.Datamart_northwind.sa]"
+                  description="La conexión de tiempo de ejecución OLE DB usada para obtener acceso a la base de datos."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Dim producto\DimProduct.Inputs[Entrada de destino de OLE DB]"
+                  errorOrTruncationOperation="Insertar"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="Entrada de destino de OLE DB">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Dim producto\DimProduct.Inputs[Entrada de destino de OLE DB].Columns[Producto_Codigo]"
+                      cachedDataType="i4"
+                      cachedName="Producto_Codigo"
+                      externalMetadataColumnId="Package\Dim producto\DimProduct.Inputs[Entrada de destino de OLE DB].ExternalColumns[productid_nk]"
+                      lineageId="Package\Dim producto\Stage Northwind.Outputs[Salida de origen de OLE DB].Columns[Producto_Codigo]" />
+                    <inputColumn
+                      refId="Package\Dim producto\DimProduct.Inputs[Entrada de destino de OLE DB].Columns[Producto_Nombre]"
+                      cachedDataType="wstr"
+                      cachedLength="40"
+                      cachedName="Producto_Nombre"
+                      externalMetadataColumnId="Package\Dim producto\DimProduct.Inputs[Entrada de destino de OLE DB].ExternalColumns[product_name]"
+                      lineageId="Package\Dim producto\Stage Northwind.Outputs[Salida de origen de OLE DB].Columns[Producto_Nombre]" />
+                    <inputColumn
+                      refId="Package\Dim producto\DimProduct.Inputs[Entrada de destino de OLE DB].Columns[Categoria_nombre]"
+                      cachedDataType="wstr"
+                      cachedLength="15"
+                      cachedName="Categoria_nombre"
+                      externalMetadataColumnId="Package\Dim producto\DimProduct.Inputs[Entrada de destino de OLE DB].ExternalColumns[category_name]"
+                      lineageId="Package\Dim producto\Stage Northwind.Outputs[Salida de origen de OLE DB].Columns[Categoria_nombre]" />
+                    <inputColumn
+                      refId="Package\Dim producto\DimProduct.Inputs[Entrada de destino de OLE DB].Columns[ProveedorNombre]"
+                      cachedDataType="wstr"
+                      cachedLength="40"
+                      cachedName="ProveedorNombre"
+                      externalMetadataColumnId="Package\Dim producto\DimProduct.Inputs[Entrada de destino de OLE DB].ExternalColumns[supplier_name]"
+                      lineageId="Package\Dim producto\Stage Northwind.Outputs[Salida de origen de OLE DB].Columns[ProveedorNombre]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Dim producto\DimProduct.Inputs[Entrada de destino de OLE DB].ExternalColumns[product_key]"
+                      dataType="i4"
+                      name="product_key" />
+                    <externalMetadataColumn
+                      refId="Package\Dim producto\DimProduct.Inputs[Entrada de destino de OLE DB].ExternalColumns[productid_nk]"
+                      dataType="i4"
+                      name="productid_nk" />
+                    <externalMetadataColumn
+                      refId="Package\Dim producto\DimProduct.Inputs[Entrada de destino de OLE DB].ExternalColumns[product_name]"
+                      dataType="wstr"
+                      length="40"
+                      name="product_name" />
+                    <externalMetadataColumn
+                      refId="Package\Dim producto\DimProduct.Inputs[Entrada de destino de OLE DB].ExternalColumns[category_name]"
+                      dataType="wstr"
+                      length="15"
+                      name="category_name" />
+                    <externalMetadataColumn
+                      refId="Package\Dim producto\DimProduct.Inputs[Entrada de destino de OLE DB].ExternalColumns[supplier_name]"
+                      dataType="wstr"
+                      length="40"
+                      name="supplier_name" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Dim producto\DimProduct.Outputs[Salida de error de destino de OLE DB]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Salida de error de destino de OLE DB"
+                  synchronousInputId="Package\Dim producto\DimProduct.Inputs[Entrada de destino de OLE DB]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Dim producto\DimProduct.Outputs[Salida de error de destino de OLE DB].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Dim producto\DimProduct.Outputs[Salida de error de destino de OLE DB].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Dim producto\DimProduct.Outputs[Salida de error de destino de OLE DB].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Dim producto\DimProduct.Outputs[Salida de error de destino de OLE DB].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Dim producto\Insertar Registros DimProducto mod"
+              componentClassID="Microsoft.OLEDBCommand"
+              contactInfo="Comando de OLE DB;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos los derechos reservados; http://www.microsoft.com/sql/support;2"
+              description="Ejecuta una instrucción SQL para cada fila de un flujo de datos. Por ejemplo, se usa para llamar al procedimiento almacenado de configuración de nuevo empleado para cada fila de la tabla de nuevos empleados. Nota: la ejecución de una instrucción SQL para cada fila de un flujo de datos de gran tamaño puede tardar mucho tiempo."
+              name="Insertar Registros DimProducto mod"
+              usesDispositions="true"
+              version="2">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="Número de segundos antes de que se agote el tiempo de espera de un comando. Un valor de 0 indica un tiempo de espera infinito."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Comando SQL para ejecutar."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=16.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">INSERT INTO [STAGE_NORTHWIND].[dbo].[Dim_Producto_Mod]
+([Producto_Codigo], [Producto_Nombre], [Producto_Nombre_Categoria], [ProveedorNombre], [ETLLoad])
+VALUES
+(?, ?, ?, ?, GETDATE())
+</property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica la página de códigos de columna para utilizar cuando la información de página de códigos no está disponible en el origen de datos."
+                  name="DefaultCodePage">1252</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Dim producto\Insertar Registros DimProducto mod.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[.,1422.Stage_Northwind.sa]"
+                  connectionManagerRefId="Package.ConnectionManagers[.,1422.Stage_Northwind.sa]"
+                  description="La conexión de tiempo de ejecución OLE DB usada para obtener acceso a la base de datos."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Dim producto\Insertar Registros DimProducto mod.Inputs[Entrada de comando de OLE DB]"
+                  errorOrTruncationOperation="Ejecución de comando"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="Entrada de comando de OLE DB">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Dim producto\Insertar Registros DimProducto mod.Inputs[Entrada de comando de OLE DB].Columns[Producto_Codigo]"
+                      cachedDataType="i4"
+                      cachedName="Producto_Codigo"
+                      externalMetadataColumnId="Package\Dim producto\Insertar Registros DimProducto mod.Inputs[Entrada de comando de OLE DB].ExternalColumns[Param_0]"
+                      lineageId="Package\Dim producto\Stage Northwind.Outputs[Salida de origen de OLE DB].Columns[Producto_Codigo]" />
+                    <inputColumn
+                      refId="Package\Dim producto\Insertar Registros DimProducto mod.Inputs[Entrada de comando de OLE DB].Columns[Producto_Nombre]"
+                      cachedDataType="wstr"
+                      cachedLength="40"
+                      cachedName="Producto_Nombre"
+                      externalMetadataColumnId="Package\Dim producto\Insertar Registros DimProducto mod.Inputs[Entrada de comando de OLE DB].ExternalColumns[Param_1]"
+                      lineageId="Package\Dim producto\Stage Northwind.Outputs[Salida de origen de OLE DB].Columns[Producto_Nombre]" />
+                    <inputColumn
+                      refId="Package\Dim producto\Insertar Registros DimProducto mod.Inputs[Entrada de comando de OLE DB].Columns[Categoria_nombre]"
+                      cachedDataType="wstr"
+                      cachedLength="15"
+                      cachedName="Categoria_nombre"
+                      externalMetadataColumnId="Package\Dim producto\Insertar Registros DimProducto mod.Inputs[Entrada de comando de OLE DB].ExternalColumns[Param_2]"
+                      lineageId="Package\Dim producto\Stage Northwind.Outputs[Salida de origen de OLE DB].Columns[Categoria_nombre]" />
+                    <inputColumn
+                      refId="Package\Dim producto\Insertar Registros DimProducto mod.Inputs[Entrada de comando de OLE DB].Columns[ProveedorNombre]"
+                      cachedDataType="wstr"
+                      cachedLength="40"
+                      cachedName="ProveedorNombre"
+                      externalMetadataColumnId="Package\Dim producto\Insertar Registros DimProducto mod.Inputs[Entrada de comando de OLE DB].ExternalColumns[Param_3]"
+                      lineageId="Package\Dim producto\Stage Northwind.Outputs[Salida de origen de OLE DB].Columns[ProveedorNombre]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Dim producto\Insertar Registros DimProducto mod.Inputs[Entrada de comando de OLE DB].ExternalColumns[Param_0]"
+                      dataType="i4"
+                      name="Param_0">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Información de parámetros. Coincide con los valores de DBPARAMFLAGSENUM de OLE DB."
+                          name="DBParamInfoFlags">81</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Dim producto\Insertar Registros DimProducto mod.Inputs[Entrada de comando de OLE DB].ExternalColumns[Param_1]"
+                      dataType="wstr"
+                      length="80"
+                      name="Param_1">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Información de parámetros. Coincide con los valores de DBPARAMFLAGSENUM de OLE DB."
+                          name="DBParamInfoFlags">65</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Dim producto\Insertar Registros DimProducto mod.Inputs[Entrada de comando de OLE DB].ExternalColumns[Param_2]"
+                      dataType="wstr"
+                      length="15"
+                      name="Param_2">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Información de parámetros. Coincide con los valores de DBPARAMFLAGSENUM de OLE DB."
+                          name="DBParamInfoFlags">65</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Dim producto\Insertar Registros DimProducto mod.Inputs[Entrada de comando de OLE DB].ExternalColumns[Param_3]"
+                      dataType="wstr"
+                      length="40"
+                      name="Param_3">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Información de parámetros. Coincide con los valores de DBPARAMFLAGSENUM de OLE DB."
+                          name="DBParamInfoFlags">65</property>
+                      </properties>
+                    </externalMetadataColumn>
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Dim producto\Insertar Registros DimProducto mod.Outputs[Salida de comando de OLE DB]"
+                  exclusionGroup="1"
+                  name="Salida de comando de OLE DB"
+                  synchronousInputId="Package\Dim producto\Insertar Registros DimProducto mod.Inputs[Entrada de comando de OLE DB]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Dim producto\Insertar Registros DimProducto mod.Outputs[Salida de error de comando de OLE DB]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Salida de error de comando de OLE DB"
+                  synchronousInputId="Package\Dim producto\Insertar Registros DimProducto mod.Inputs[Entrada de comando de OLE DB]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Dim producto\Insertar Registros DimProducto mod.Outputs[Salida de error de comando de OLE DB].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Dim producto\Insertar Registros DimProducto mod.Outputs[Salida de error de comando de OLE DB].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Dim producto\Insertar Registros DimProducto mod.Outputs[Salida de error de comando de OLE DB].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Dim producto\Insertar Registros DimProducto mod.Outputs[Salida de error de comando de OLE DB].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Dim producto\Stage Northwind"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="Origen de OLE DB;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos los derechos reservados; http://www.microsoft.com/sql/support;7"
+              description="Origen de OLE DB"
+              name="Stage Northwind"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="Número de segundos antes de que se agote el tiempo de espera de un comando. Un valor de 0 indica un tiempo de espera infinito."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Especifica el nombre del objeto de base de datos usado para abrir un conjunto de filas."
+                  name="OpenRowset"></property>
+                <property
+                  dataType="System.String"
+                  description="Especifica la variable que contiene el nombre del objeto de base de datos usado para abrir un conjunto de filas."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="Comando SQL para ejecutar."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=16.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">SELECT [Producto_Codigo]
+      ,CAST([Producto_Nombre] as nvarchar(40)) AS [Producto_Nombre]
+      ,CAST([CategoriaProducto_Nombre] AS nvarchar (15)) AS [Categoria_nombre]
+      ,CAST([ProveedorNombre] AS nvarchar (40)) AS [ProveedorNombre]
+      ,[ETLLoad]
+      ,[ETLExecution]
+  FROM [Stage_Northwind].[dbo].[Stage_Producto]</property>
+                <property
+                  dataType="System.String"
+                  description="Variable que contiene el comando SQL para ejecutar."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica la página de códigos de columna para utilizar cuando la información de página de códigos no está disponible en el origen de datos."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Fuerza el uso del valor de la propiedad DefaultCodePage al describir datos de caracteres."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica el modo utilizado para obtener acceso a la base de datos."
+                  name="AccessMode"
+                  typeConverter="AccessMode">2</property>
+                <property
+                  dataType="System.String"
+                  description="Asignaciones entre los parámetros del comando SQL y las variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Dim producto\Stage Northwind.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[.,1422.Stage_Northwind.sa]"
+                  connectionManagerRefId="Package.ConnectionManagers[.,1422.Stage_Northwind.sa]"
+                  description="La conexión de tiempo de ejecución OLE DB usada para obtener acceso a la base de datos."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Dim producto\Stage Northwind.Outputs[Salida de origen de OLE DB]"
+                  name="Salida de origen de OLE DB">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Dim producto\Stage Northwind.Outputs[Salida de origen de OLE DB].Columns[Producto_Codigo]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Dim producto\Stage Northwind.Outputs[Salida de origen de OLE DB].ExternalColumns[Producto_Codigo]"
+                      lineageId="Package\Dim producto\Stage Northwind.Outputs[Salida de origen de OLE DB].Columns[Producto_Codigo]"
+                      name="Producto_Codigo"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Dim producto\Stage Northwind.Outputs[Salida de origen de OLE DB].Columns[Producto_Nombre]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Dim producto\Stage Northwind.Outputs[Salida de origen de OLE DB].ExternalColumns[Producto_Nombre]"
+                      length="40"
+                      lineageId="Package\Dim producto\Stage Northwind.Outputs[Salida de origen de OLE DB].Columns[Producto_Nombre]"
+                      name="Producto_Nombre"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Dim producto\Stage Northwind.Outputs[Salida de origen de OLE DB].Columns[Categoria_nombre]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Dim producto\Stage Northwind.Outputs[Salida de origen de OLE DB].ExternalColumns[Categoria_nombre]"
+                      length="15"
+                      lineageId="Package\Dim producto\Stage Northwind.Outputs[Salida de origen de OLE DB].Columns[Categoria_nombre]"
+                      name="Categoria_nombre"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Dim producto\Stage Northwind.Outputs[Salida de origen de OLE DB].Columns[ProveedorNombre]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Dim producto\Stage Northwind.Outputs[Salida de origen de OLE DB].ExternalColumns[ProveedorNombre]"
+                      length="40"
+                      lineageId="Package\Dim producto\Stage Northwind.Outputs[Salida de origen de OLE DB].Columns[ProveedorNombre]"
+                      name="ProveedorNombre"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Dim producto\Stage Northwind.Outputs[Salida de origen de OLE DB].Columns[ETLLoad]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Dim producto\Stage Northwind.Outputs[Salida de origen de OLE DB].ExternalColumns[ETLLoad]"
+                      lineageId="Package\Dim producto\Stage Northwind.Outputs[Salida de origen de OLE DB].Columns[ETLLoad]"
+                      name="ETLLoad"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Dim producto\Stage Northwind.Outputs[Salida de origen de OLE DB].Columns[ETLExecution]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Dim producto\Stage Northwind.Outputs[Salida de origen de OLE DB].ExternalColumns[ETLExecution]"
+                      lineageId="Package\Dim producto\Stage Northwind.Outputs[Salida de origen de OLE DB].Columns[ETLExecution]"
+                      name="ETLExecution"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Dim producto\Stage Northwind.Outputs[Salida de origen de OLE DB].ExternalColumns[Producto_Codigo]"
+                      dataType="i4"
+                      name="Producto_Codigo" />
+                    <externalMetadataColumn
+                      refId="Package\Dim producto\Stage Northwind.Outputs[Salida de origen de OLE DB].ExternalColumns[Producto_Nombre]"
+                      dataType="wstr"
+                      length="40"
+                      name="Producto_Nombre" />
+                    <externalMetadataColumn
+                      refId="Package\Dim producto\Stage Northwind.Outputs[Salida de origen de OLE DB].ExternalColumns[Categoria_nombre]"
+                      dataType="wstr"
+                      length="15"
+                      name="Categoria_nombre" />
+                    <externalMetadataColumn
+                      refId="Package\Dim producto\Stage Northwind.Outputs[Salida de origen de OLE DB].ExternalColumns[ProveedorNombre]"
+                      dataType="wstr"
+                      length="40"
+                      name="ProveedorNombre" />
+                    <externalMetadataColumn
+                      refId="Package\Dim producto\Stage Northwind.Outputs[Salida de origen de OLE DB].ExternalColumns[ETLLoad]"
+                      dataType="dbTimeStamp"
+                      name="ETLLoad" />
+                    <externalMetadataColumn
+                      refId="Package\Dim producto\Stage Northwind.Outputs[Salida de origen de OLE DB].ExternalColumns[ETLExecution]"
+                      dataType="i4"
+                      name="ETLExecution" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Dim producto\Stage Northwind.Outputs[Salida de error de origen de OLE DB]"
+                  isErrorOut="true"
+                  name="Salida de error de origen de OLE DB">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Dim producto\Stage Northwind.Outputs[Salida de error de origen de OLE DB].Columns[Producto_Codigo]"
+                      dataType="i4"
+                      lineageId="Package\Dim producto\Stage Northwind.Outputs[Salida de error de origen de OLE DB].Columns[Producto_Codigo]"
+                      name="Producto_Codigo" />
+                    <outputColumn
+                      refId="Package\Dim producto\Stage Northwind.Outputs[Salida de error de origen de OLE DB].Columns[Producto_Nombre]"
+                      dataType="wstr"
+                      length="40"
+                      lineageId="Package\Dim producto\Stage Northwind.Outputs[Salida de error de origen de OLE DB].Columns[Producto_Nombre]"
+                      name="Producto_Nombre" />
+                    <outputColumn
+                      refId="Package\Dim producto\Stage Northwind.Outputs[Salida de error de origen de OLE DB].Columns[Categoria_nombre]"
+                      dataType="wstr"
+                      length="15"
+                      lineageId="Package\Dim producto\Stage Northwind.Outputs[Salida de error de origen de OLE DB].Columns[Categoria_nombre]"
+                      name="Categoria_nombre" />
+                    <outputColumn
+                      refId="Package\Dim producto\Stage Northwind.Outputs[Salida de error de origen de OLE DB].Columns[ProveedorNombre]"
+                      dataType="wstr"
+                      length="40"
+                      lineageId="Package\Dim producto\Stage Northwind.Outputs[Salida de error de origen de OLE DB].Columns[ProveedorNombre]"
+                      name="ProveedorNombre" />
+                    <outputColumn
+                      refId="Package\Dim producto\Stage Northwind.Outputs[Salida de error de origen de OLE DB].Columns[ETLLoad]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\Dim producto\Stage Northwind.Outputs[Salida de error de origen de OLE DB].Columns[ETLLoad]"
+                      name="ETLLoad" />
+                    <outputColumn
+                      refId="Package\Dim producto\Stage Northwind.Outputs[Salida de error de origen de OLE DB].Columns[ETLExecution]"
+                      dataType="i4"
+                      lineageId="Package\Dim producto\Stage Northwind.Outputs[Salida de error de origen de OLE DB].Columns[ETLExecution]"
+                      name="ETLExecution" />
+                    <outputColumn
+                      refId="Package\Dim producto\Stage Northwind.Outputs[Salida de error de origen de OLE DB].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Dim producto\Stage Northwind.Outputs[Salida de error de origen de OLE DB].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Dim producto\Stage Northwind.Outputs[Salida de error de origen de OLE DB].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Dim producto\Stage Northwind.Outputs[Salida de error de origen de OLE DB].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Dim producto.Paths[Nueva salida]"
+              endId="Package\Dim producto\CantidadRegistrosNuevos.Inputs[Entrada de Recuento de filas 1]"
+              name="Nueva salida"
+              startId="Package\Dim producto\Dimensión de variación lenta.Outputs[Nueva salida]" />
+            <path
+              refId="Package\Dim producto.Paths[Salida de actualizaciones de atributos variables]"
+              endId="Package\Dim producto\Cantidad Registros Modificados.Inputs[Entrada de Recuento de filas 1]"
+              name="Salida de actualizaciones de atributos variables"
+              startId="Package\Dim producto\Dimensión de variación lenta.Outputs[Salida de actualizaciones de atributos variables]" />
+            <path
+              refId="Package\Dim producto.Paths[Salida de comando de OLE DB]"
+              endId="Package\Dim producto\Comando de OLE DB.Inputs[Entrada de comando de OLE DB]"
+              name="Salida de comando de OLE DB"
+              startId="Package\Dim producto\Insertar Registros DimProducto mod.Outputs[Salida de comando de OLE DB]" />
+            <path
+              refId="Package\Dim producto.Paths[Salida de origen de OLE DB]"
+              endId="Package\Dim producto\Dimensión de variación lenta.Inputs[Entrada de dimensión de variación lenta]"
+              name="Salida de origen de OLE DB"
+              startId="Package\Dim producto\Stage Northwind.Outputs[Salida de origen de OLE DB]" />
+            <path
+              refId="Package\Dim producto.Paths[Salida de Recuento de filas 1]"
+              endId="Package\Dim producto\DimProduct.Inputs[Entrada de destino de OLE DB]"
+              name="Salida de Recuento de filas 1"
+              startId="Package\Dim producto\CantidadRegistrosNuevos.Outputs[Salida de Recuento de filas 1]" />
+            <path
+              refId="Package\Dim producto.Paths[Salida de Recuento de filas 11]"
+              endId="Package\Dim producto\Insertar Registros DimProducto mod.Inputs[Entrada de comando de OLE DB]"
+              name="Salida de Recuento de filas 1"
+              startId="Package\Dim producto\Cantidad Registros Modificados.Outputs[Salida de Recuento de filas 1]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Insertar Cantidad Registros Nuevos y modificados"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Tarea Ejecutar SQL"
+      DTS:DTSID="{D467A3A2-053C-4E90-9384-25CAD4E84602}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Insertar Cantidad Registros Nuevos y modificados"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{296C0307-B771-49F3-822F-CFA559743017}"
+          SQLTask:SqlStatementSource="UPDATE ETLExecution&#xA;SET [ETLCountNewRegister] = ?,&#xA;    [ETLCountModifiedRegister] = ?&#xA;WHERE ID = ?&#xA;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="0"
+            SQLTask:DtsVariableName="User::ETLCantidadRegistroNuevos"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="3"
+            SQLTask:ParameterSize="-1" />
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="1"
+            SQLTask:DtsVariableName="User::ETLCantidadRegistroModificados"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="3"
+            SQLTask:ParameterSize="-1" />
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="2"
+            SQLTask:DtsVariableName="User::ETlExecution"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="3"
+            SQLTask:ParameterSize="-1" />
+        </SQLTask:SqlTaskData>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Insertar Cantidad Total"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Tarea Ejecutar SQL"
+      DTS:DTSID="{346D3ACB-6524-43A9-97AE-D7E8FDAA609C}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Insertar Cantidad Total"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{296C0307-B771-49F3-822F-CFA559743017}"
+          SQLTask:SqlStatementSource="UPDATE ETLExecution&#xA;SET [ETLCountRows]=([ETLCountNewRegister]+[ETLCountModifiedRegister])&#xA;WHERE ID = ?&#xA;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="0"
+            SQLTask:DtsVariableName="User::ETlExecution"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="3"
+            SQLTask:ParameterSize="-1" />
+        </SQLTask:SqlTaskData>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Insertar registros en el Metadata"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Tarea Ejecutar SQL"
+      DTS:DTSID="{691A34C7-EBCB-45F4-B4C5-D083B00CD11F}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Insertar registros en el Metadata"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{296C0307-B771-49F3-822F-CFA559743017}"
+          SQLTask:SqlStatementSource="INSERT INTO ETLExecution(UserName, MachineName, PackageName, ETLLoad)&#xA;                VALUES(?,?,?,GETDATE())" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="0"
+            SQLTask:DtsVariableName="System::UserName"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="130"
+            SQLTask:ParameterSize="-1" />
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="1"
+            SQLTask:DtsVariableName="System::MachineName"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="130"
+            SQLTask:ParameterSize="-1" />
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="2"
+            SQLTask:DtsVariableName="System::PackageName"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="130"
+            SQLTask:ParameterSize="-1" />
+        </SQLTask:SqlTaskData>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Obtener id"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Tarea Ejecutar SQL"
+      DTS:DTSID="{CCACC881-420C-43A6-92E2-19F0A25144DA}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Obtener id"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{920C4A99-D38A-4455-821F-097EB5C690A1}"
+          SQLTask:SqlStatementSource="SELECT TOP(1) ID FROM ETLExecution&#xA;WHERE PackageName = ?&#xA;ORDER BY ID DESC"
+          SQLTask:ResultType="ResultSetType_SingleRow" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+          <SQLTask:ResultBinding
+            SQLTask:ResultName="0"
+            SQLTask:DtsVariableName="User::ETlExecution" />
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="0"
+            SQLTask:DtsVariableName="System::PackageName"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="130"
+            SQLTask:ParameterSize="-1" />
+        </SQLTask:SqlTaskData>
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Restricción]"
+      DTS:CreationName=""
+      DTS:DTSID="{57349ECC-62AE-4602-A4D2-9E8C3ECAAFF8}"
+      DTS:From="Package\Insertar registros en el Metadata"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Restricción"
+      DTS:To="Package\Obtener id" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Restricción 1]"
+      DTS:CreationName=""
+      DTS:DTSID="{2A8A407F-99F2-4476-889F-916BA5F2483F}"
+      DTS:From="Package\Obtener id"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Restricción 1"
+      DTS:To="Package\Dim producto" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Restricción 2]"
+      DTS:CreationName=""
+      DTS:DTSID="{9ED86E29-E0B6-44FE-96E1-C46BFB394B8F}"
+      DTS:From="Package\Dim producto"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Restricción 2"
+      DTS:To="Package\Insertar Cantidad Registros Nuevos y modificados" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Restricción 3]"
+      DTS:CreationName=""
+      DTS:DTSID="{D90E2C87-B169-454A-9946-25700E04287E}"
+      DTS:From="Package\Insertar Cantidad Registros Nuevos y modificados"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Restricción 3"
+      DTS:To="Package\Insertar Cantidad Total" />
+  </DTS:PrecedenceConstraints>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--Esta sección CDATA contiene la información de diseño del paquete. Esta sección incluye información como, por ejemplo, las coordenadas (x,y), el ancho y el alto.-->
+<!--Si edita manualmente esta sección y comete un error, puede eliminarlo. -->
+<!--El paquete podrá cargarse normalmente, pero se perderá la información de diseño anterior y el diseñador reorganizará los elementos automáticamente en la superficie de diseño.-->
+<Objects
+  Version="8">
+  <!--Cada uno de los nodos siguientes contiene propiedades que no afectan al comportamiento en tiempo de ejecución.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="140,41.6"
+          Id="Package\Dim producto"
+          TopLeft="303.333316759932,169.866665485435" />
+        <NodeLayout
+          Size="309.6,41.6"
+          Id="Package\Insertar Cantidad Registros Nuevos y modificados"
+          TopLeft="223.333321130938,247.866664943033" />
+        <NodeLayout
+          Size="184,41.6"
+          Id="Package\Insertar Cantidad Total"
+          TopLeft="279.999984701475,323.26666441871" />
+        <NodeLayout
+          Size="228,41.6"
+          Id="Package\Insertar registros en el Metadata"
+          TopLeft="264.166652233237,31.1999997830391" />
+        <NodeLayout
+          Size="127.2,41.6"
+          Id="Package\Obtener id"
+          TopLeft="313.333316213556,98.7999993129574" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Restricción]"
+          TopLeft="377.549984223396,72.7999997830391">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,25.9999995299183"
+              Start="0,0"
+              End="0,18.4999995299183">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,18.4999995299183" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Restricción 1]"
+          TopLeft="375.133316486744,140.399999312957">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,29.4666661724779"
+              Start="0,0"
+              End="0,21.9666661724779">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,21.9666661724779" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Restricción 2]"
+          TopLeft="375.733318945435,211.466665485435">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,36.399999457598"
+              Start="0,0"
+              End="0,28.899999457598">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,28.899999457598" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Restricción 3]"
+          TopLeft="375.066652916207,289.466664943033">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,33.7999994756769"
+              Start="0,0"
+              End="0,26.2999994756769">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,26.2999994756769" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\Dim producto">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="212,41.6"
+          Id="Package\Dim producto\Dimensión de variación lenta"
+          TopLeft="303.866660975251,158.233332977759" />
+        <NodeLayout
+          Size="132.8,41.6"
+          Id="Package\Dim producto\DimProduct"
+          TopLeft="183.83332358963,330.899999150237" />
+        <NodeLayout
+          Size="178.4,41.6"
+          Id="Package\Dim producto\Comando de OLE DB"
+          TopLeft="445.666654145553,376.766665503515" />
+        <NodeLayout
+          Size="199.2,41.6"
+          Id="Package\Dim producto\CantidadRegistrosNuevos"
+          TopLeft="149.16665851656,243.533331639833" />
+        <NodeLayout
+          Size="155.2,41.6"
+          Id="Package\Dim producto\Stage Northwind"
+          TopLeft="332.266660975251,56.6333329777585" />
+        <NodeLayout
+          Size="225.6,41.6"
+          Id="Package\Dim producto\Cantidad Registros Modificados"
+          TopLeft="424.999976779025,240.266665123834" />
+        <EdgeLayout
+          Id="Package\Dim producto.Paths[Salida de Recuento de filas 1]"
+          TopLeft="249.499991053095,285.133331639833">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,45.7666675104036"
+              Start="0,0"
+              End="0,38.2666675104036">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,38.2666675104036" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Dim producto.Paths[Salida de origen de OLE DB]"
+          TopLeft="409.866660975251,98.2333329777585">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60.0000000000001"
+              Start="0,0"
+              End="0,52.5000000000001">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5000000000001" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Dim producto.Paths[Salida de actualizaciones de atributos variables]"
+          TopLeft="443.866660975251,199.833332977759">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="93.9333158037742,40.433332146075"
+              Start="0,0"
+              End="93.9333158037742,32.933332146075">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,12.355055699536" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,12.355055699536"
+                    Point2="0,16.355055699536"
+                    Point3="4,16.355055699536" />
+                  <mssgle:LineSegment
+                    End="89.9333158037742,16.355055699536" />
+                  <mssgle:CubicBezierSegment
+                    Point1="89.9333158037742,16.355055699536"
+                    Point2="93.9333158037742,16.355055699536"
+                    Point3="93.9333158037742,20.355055699536" />
+                  <mssgle:LineSegment
+                    End="93.9333158037742,32.933332146075" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-57.2865842856129,21.355055699536,208.506484375,9.7490234375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Dim producto.Paths[Nueva salida]"
+          TopLeft="375.866660975251,199.833332977759">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-127.100002458692,43.699998662074"
+              Start="0,0"
+              End="-127.100002458692,36.199998662074">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,13.6764039531985" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,13.6764039531985"
+                    Point2="0,17.6764039531985"
+                    Point3="-4,17.6764039531985" />
+                  <mssgle:LineSegment
+                    End="-123.100002458692,17.6764039531985" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-123.100002458692,17.6764039531985"
+                    Point2="-127.100002458692,17.6764039531985"
+                    Point3="-127.100002458692,21.6764039531985" />
+                  <mssgle:LineSegment
+                    End="-127.100002458692,36.199998662074" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-91.8383606043458,22.6764039531985,56.57671875,9.7490234375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="246.4,41.6"
+          Id="Package\Dim producto\Insertar Registros DimProducto mod"
+          TopLeft="413.333310749797,306.799997866551" />
+        <EdgeLayout
+          Id="Package\Dim producto.Paths[Salida de Recuento de filas 11]"
+          TopLeft="537.166643764411,281.866665123834">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,24.9333327427176"
+              Start="0,0"
+              End="0,17.4333327427176">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,17.4333327427176" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Dim producto.Paths[Salida de comando de OLE DB]"
+          TopLeft="535.699982447675,348.399997866551">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,28.3666676369638"
+              Start="0,0"
+              End="0,20.8666676369638">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,20.8666676369638" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Dim producto\Dimensión de variación lenta">
+    <Properties>
+      <Property>
+        <Name>SCDMetadata</Name>
+        <Value
+          type="q2:string">&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;SCDWizardMetadata xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"&gt;
+  &lt;ConnectionID&gt;{492B2500-90F3-4291-8026-6EBCC9F224D8}&lt;/ConnectionID&gt;
+  &lt;TableName&gt;[dbo].[dim_product]&lt;/TableName&gt;
+  &lt;InputToColumnsCollection&gt;
+    &lt;InputColumnToDBColumn&gt;
+      &lt;IdentificationString&gt;Stage Northwind.Salidas[Salida de origen de OLE DB].Columnas[Categoria_nombre]&lt;/IdentificationString&gt;
+      &lt;ColumnName&gt;category_name&lt;/ColumnName&gt;
+      &lt;KeyType&gt;None&lt;/KeyType&gt;
+      &lt;ChangeType&gt;ChangingAttribute&lt;/ChangeType&gt;
+    &lt;/InputColumnToDBColumn&gt;
+    &lt;InputColumnToDBColumn&gt;
+      &lt;IdentificationString&gt;Stage Northwind.Salidas[Salida de origen de OLE DB].Columnas[Producto_Nombre]&lt;/IdentificationString&gt;
+      &lt;ColumnName&gt;product_name&lt;/ColumnName&gt;
+      &lt;KeyType&gt;None&lt;/KeyType&gt;
+      &lt;ChangeType&gt;ChangingAttribute&lt;/ChangeType&gt;
+    &lt;/InputColumnToDBColumn&gt;
+    &lt;InputColumnToDBColumn&gt;
+      &lt;IdentificationString&gt;Stage Northwind.Salidas[Salida de origen de OLE DB].Columnas[Producto_Codigo]&lt;/IdentificationString&gt;
+      &lt;ColumnName&gt;productid_nk&lt;/ColumnName&gt;
+      &lt;KeyType&gt;BusinessKey&lt;/KeyType&gt;
+      &lt;ChangeType&gt;None&lt;/ChangeType&gt;
+    &lt;/InputColumnToDBColumn&gt;
+    &lt;InputColumnToDBColumn&gt;
+      &lt;IdentificationString&gt;Stage Northwind.Salidas[Salida de origen de OLE DB].Columnas[ProveedorNombre]&lt;/IdentificationString&gt;
+      &lt;ColumnName&gt;supplier_name&lt;/ColumnName&gt;
+      &lt;KeyType&gt;None&lt;/KeyType&gt;
+      &lt;ChangeType&gt;ChangingAttribute&lt;/ChangeType&gt;
+    &lt;/InputColumnToDBColumn&gt;
+  &lt;/InputToColumnsCollection&gt;
+  &lt;GeneratedComponentsIdentificationStrings&gt;
+    &lt;anyType xsi:type="xsd:string"&gt;Insertar destino&lt;/anyType&gt;
+    &lt;anyType xsi:type="xsd:string"&gt;Comando de OLE DB&lt;/anyType&gt;
+  &lt;/GeneratedComponentsIdentificationStrings&gt;
+  &lt;FailFixedAttribute&gt;false&lt;/FailFixedAttribute&gt;
+  &lt;FailChangeAttribute&gt;false&lt;/FailChangeAttribute&gt;
+  &lt;UseStartEndDate&gt;false&lt;/UseStartEndDate&gt;
+  &lt;CurrentIndicatorColumn /&gt;
+  &lt;InferredIndicatorColumn /&gt;
+  &lt;ValueCurrent /&gt;
+  &lt;ValueExpired /&gt;
+  &lt;StartDateColumn /&gt;
+  &lt;EndDateColumn /&gt;
+  &lt;DateVariable /&gt;
+  &lt;EnableInferredSupport&gt;false&lt;/EnableInferredSupport&gt;
+&lt;/SCDWizardMetadata&gt;</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Dim producto\Stage Northwind">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

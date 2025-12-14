@@ -1,0 +1,1292 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="11/20/2025 12:03:41 AM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="DESKTOP-772JNFH"
+  DTS:CreatorName="DESKTOP-772JNFH\Bruno"
+  DTS:DTSID="{F1BC45B2-C025-4819-ABAB-0559EF4982F6}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="16.0.5685.0"
+  DTS:LocaleID="2058"
+  DTS:ObjectName="StageVentas"
+  DTS:PackageType="5"
+  DTS:VersionBuild="28"
+  DTS:VersionGUID="{F46E082B-39BE-4B4E-B6B0-6D83CB214A92}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[.,1422.Load_Northwind.sa]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{ACA31C21-C4B1-4B8E-8C2B-0D41FB4FC594}"
+      DTS:ObjectName=".,1422.Load_Northwind.sa">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=.,1422;User ID=sa;Initial Catalog=Load_Northwind;Provider=MSOLEDBSQL.1;Auto Translate=False;Application Name=SSIS-StageVentas-{ACA31C21-C4B1-4B8E-8C2B-0D41FB4FC594}.,1422.Load_Northwind.sa;">
+          <DTS:Password
+            DTS:Name="Password"
+            Sensitive="1"
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAxkPZQf2+b06WS1sIs1Z74AAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAAC6S0GZJwd9utZ9eEKvNiWtmDDActZKk+08dZJBYo8B5AAAAAAOgAAAAAIAACAAAAD18fLDNKH6kmq/mecZKVpzF8fW3Ln7k+3BF4A7csRwEiAAAABnkZ5E4KRXQW8IZmmOvH9hxowInXXw1eUqKTMF2/emRUAAAADHl5dUkePBnAXXa9HDF1iJ5U1+3MK3NFA/wnK/OLabzqQenENxE+y2x+P+mOuffvdaZclgMljO5CtovVbRTtN7</DTS:Password>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[.,1422.Load_Northwind.sa1]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{429BF11A-4F8F-4433-B10F-EB577AD509CC}"
+      DTS:ObjectName=".,1422.Load_Northwind.sa1">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=.,1422;User ID=sa;Initial Catalog=Load_Northwind;Provider=MSOLEDBSQL.1;Auto Translate=False;Application Name=SSIS-StageVentas-{429BF11A-4F8F-4433-B10F-EB577AD509CC}.,1422.Load_Northwind.sa1;">
+          <DTS:Password
+            DTS:Name="Password"
+            Sensitive="1"
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAxkPZQf2+b06WS1sIs1Z74AAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAABK52q3IPdwkaYRh7qbegRJ64Q2TltsxkTfSoQVwP7siQAAAAAOgAAAAAIAACAAAADg4AKfoYhGRLC3+fYTF4YLNZ4HHZ7r9xnyBUS+NTglDiAAAACKdYExAJty14ko9aAkAweGy4RT95N9Gy8NuI+oYJ07PEAAAAB0niSoJoRJznHni61tChbhdUBrjRuT8qGtQWK11KtQY8mszfa5IGPDYbAoovyWtyDbT/r2IodGFxV8X5PfaqDX</DTS:Password>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[.,1422.NORTHWIND_METADATA.sa]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{73CA5EB1-63B1-49FF-8672-CE3958764F00}"
+      DTS:ObjectName=".,1422.NORTHWIND_METADATA.sa">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=.,1422;User ID=sa;Initial Catalog=NORTHWIND_METADATA;Provider=MSOLEDBSQL.1;Auto Translate=False;Application Name=SSIS-StageVentas-{73CA5EB1-63B1-49FF-8672-CE3958764F00}.,1422.NORTHWIND_METADATA.sa;">
+          <DTS:Password
+            DTS:Name="Password"
+            Sensitive="1"
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAxkPZQf2+b06WS1sIs1Z74AAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAABDaMnNZ4Zws1m0G/9F23MFFoitbfAtwhmJp4jcauvUeAAAAAAOgAAAAAIAACAAAAC3XjWivLwvnPWARxQ0jzNXsCZIlUUu3LoH+X2DdGRM6SAAAAB84Hd5fc2r5cyjvtWMxKKoTPY1cieBsj4LwSfReXZ98UAAAAB4v++6mN/tyQat1/Cb+jc05F99NlfQXotSY6lD+FA2BpCjbRycOBBK8Si1Y2YIprs103FvG4GjnY04DC8WCIoy</DTS:Password>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[.,1422.Stage_Northwind.sa]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{E46A663A-CE46-43CD-B008-CFFDC9AC4C03}"
+      DTS:ObjectName=".,1422.Stage_Northwind.sa">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=.,1422;User ID=sa;Initial Catalog=Stage_Northwind;Provider=MSOLEDBSQL.1;Persist Security Info=True;Auto Translate=False;Application Name=SSIS-StageVentas-{E46A663A-CE46-43CD-B008-CFFDC9AC4C03}.,1422.Stage_Northwind.sa;">
+          <DTS:Password
+            DTS:Name="Password"
+            Sensitive="1"
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAxkPZQf2+b06WS1sIs1Z74AAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAADIzm61hbrpdKD90ES1qiEPCggFtUCPHng9dznZBWR71AAAAAAOgAAAAAIAACAAAACxwcovF2nj4eN76TsSCgmVQowD+XiLaiCyxk8UZ4kUJyAAAADPqk2dqXx5+2wyIblB++hqOPmGNj/3VYohiOdTVLfDd0AAAABMHbaTEe79ePCOMXD35br/9BTqKMlp3mvuu1H8rSHnUJXFB/mVstunHdIIE1KrkibYP+uMInCtrkJDUyV5M7GC</DTS:Password>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[.,1422.Stage_Northwind.sa1]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{8437D354-D569-4C01-9F65-95A575839AF1}"
+      DTS:ObjectName=".,1422.Stage_Northwind.sa1">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=.,1422;User ID=sa;Initial Catalog=Stage_Northwind;Provider=MSOLEDBSQL.1;Persist Security Info=True;Application Name=SSIS-StageVentas-{8437D354-D569-4C01-9F65-95A575839AF1}.,1422.Stage_Northwind.sa1;Auto Translate=False;">
+          <DTS:Password
+            DTS:Name="Password"
+            Sensitive="1"
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAxkPZQf2+b06WS1sIs1Z74AAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAABsC2TPgZmtaPhgS0Fjr7EZ6nnaoVE1SK/5OrcJLCuUHAAAAAAOgAAAAAIAACAAAABV36i4Fp7D5u4aXER2Ld2tpRAPd8M83eP3xE4TjxJBOCAAAADzxT3gQbgSHuk6Z5j1Y2jipvOwHQxEnbQxSDJYarCPlUAAAADHTxTAuZp409irCNQygiPNGBjlJjnknM0/rKobK5bDxitNG76umulLf/K0aSlQ0rlxSgJAjVk1bWvDxoahqa3F</DTS:Password>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{480CBD20-584E-4C6B-B074-5E4E429339AE}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="ETLExecution">
+      <DTS:VariableValue
+        DTS:DataType="3">0</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{93BEDE17-6E39-4546-BA9A-6E628996AEDC}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="ETLExecution_Ultimo">
+      <DTS:VariableValue
+        DTS:DataType="3">0</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{62DC2049-F6B1-4EEE-8B70-3A2F9A9646A1}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="ETLRowCounts">
+      <DTS:VariableValue
+        DTS:DataType="3">0</DTS:VariableValue>
+    </DTS:Variable>
+  </DTS:Variables>
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Actualizar ETLRowCounts"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Tarea Ejecutar SQL"
+      DTS:DTSID="{5cbd9dcc-5389-41d8-b3e8-8dce37542a0f}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Actualizar ETLRowCounts"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{73CA5EB1-63B1-49FF-8672-CE3958764F00}"
+          SQLTask:SqlStatementSource="UPDATE ETLExecution &#xA;    SET ETLCountRows = ?&#xA;    WHERE ID = ?;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="0"
+            SQLTask:DtsVariableName="User::ETLRowCounts"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="3"
+            SQLTask:ParameterSize="-1" />
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="1"
+            SQLTask:DtsVariableName="User::ETLExecution"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="3"
+            SQLTask:ParameterSize="-1" />
+        </SQLTask:SqlTaskData>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\DF_Stage_Northwind"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{7fa98ad0-f579-4c2a-adcd-91115476a64c}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="DF_Stage_Northwind"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\DF_Stage_Northwind\Agregar Columna"
+              componentClassID="Microsoft.DerivedColumn"
+              contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
+              name="Agregar Columna"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\DF_Stage_Northwind\Agregar Columna.Inputs[Derived Column Input]"
+                  description="Input to the Derived Column Transformation"
+                  name="Derived Column Input">
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\DF_Stage_Northwind\Agregar Columna.Outputs[Derived Column Output]"
+                  description="Default Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  name="Derived Column Output"
+                  synchronousInputId="Package\DF_Stage_Northwind\Agregar Columna.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DF_Stage_Northwind\Agregar Columna.Outputs[Derived Column Output].Columns[ETLLoad]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\DF_Stage_Northwind\Agregar Columna.Outputs[Derived Column Output].Columns[ETLLoad]"
+                      name="ETLLoad"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">[GETDATE]()</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">GETDATE()</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\DF_Stage_Northwind\Agregar Columna.Outputs[Derived Column Output].Columns[ETLExecution]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\DF_Stage_Northwind\Agregar Columna.Outputs[Derived Column Output].Columns[ETLExecution]"
+                      name="ETLExecution"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">@[User::ETLExecution]</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">@[User::ETLExecution]</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\DF_Stage_Northwind\Agregar Columna.Outputs[Derived Column Error Output]"
+                  description="Error Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Derived Column Error Output"
+                  synchronousInputId="Package\DF_Stage_Northwind\Agregar Columna.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DF_Stage_Northwind\Agregar Columna.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DF_Stage_Northwind\Agregar Columna.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DF_Stage_Northwind\Agregar Columna.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DF_Stage_Northwind\Agregar Columna.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\DF_Stage_Northwind\OLE DB Destination"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="OLE DB Destination"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[Stage_Ventas]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\DF_Stage_Northwind\OLE DB Destination.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[.,1422.Stage_Northwind.sa1]"
+                  connectionManagerRefId="Package.ConnectionManagers[.,1422.Stage_Northwind.sa1]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\DF_Stage_Northwind\OLE DB Destination.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\DF_Stage_Northwind\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[ETLLoad]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="ETLLoad"
+                      externalMetadataColumnId="Package\DF_Stage_Northwind\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ETLLoad]"
+                      lineageId="Package\DF_Stage_Northwind\Agregar Columna.Outputs[Derived Column Output].Columns[ETLLoad]" />
+                    <inputColumn
+                      refId="Package\DF_Stage_Northwind\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[ETLExecution]"
+                      cachedDataType="i4"
+                      cachedName="ETLExecution"
+                      externalMetadataColumnId="Package\DF_Stage_Northwind\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ETLExecution]"
+                      lineageId="Package\DF_Stage_Northwind\Agregar Columna.Outputs[Derived Column Output].Columns[ETLExecution]" />
+                    <inputColumn
+                      refId="Package\DF_Stage_Northwind\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Cliente_Codigo]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="5"
+                      cachedName="Cliente_Codigo"
+                      externalMetadataColumnId="Package\DF_Stage_Northwind\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Cliente_Codigo]"
+                      lineageId="Package\DF_Stage_Northwind\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[Cliente_Codigo]" />
+                    <inputColumn
+                      refId="Package\DF_Stage_Northwind\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Empleado_Codigo]"
+                      cachedDataType="i4"
+                      cachedName="Empleado_Codigo"
+                      externalMetadataColumnId="Package\DF_Stage_Northwind\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Empleado_Codigo]"
+                      lineageId="Package\DF_Stage_Northwind\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[Empleado_Codigo]" />
+                    <inputColumn
+                      refId="Package\DF_Stage_Northwind\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Producto_Codigo]"
+                      cachedDataType="i4"
+                      cachedName="Producto_Codigo"
+                      externalMetadataColumnId="Package\DF_Stage_Northwind\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Producto_Codigo]"
+                      lineageId="Package\DF_Stage_Northwind\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[Producto_Codigo]" />
+                    <inputColumn
+                      refId="Package\DF_Stage_Northwind\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Ventas_OrderDate]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="Ventas_OrderDate"
+                      externalMetadataColumnId="Package\DF_Stage_Northwind\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Ventas_OrderDate]"
+                      lineageId="Package\DF_Stage_Northwind\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[Ventas_OrderDate]" />
+                    <inputColumn
+                      refId="Package\DF_Stage_Northwind\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Ventas_NOrden]"
+                      cachedDataType="i4"
+                      cachedName="Ventas_NOrden"
+                      externalMetadataColumnId="Package\DF_Stage_Northwind\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Ventas_NOrden]"
+                      lineageId="Package\DF_Stage_Northwind\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[Ventas_NOrden]" />
+                    <inputColumn
+                      refId="Package\DF_Stage_Northwind\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Ventas_Monto]"
+                      cachedDataType="numeric"
+                      cachedName="Ventas_Monto"
+                      cachedPrecision="15"
+                      cachedScale="2"
+                      externalMetadataColumnId="Package\DF_Stage_Northwind\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Ventas_Monto]"
+                      lineageId="Package\DF_Stage_Northwind\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[Ventas_Monto]" />
+                    <inputColumn
+                      refId="Package\DF_Stage_Northwind\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Ventas_Unidades]"
+                      cachedDataType="i4"
+                      cachedName="Ventas_Unidades"
+                      externalMetadataColumnId="Package\DF_Stage_Northwind\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Ventas_Unidades]"
+                      lineageId="Package\DF_Stage_Northwind\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[Ventas_Unidades]" />
+                    <inputColumn
+                      refId="Package\DF_Stage_Northwind\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Ventas_PUnitario]"
+                      cachedDataType="numeric"
+                      cachedName="Ventas_PUnitario"
+                      cachedPrecision="15"
+                      cachedScale="2"
+                      externalMetadataColumnId="Package\DF_Stage_Northwind\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Ventas_PUnitario]"
+                      lineageId="Package\DF_Stage_Northwind\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[Ventas_PUnitario]" />
+                    <inputColumn
+                      refId="Package\DF_Stage_Northwind\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Ventas_Descuento]"
+                      cachedDataType="numeric"
+                      cachedName="Ventas_Descuento"
+                      cachedPrecision="15"
+                      cachedScale="2"
+                      externalMetadataColumnId="Package\DF_Stage_Northwind\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Ventas_Descuento]"
+                      lineageId="Package\DF_Stage_Northwind\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[Ventas_Descuento]" />
+                    <inputColumn
+                      refId="Package\DF_Stage_Northwind\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Transportista_Codigo]"
+                      cachedDataType="i4"
+                      cachedName="Transportista_Codigo"
+                      externalMetadataColumnId="Package\DF_Stage_Northwind\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Transportista_Codigo]"
+                      lineageId="Package\DF_Stage_Northwind\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[Transportista_Codigo]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\DF_Stage_Northwind\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ETLLoad]"
+                      dataType="dbTimeStamp"
+                      name="ETLLoad" />
+                    <externalMetadataColumn
+                      refId="Package\DF_Stage_Northwind\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ETLExecution]"
+                      dataType="i4"
+                      name="ETLExecution" />
+                    <externalMetadataColumn
+                      refId="Package\DF_Stage_Northwind\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Cliente_Codigo]"
+                      codePage="1252"
+                      dataType="str"
+                      length="5"
+                      name="Cliente_Codigo" />
+                    <externalMetadataColumn
+                      refId="Package\DF_Stage_Northwind\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Empleado_Codigo]"
+                      dataType="i4"
+                      name="Empleado_Codigo" />
+                    <externalMetadataColumn
+                      refId="Package\DF_Stage_Northwind\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Producto_Codigo]"
+                      dataType="i4"
+                      name="Producto_Codigo" />
+                    <externalMetadataColumn
+                      refId="Package\DF_Stage_Northwind\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Ventas_OrderDate]"
+                      dataType="dbTimeStamp"
+                      name="Ventas_OrderDate" />
+                    <externalMetadataColumn
+                      refId="Package\DF_Stage_Northwind\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Ventas_NOrden]"
+                      dataType="i4"
+                      name="Ventas_NOrden" />
+                    <externalMetadataColumn
+                      refId="Package\DF_Stage_Northwind\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Ventas_Monto]"
+                      dataType="numeric"
+                      name="Ventas_Monto"
+                      precision="15"
+                      scale="2" />
+                    <externalMetadataColumn
+                      refId="Package\DF_Stage_Northwind\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Ventas_Unidades]"
+                      dataType="i4"
+                      name="Ventas_Unidades" />
+                    <externalMetadataColumn
+                      refId="Package\DF_Stage_Northwind\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Ventas_PUnitario]"
+                      dataType="numeric"
+                      name="Ventas_PUnitario"
+                      precision="15"
+                      scale="2" />
+                    <externalMetadataColumn
+                      refId="Package\DF_Stage_Northwind\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Ventas_Descuento]"
+                      dataType="numeric"
+                      name="Ventas_Descuento"
+                      precision="15"
+                      scale="2" />
+                    <externalMetadataColumn
+                      refId="Package\DF_Stage_Northwind\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ShipperID]"
+                      dataType="i4"
+                      name="ShipperID" />
+                    <externalMetadataColumn
+                      refId="Package\DF_Stage_Northwind\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Transportista_Codigo]"
+                      dataType="i4"
+                      name="Transportista_Codigo" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\DF_Stage_Northwind\OLE DB Destination.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\DF_Stage_Northwind\OLE DB Destination.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DF_Stage_Northwind\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DF_Stage_Northwind\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DF_Stage_Northwind\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DF_Stage_Northwind\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\DF_Stage_Northwind\Origen de OLE DB"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="Origen de OLE DB;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos los derechos reservados; http://www.microsoft.com/sql/support;7"
+              description="Origen de OLE DB"
+              name="Origen de OLE DB"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="Número de segundos antes de que se agote el tiempo de espera de un comando. Un valor de 0 indica un tiempo de espera infinito."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Especifica el nombre del objeto de base de datos usado para abrir un conjunto de filas."
+                  name="OpenRowset"></property>
+                <property
+                  dataType="System.String"
+                  description="Especifica la variable que contiene el nombre del objeto de base de datos usado para abrir un conjunto de filas."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="Comando SQL para ejecutar."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT
+    CAST(o.CustomerID AS CHAR(5))                    AS Cliente_Codigo,  
+    o.EmployeeID                                     AS Empleado_Codigo,
+    od.ProductID                                     AS Producto_Codigo,
+	o.ShipVia										 AS Transportista_Codigo,
+    o.OrderDate                                      AS Ventas_OrderDate,
+    od.OrderID                                       AS Ventas_NOrden,
+    CAST(od.Quantity AS INT)                         AS Ventas_Unidades,
+    CAST(od.UnitPrice AS DECIMAL(15,2))              AS Ventas_PUnitario,
+    CAST(od.Discount AS DECIMAL(15,2))               AS Ventas_Descuento,
+    CAST(od.UnitPrice * od.Quantity * (1 - od.Discount) AS DECIMAL(15,2)) AS Ventas_Monto
+FROM [Load_Northwind].[dbo].[Orders]        AS o
+JOIN [Load_Northwind].[dbo].[OrderDetails] AS od
+ON o.OrderID = od.OrderID
+WHERE o.ETLExecution = ?;</property>
+                <property
+                  dataType="System.String"
+                  description="Variable que contiene el comando SQL para ejecutar."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica la página de códigos de columna para utilizar cuando la información de página de códigos no está disponible en el origen de datos."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Fuerza el uso del valor de la propiedad DefaultCodePage al describir datos de caracteres."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica el modo utilizado para obtener acceso a la base de datos."
+                  name="AccessMode"
+                  typeConverter="AccessMode">2</property>
+                <property
+                  dataType="System.String"
+                  description="Asignaciones entre los parámetros del comando SQL y las variables."
+                  name="ParameterMapping">"Parámetro0:Input",{93BEDE17-6E39-4546-BA9A-6E628996AEDC};</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\DF_Stage_Northwind\Origen de OLE DB.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[.,1422.Load_Northwind.sa1]"
+                  connectionManagerRefId="Package.ConnectionManagers[.,1422.Load_Northwind.sa1]"
+                  description="La conexión de tiempo de ejecución OLE DB usada para obtener acceso a la base de datos."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\DF_Stage_Northwind\Origen de OLE DB.Outputs[Salida de origen de OLE DB]"
+                  name="Salida de origen de OLE DB">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DF_Stage_Northwind\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[Cliente_Codigo]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF_Stage_Northwind\Origen de OLE DB.Outputs[Salida de origen de OLE DB].ExternalColumns[Cliente_Codigo]"
+                      length="5"
+                      lineageId="Package\DF_Stage_Northwind\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[Cliente_Codigo]"
+                      name="Cliente_Codigo"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DF_Stage_Northwind\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[Empleado_Codigo]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF_Stage_Northwind\Origen de OLE DB.Outputs[Salida de origen de OLE DB].ExternalColumns[Empleado_Codigo]"
+                      lineageId="Package\DF_Stage_Northwind\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[Empleado_Codigo]"
+                      name="Empleado_Codigo"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DF_Stage_Northwind\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[Producto_Codigo]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF_Stage_Northwind\Origen de OLE DB.Outputs[Salida de origen de OLE DB].ExternalColumns[Producto_Codigo]"
+                      lineageId="Package\DF_Stage_Northwind\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[Producto_Codigo]"
+                      name="Producto_Codigo"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DF_Stage_Northwind\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[Transportista_Codigo]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF_Stage_Northwind\Origen de OLE DB.Outputs[Salida de origen de OLE DB].ExternalColumns[Transportista_Codigo]"
+                      lineageId="Package\DF_Stage_Northwind\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[Transportista_Codigo]"
+                      name="Transportista_Codigo"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DF_Stage_Northwind\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[Ventas_OrderDate]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF_Stage_Northwind\Origen de OLE DB.Outputs[Salida de origen de OLE DB].ExternalColumns[Ventas_OrderDate]"
+                      lineageId="Package\DF_Stage_Northwind\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[Ventas_OrderDate]"
+                      name="Ventas_OrderDate"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DF_Stage_Northwind\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[Ventas_NOrden]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF_Stage_Northwind\Origen de OLE DB.Outputs[Salida de origen de OLE DB].ExternalColumns[Ventas_NOrden]"
+                      lineageId="Package\DF_Stage_Northwind\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[Ventas_NOrden]"
+                      name="Ventas_NOrden"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DF_Stage_Northwind\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[Ventas_Unidades]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF_Stage_Northwind\Origen de OLE DB.Outputs[Salida de origen de OLE DB].ExternalColumns[Ventas_Unidades]"
+                      lineageId="Package\DF_Stage_Northwind\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[Ventas_Unidades]"
+                      name="Ventas_Unidades"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DF_Stage_Northwind\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[Ventas_PUnitario]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF_Stage_Northwind\Origen de OLE DB.Outputs[Salida de origen de OLE DB].ExternalColumns[Ventas_PUnitario]"
+                      lineageId="Package\DF_Stage_Northwind\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[Ventas_PUnitario]"
+                      name="Ventas_PUnitario"
+                      precision="15"
+                      scale="2"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DF_Stage_Northwind\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[Ventas_Descuento]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF_Stage_Northwind\Origen de OLE DB.Outputs[Salida de origen de OLE DB].ExternalColumns[Ventas_Descuento]"
+                      lineageId="Package\DF_Stage_Northwind\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[Ventas_Descuento]"
+                      name="Ventas_Descuento"
+                      precision="15"
+                      scale="2"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DF_Stage_Northwind\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[Ventas_Monto]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF_Stage_Northwind\Origen de OLE DB.Outputs[Salida de origen de OLE DB].ExternalColumns[Ventas_Monto]"
+                      lineageId="Package\DF_Stage_Northwind\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[Ventas_Monto]"
+                      name="Ventas_Monto"
+                      precision="15"
+                      scale="2"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\DF_Stage_Northwind\Origen de OLE DB.Outputs[Salida de origen de OLE DB].ExternalColumns[Cliente_Codigo]"
+                      codePage="1252"
+                      dataType="str"
+                      length="5"
+                      name="Cliente_Codigo" />
+                    <externalMetadataColumn
+                      refId="Package\DF_Stage_Northwind\Origen de OLE DB.Outputs[Salida de origen de OLE DB].ExternalColumns[Empleado_Codigo]"
+                      dataType="i4"
+                      name="Empleado_Codigo" />
+                    <externalMetadataColumn
+                      refId="Package\DF_Stage_Northwind\Origen de OLE DB.Outputs[Salida de origen de OLE DB].ExternalColumns[Producto_Codigo]"
+                      dataType="i4"
+                      name="Producto_Codigo" />
+                    <externalMetadataColumn
+                      refId="Package\DF_Stage_Northwind\Origen de OLE DB.Outputs[Salida de origen de OLE DB].ExternalColumns[Transportista_Codigo]"
+                      dataType="i4"
+                      name="Transportista_Codigo" />
+                    <externalMetadataColumn
+                      refId="Package\DF_Stage_Northwind\Origen de OLE DB.Outputs[Salida de origen de OLE DB].ExternalColumns[Ventas_OrderDate]"
+                      dataType="dbTimeStamp"
+                      name="Ventas_OrderDate" />
+                    <externalMetadataColumn
+                      refId="Package\DF_Stage_Northwind\Origen de OLE DB.Outputs[Salida de origen de OLE DB].ExternalColumns[Ventas_NOrden]"
+                      dataType="i4"
+                      name="Ventas_NOrden" />
+                    <externalMetadataColumn
+                      refId="Package\DF_Stage_Northwind\Origen de OLE DB.Outputs[Salida de origen de OLE DB].ExternalColumns[Ventas_Unidades]"
+                      dataType="i4"
+                      name="Ventas_Unidades" />
+                    <externalMetadataColumn
+                      refId="Package\DF_Stage_Northwind\Origen de OLE DB.Outputs[Salida de origen de OLE DB].ExternalColumns[Ventas_PUnitario]"
+                      dataType="numeric"
+                      name="Ventas_PUnitario"
+                      precision="15"
+                      scale="2" />
+                    <externalMetadataColumn
+                      refId="Package\DF_Stage_Northwind\Origen de OLE DB.Outputs[Salida de origen de OLE DB].ExternalColumns[Ventas_Descuento]"
+                      dataType="numeric"
+                      name="Ventas_Descuento"
+                      precision="15"
+                      scale="2" />
+                    <externalMetadataColumn
+                      refId="Package\DF_Stage_Northwind\Origen de OLE DB.Outputs[Salida de origen de OLE DB].ExternalColumns[Ventas_Monto]"
+                      dataType="numeric"
+                      name="Ventas_Monto"
+                      precision="15"
+                      scale="2" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\DF_Stage_Northwind\Origen de OLE DB.Outputs[Salida de error de origen de OLE DB]"
+                  isErrorOut="true"
+                  name="Salida de error de origen de OLE DB">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DF_Stage_Northwind\Origen de OLE DB.Outputs[Salida de error de origen de OLE DB].Columns[Cliente_Codigo]"
+                      codePage="1252"
+                      dataType="str"
+                      length="5"
+                      lineageId="Package\DF_Stage_Northwind\Origen de OLE DB.Outputs[Salida de error de origen de OLE DB].Columns[Cliente_Codigo]"
+                      name="Cliente_Codigo" />
+                    <outputColumn
+                      refId="Package\DF_Stage_Northwind\Origen de OLE DB.Outputs[Salida de error de origen de OLE DB].Columns[Empleado_Codigo]"
+                      dataType="i4"
+                      lineageId="Package\DF_Stage_Northwind\Origen de OLE DB.Outputs[Salida de error de origen de OLE DB].Columns[Empleado_Codigo]"
+                      name="Empleado_Codigo" />
+                    <outputColumn
+                      refId="Package\DF_Stage_Northwind\Origen de OLE DB.Outputs[Salida de error de origen de OLE DB].Columns[Producto_Codigo]"
+                      dataType="i4"
+                      lineageId="Package\DF_Stage_Northwind\Origen de OLE DB.Outputs[Salida de error de origen de OLE DB].Columns[Producto_Codigo]"
+                      name="Producto_Codigo" />
+                    <outputColumn
+                      refId="Package\DF_Stage_Northwind\Origen de OLE DB.Outputs[Salida de error de origen de OLE DB].Columns[Transportista_Codigo]"
+                      dataType="i4"
+                      lineageId="Package\DF_Stage_Northwind\Origen de OLE DB.Outputs[Salida de error de origen de OLE DB].Columns[Transportista_Codigo]"
+                      name="Transportista_Codigo" />
+                    <outputColumn
+                      refId="Package\DF_Stage_Northwind\Origen de OLE DB.Outputs[Salida de error de origen de OLE DB].Columns[Ventas_OrderDate]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\DF_Stage_Northwind\Origen de OLE DB.Outputs[Salida de error de origen de OLE DB].Columns[Ventas_OrderDate]"
+                      name="Ventas_OrderDate" />
+                    <outputColumn
+                      refId="Package\DF_Stage_Northwind\Origen de OLE DB.Outputs[Salida de error de origen de OLE DB].Columns[Ventas_NOrden]"
+                      dataType="i4"
+                      lineageId="Package\DF_Stage_Northwind\Origen de OLE DB.Outputs[Salida de error de origen de OLE DB].Columns[Ventas_NOrden]"
+                      name="Ventas_NOrden" />
+                    <outputColumn
+                      refId="Package\DF_Stage_Northwind\Origen de OLE DB.Outputs[Salida de error de origen de OLE DB].Columns[Ventas_Unidades]"
+                      dataType="i4"
+                      lineageId="Package\DF_Stage_Northwind\Origen de OLE DB.Outputs[Salida de error de origen de OLE DB].Columns[Ventas_Unidades]"
+                      name="Ventas_Unidades" />
+                    <outputColumn
+                      refId="Package\DF_Stage_Northwind\Origen de OLE DB.Outputs[Salida de error de origen de OLE DB].Columns[Ventas_PUnitario]"
+                      dataType="numeric"
+                      lineageId="Package\DF_Stage_Northwind\Origen de OLE DB.Outputs[Salida de error de origen de OLE DB].Columns[Ventas_PUnitario]"
+                      name="Ventas_PUnitario"
+                      precision="15"
+                      scale="2" />
+                    <outputColumn
+                      refId="Package\DF_Stage_Northwind\Origen de OLE DB.Outputs[Salida de error de origen de OLE DB].Columns[Ventas_Descuento]"
+                      dataType="numeric"
+                      lineageId="Package\DF_Stage_Northwind\Origen de OLE DB.Outputs[Salida de error de origen de OLE DB].Columns[Ventas_Descuento]"
+                      name="Ventas_Descuento"
+                      precision="15"
+                      scale="2" />
+                    <outputColumn
+                      refId="Package\DF_Stage_Northwind\Origen de OLE DB.Outputs[Salida de error de origen de OLE DB].Columns[Ventas_Monto]"
+                      dataType="numeric"
+                      lineageId="Package\DF_Stage_Northwind\Origen de OLE DB.Outputs[Salida de error de origen de OLE DB].Columns[Ventas_Monto]"
+                      name="Ventas_Monto"
+                      precision="15"
+                      scale="2" />
+                    <outputColumn
+                      refId="Package\DF_Stage_Northwind\Origen de OLE DB.Outputs[Salida de error de origen de OLE DB].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DF_Stage_Northwind\Origen de OLE DB.Outputs[Salida de error de origen de OLE DB].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DF_Stage_Northwind\Origen de OLE DB.Outputs[Salida de error de origen de OLE DB].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DF_Stage_Northwind\Origen de OLE DB.Outputs[Salida de error de origen de OLE DB].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\DF_Stage_Northwind\Recuento de filas"
+              componentClassID="Microsoft.RowCount"
+              contactInfo="Recuento de filas;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos los derechos reservados; http://www.microsoft.com/sql/support;0"
+              description="Cuenta las filas a medida que pasan por un flujo de datos. Por ejemplo, se usa el número de filas procesadas para determinar si deben o no realizarse operaciones de limpieza o actualizar el texto de un mensaje de correo electrónico para comunicar el estado de procesamiento."
+              name="Recuento de filas">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Especifica la variable que contiene el recuento de filas."
+                  name="VariableName">User::ETLRowCounts</property>
+              </properties>
+              <inputs>
+                <input
+                  refId="Package\DF_Stage_Northwind\Recuento de filas.Inputs[Entrada de Recuento de filas 1]"
+                  hasSideEffects="true"
+                  name="Entrada de Recuento de filas 1">
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\DF_Stage_Northwind\Recuento de filas.Outputs[Salida de Recuento de filas 1]"
+                  name="Salida de Recuento de filas 1"
+                  synchronousInputId="Package\DF_Stage_Northwind\Recuento de filas.Inputs[Entrada de Recuento de filas 1]">
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\DF_Stage_Northwind.Paths[Derived Column Output]"
+              endId="Package\DF_Stage_Northwind\Recuento de filas.Inputs[Entrada de Recuento de filas 1]"
+              name="Derived Column Output"
+              startId="Package\DF_Stage_Northwind\Agregar Columna.Outputs[Derived Column Output]" />
+            <path
+              refId="Package\DF_Stage_Northwind.Paths[Salida de origen de OLE DB]"
+              endId="Package\DF_Stage_Northwind\Agregar Columna.Inputs[Derived Column Input]"
+              name="Salida de origen de OLE DB"
+              startId="Package\DF_Stage_Northwind\Origen de OLE DB.Outputs[Salida de origen de OLE DB]" />
+            <path
+              refId="Package\DF_Stage_Northwind.Paths[Salida de Recuento de filas 1]"
+              endId="Package\DF_Stage_Northwind\OLE DB Destination.Inputs[OLE DB Destination Input]"
+              name="Salida de Recuento de filas 1"
+              startId="Package\DF_Stage_Northwind\Recuento de filas.Outputs[Salida de Recuento de filas 1]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Insertar Datos en Northwind Metadata"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Tarea Ejecutar SQL"
+      DTS:DTSID="{71967065-ecef-4b46-85c9-1464363a1784}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Insertar Datos en Northwind Metadata"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{73CA5EB1-63B1-49FF-8672-CE3958764F00}"
+          SQLTask:SqlStatementSource="INSERT INTO [dbo].[ETLExecution] (UserName, MachineName, PackageName, ETLLoad)&#xA; VALUES (?,?,?, GETDATE());" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="0"
+            SQLTask:DtsVariableName="System::UserName"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="130"
+            SQLTask:ParameterSize="-1" />
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="1"
+            SQLTask:DtsVariableName="System::MachineName"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="130"
+            SQLTask:ParameterSize="-1" />
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="2"
+            SQLTask:DtsVariableName="System::PackageName"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="130"
+            SQLTask:ParameterSize="-1" />
+        </SQLTask:SqlTaskData>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Limpiar Stage"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Tarea Ejecutar SQL"
+      DTS:DTSID="{e83ef8e3-6eb4-413a-963c-beccd78fc425}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Limpiar Stage"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{E46A663A-CE46-43CD-B008-CFFDC9AC4C03}"
+          SQLTask:SqlStatementSource="TRUNCATE TABLE Stage_Ventas" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Obtener ID"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Tarea Ejecutar SQL"
+      DTS:DTSID="{5b531e1a-af94-4a44-9137-2d0ba95f7d33}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Obtener ID"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{73CA5EB1-63B1-49FF-8672-CE3958764F00}"
+          SQLTask:SqlStatementSource="SELECT TOP (1) ID &#xA;FROM ETLExecution&#xA;ORDER BY ID DESC;"
+          SQLTask:ResultType="ResultSetType_SingleRow" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+          <SQLTask:ResultBinding
+            SQLTask:ResultName="0"
+            SQLTask:DtsVariableName="User::ETLExecution" />
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="0"
+            SQLTask:DtsVariableName="System::PackageName"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="130"
+            SQLTask:ParameterSize="-1" />
+        </SQLTask:SqlTaskData>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Obtener Ultimo ETLExecution"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Tarea Ejecutar SQL"
+      DTS:DTSID="{6f70b25f-f6bd-4f12-b733-42bf9049986e}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Obtener Ultimo ETLExecution"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{E46A663A-CE46-43CD-B008-CFFDC9AC4C03}"
+          SQLTask:SqlStatementSource="SELECT MAX(ETLExecution) FROM [Load_Northwind].[dbo].[Orders]"
+          SQLTask:ResultType="ResultSetType_SingleRow" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+          <SQLTask:ResultBinding
+            SQLTask:ResultName="0"
+            SQLTask:DtsVariableName="User::ETLExecution_Ultimo" />
+        </SQLTask:SqlTaskData>
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Restricción]"
+      DTS:CreationName=""
+      DTS:DTSID="{bff0fa94-4a93-4ab3-8332-53ecc384728f}"
+      DTS:From="Package\Insertar Datos en Northwind Metadata"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Restricción"
+      DTS:To="Package\Obtener ID" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Restricción 1]"
+      DTS:CreationName=""
+      DTS:DTSID="{77ebfdd9-d00d-4577-b578-df20bc181f54}"
+      DTS:From="Package\Obtener ID"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Restricción 1"
+      DTS:To="Package\Limpiar Stage" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Restricción 2]"
+      DTS:CreationName=""
+      DTS:DTSID="{bf86abfe-f789-4384-b7d3-dd46835a85b8}"
+      DTS:From="Package\Limpiar Stage"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Restricción 2"
+      DTS:To="Package\Obtener Ultimo ETLExecution" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Restricción 3]"
+      DTS:CreationName=""
+      DTS:DTSID="{9265c05f-8e4f-465e-bc94-50c9c8ae897d}"
+      DTS:From="Package\Obtener Ultimo ETLExecution"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Restricción 3"
+      DTS:To="Package\DF_Stage_Northwind" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Restricción 4]"
+      DTS:CreationName=""
+      DTS:DTSID="{e7b03d00-9fbf-4924-b0e3-8b5dadca40fb}"
+      DTS:From="Package\DF_Stage_Northwind"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Restricción 4"
+      DTS:To="Package\Actualizar ETLRowCounts" />
+  </DTS:PrecedenceConstraints>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--Esta sección CDATA contiene la información de diseño del paquete. Esta sección incluye información como, por ejemplo, las coordenadas (x,y), el ancho y el alto.-->
+<!--Si edita manualmente esta sección y comete un error, puede eliminarlo. -->
+<!--El paquete podrá cargarse normalmente, pero se perderá la información de diseño anterior y el diseñador reorganizará los elementos automáticamente en la superficie de diseño.-->
+<Objects
+  Version="8">
+  <!--Cada uno de los nodos siguientes contiene propiedades que no afectan al comportamiento en tiempo de ejecución.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="200,41.6"
+          Id="Package\Actualizar ETLRowCounts"
+          TopLeft="683.333299275903,288.666665376955" />
+        <NodeLayout
+          Size="177.6,41.6"
+          Id="Package\DF_Stage_Northwind"
+          TopLeft="466.66664444738,290.533331730233" />
+        <NodeLayout
+          Size="253.6,41.6"
+          Id="Package\Insertar Datos en Northwind Metadata"
+          TopLeft="104.166664253507,60" />
+        <NodeLayout
+          Size="142.4,41.6"
+          Id="Package\Limpiar Stage"
+          TopLeft="165.833327550855,197.799999041756" />
+        <NodeLayout
+          Size="128.8,41.6"
+          Id="Package\Obtener ID"
+          TopLeft="164.166660975251,138.866666118238" />
+        <NodeLayout
+          Size="216,41.6"
+          Id="Package\Obtener Ultimo ETLExecution"
+          TopLeft="169.999993989865,283.066665232314" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Restricción]"
+          TopLeft="229.766662614379,101.6">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,37.266666118238"
+              Start="0,0"
+              End="0,29.766666118238">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,29.766666118238" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Restricción 1]"
+          TopLeft="164.166660975251,159.666666118238">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="1.6666665756038,58.9333329235184"
+              Start="0,0"
+              End="-5.8333334243962,58.9333329235184">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="-18.5,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-18.5,0"
+                    Point2="-22.5,0"
+                    Point3="-22.5,4" />
+                  <mssgle:LineSegment
+                    End="-22.5,54.9333329235184" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-22.5,54.9333329235184"
+                    Point2="-22.5,58.9333329235184"
+                    Point3="-18.5,58.9333329235184" />
+                  <mssgle:LineSegment
+                    End="-5.8333334243962,58.9333329235184" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Restricción 2]"
+          TopLeft="240.183327437026,239.399999041756">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,43.6666661905575"
+              Start="0,0"
+              End="0,36.1666661905575">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,36.1666661905575" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Restricción 3]"
+          TopLeft="385.999993989865,307.599998481274">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="80.6666504575152,0"
+              Start="0,0"
+              End="73.1666504575152,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="73.1666504575152,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Restricción 4]"
+          TopLeft="644.26664444738,310.399998553594">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="39.0666548285228,0"
+              Start="0,0"
+              End="31.5666548285228,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="31.5666548285228,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\DF_Stage_Northwind">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="164.8,41.6"
+          Id="Package\DF_Stage_Northwind\Origen de OLE DB"
+          TopLeft="388.333312115736,0.866666660639989" />
+        <NodeLayout
+          Size="158.4,41.6"
+          Id="Package\DF_Stage_Northwind\Recuento de filas"
+          TopLeft="393.333311842549,176.799998770555" />
+        <NodeLayout
+          Size="160,41.6"
+          Id="Package\DF_Stage_Northwind\Agregar Columna"
+          TopLeft="384.999978964529,96.1999993310372" />
+        <NodeLayout
+          Size="171.2,41.6"
+          Id="Package\DF_Stage_Northwind\OLE DB Destination"
+          TopLeft="384.166645676726,263.399998173913" />
+        <EdgeLayout
+          Id="Package\DF_Stage_Northwind.Paths[Salida de Recuento de filas 1]"
+          TopLeft="471.149978759637,218.399998770555">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,44.999999403358"
+              Start="0,0"
+              End="0,37.499999403358">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,37.499999403358" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\DF_Stage_Northwind.Paths[Salida de origen de OLE DB]"
+          TopLeft="467.866645540132,42.46666666064">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,53.7333326703972"
+              Start="0,0"
+              End="0,46.2333326703972">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,46.2333326703972" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\DF_Stage_Northwind.Paths[Derived Column Output]"
+          TopLeft="468.766645403539,137.799999331037">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,38.9999994395178"
+              Start="0,0"
+              End="0,31.4999994395178">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,31.4999994395178" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\DF_Stage_Northwind\Origen de OLE DB">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\DF_Stage_Northwind\OLE DB Destination">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

@@ -1,0 +1,1420 @@
+<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="10/21/2025 7:35:52 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="DESKTOP-772JNFH"
+  DTS:CreatorName="DESKTOP-772JNFH\Bruno"
+  DTS:DTSID="{2B7A0C37-0DC1-4C30-80C9-87604895193B}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="16.0.5685.0"
+  DTS:LocaleID="2058"
+  DTS:ObjectName="LoadEmployee"
+  DTS:PackageType="5"
+  DTS:VersionBuild="31"
+  DTS:VersionGUID="{85895A1E-F06F-41E5-A208-39A39817536C}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[.,1422.Load_Northwind.sa]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{53A56919-E4BF-4D4F-9B6C-49238F98D9E7}"
+      DTS:ObjectName=".,1422.Load_Northwind.sa">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=.,1422;User ID=sa;Initial Catalog=Load_Northwind;Provider=MSOLEDBSQL.1;Application Name=SSIS-LoadEmployee-{53A56919-E4BF-4D4F-9B6C-49238F98D9E7}.,1422.Load_Northwind.sa;Auto Translate=False;">
+          <DTS:Password
+            DTS:Name="Password"
+            Sensitive="1"
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAgEFJ6jdXUUWTHUj9s013nwAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAADiBvEKPuCJj7zAiE2A2T+1Kw9dyliuU5bvgxZkgRVF8QAAAAAOgAAAAAIAACAAAADCJIDgIiWVOoaXVZUCYMVKXMVPX73qVdFsOmx+h9/q+jAAAADXalQTr0yAxlwQWMTV9BQrszHL1rlK2uD+1BLoc0XEjX6wkYImTrc5FupOJzpfEzlAAAAAx6p2l1ElERALDDmmaQxKO403l+lnVOq2fZYKAhO1Cs6H2/v6gGTZo3hwltBaqkWD3E4EBEYsZ2hOZ1Nk9VFUnQ</DTS:Password>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[.,1422.NORTHWIND_METADATA.sa]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{6318A0EA-D3DB-452C-8E67-A6AE6483199A}"
+      DTS:ObjectName=".,1422.NORTHWIND_METADATA.sa">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=.,1422;User ID=sa;Initial Catalog=NORTHWIND_METADATA;Provider=MSOLEDBSQL.1;Application Name=SSIS-LoadEmployee-{6318A0EA-D3DB-452C-8E67-A6AE6483199A}.,1422.NORTHWIND_METADATA.sa;Auto Translate=False;">
+          <DTS:Password
+            DTS:Name="Password"
+            Sensitive="1"
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAgEFJ6jdXUUWTHUj9s013nwAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAADc3D+ruWUUwFjFQ65HteJw5G98JLH/eQjfqZOptoaXiAAAAAAOgAAAAAIAACAAAACZ7i4LyaDiBXk6hLdc9G7WgpvIV8AUw+yuV7w6457/qTAAAABlIy4226UVxyMHjn3ZtRqCeM++SghRDZCeg6xDCvpzQPuatzx7iOD7cnSeayW2mMBAAAAAW+eef3OeXoNjmDrRNqC4GiNcpjDLLdae1I3+darFPZN2CORkLp7UTW8tcV68nleQ1qYD5ypgWxRmdMuC0SIMsg</DTS:Password>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[.,1422.NORTHWND.sa]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{17C7F889-E482-48F5-85E6-D581808F04EE}"
+      DTS:ObjectName=".,1422.NORTHWND.sa">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=.,1422;User ID=sa;Initial Catalog=NORTHWND;Provider=MSOLEDBSQL.1;Application Name=SSIS-LoadEmployee-{17C7F889-E482-48F5-85E6-D581808F04EE}.,1422.NORTHWND.sa;Auto Translate=False;">
+          <DTS:Password
+            DTS:Name="Password"
+            Sensitive="1"
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAgEFJ6jdXUUWTHUj9s013nwAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAABT3qGlJkNGgyXNhGirf66NXiWf/3glMUhZCTtasfgnYAAAAAAOgAAAAAIAACAAAADmfzPcae+yfxXWkkEQaI85D3+NPSHybFD+fZkDlknsuzAAAAB2SqL4HmwlntZIEMoBQOBg0A7jLFt85VIbF2/5EXOhyCR9PhJtEZ/wsHqbvmSgpj1AAAAACp42Kb8UjvMNOzhkY0DvTPO3RmtSIL9Bq/9OPbENIZu141Ro+cg88YfmhRHcJ2yyWWrWmJaRbqza0r+6dpQ6Hg</DTS:Password>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[.,1422.NORTHWND.sa 1]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{8F55E226-4DCD-4E13-B6BD-0146B980700C}"
+      DTS:ObjectName=".,1422.NORTHWND.sa 1">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=.,1422;User ID=sa;Initial Catalog=NORTHWND;Provider=MSOLEDBSQL.1;Application Name=SSIS-LoadEmployee-{8F55E226-4DCD-4E13-B6BD-0146B980700C}.,1422.NORTHWND.sa 1;Auto Translate=False;">
+          <DTS:Password
+            DTS:Name="Password"
+            Sensitive="1"
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAgEFJ6jdXUUWTHUj9s013nwAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAACdYo64dKACdMlWPzmvstIRM9plaPjPIly3DnluXKgFzgAAAAAOgAAAAAIAACAAAADqJxEuIzsoAD5HFP9Tnd7nSVHlGoW0NxGRw8JGklGw3TAAAADREn92izqEBG3GsJygyXGGfIquS4pvF8wWgNoCpheRuotn0rGfGD1KKR3DI+aCbAlAAAAAXaJENi2/VkOJBrYeStY98FosK21HLVSBi6QqK+vcj71Ty7c5/WMsq6tIc+20eqWPw0eSrMra8+oNuMIxO4zDlQ</DTS:Password>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{4EF2C899-6650-4BD1-8604-32311DE9BF7B}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="ETLCountRows">
+      <DTS:VariableValue
+        DTS:DataType="3">0</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{5702148B-18F2-4AAD-BB2C-241BD5E9392E}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="ETLEXECUTION">
+      <DTS:VariableValue
+        DTS:DataType="3">0</DTS:VariableValue>
+    </DTS:Variable>
+  </DTS:Variables>
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Actualizar columna ETLCountRows"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Tarea Ejecutar SQL"
+      DTS:DTSID="{0344792E-42C2-4946-9C5E-2139124D1A2F}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Actualizar columna ETLCountRows"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{6318A0EA-D3DB-452C-8E67-A6AE6483199A}"
+          SQLTask:SqlStatementSource="UPDATE ETLExecution&#xA;SET ETLCountRows = ?&#xA;WHERE Id = ?" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="0"
+            SQLTask:DtsVariableName="User::ETLCountRows"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="3"
+            SQLTask:ParameterSize="-1" />
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="1"
+            SQLTask:DtsVariableName="User::ETLEXECUTION"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="3"
+            SQLTask:ParameterSize="-1" />
+        </SQLTask:SqlTaskData>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\DF Load Employee"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{4B6E1E38-3361-4FFD-B138-A2BAF9C6F89A}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="DF Load Employee"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\DF Load Employee\Agregar columnas"
+              componentClassID="Microsoft.DerivedColumn"
+              contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
+              name="Agregar columnas"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\DF Load Employee\Agregar columnas.Inputs[Derived Column Input]"
+                  description="Input to the Derived Column Transformation"
+                  name="Derived Column Input">
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\DF Load Employee\Agregar columnas.Outputs[Derived Column Output]"
+                  description="Default Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  name="Derived Column Output"
+                  synchronousInputId="Package\DF Load Employee\Agregar columnas.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DF Load Employee\Agregar columnas.Outputs[Derived Column Output].Columns[ETLLOAD]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\DF Load Employee\Agregar columnas.Outputs[Derived Column Output].Columns[ETLLOAD]"
+                      name="ETLLOAD"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">[GETDATE]()</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">GETDATE()</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\DF Load Employee\Agregar columnas.Outputs[Derived Column Output].Columns[ETLEXECUTE]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\DF Load Employee\Agregar columnas.Outputs[Derived Column Output].Columns[ETLEXECUTE]"
+                      name="ETLEXECUTE"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">@[User::ETLEXECUTION]</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">@[User::ETLEXECUTION]</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\DF Load Employee\Agregar columnas.Outputs[Derived Column Error Output]"
+                  description="Error Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Derived Column Error Output"
+                  synchronousInputId="Package\DF Load Employee\Agregar columnas.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DF Load Employee\Agregar columnas.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DF Load Employee\Agregar columnas.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DF Load Employee\Agregar columnas.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DF Load Employee\Agregar columnas.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\DF Load Employee\Contar numero de registros insertados"
+              componentClassID="Microsoft.RowCount"
+              contactInfo="Row Count;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Counts rows as they pass through a data flow. For example, use the number of rows processed to determine whether or not to perform cleanup operations, or update text in an e-mail message to communicate processing status."
+              name="Contar numero de registros insertados">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable to hold the row count."
+                  name="VariableName">User::ETLCountRows</property>
+              </properties>
+              <inputs>
+                <input
+                  refId="Package\DF Load Employee\Contar numero de registros insertados.Inputs[Row Count Input 1]"
+                  hasSideEffects="true"
+                  name="Row Count Input 1">
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\DF Load Employee\Contar numero de registros insertados.Outputs[Row Count Output 1]"
+                  name="Row Count Output 1"
+                  synchronousInputId="Package\DF Load Employee\Contar numero de registros insertados.Inputs[Row Count Input 1]">
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\DF Load Employee\Load_Northwind Employee"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="Load_Northwind Employee"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[Employees]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\DF Load Employee\Load_Northwind Employee.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[.,1422.Load_Northwind.sa]"
+                  connectionManagerRefId="Package.ConnectionManagers[.,1422.Load_Northwind.sa]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\DF Load Employee\Load_Northwind Employee.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\DF Load Employee\Load_Northwind Employee.Inputs[OLE DB Destination Input].Columns[Address]"
+                      cachedDataType="wstr"
+                      cachedLength="60"
+                      cachedName="Address"
+                      externalMetadataColumnId="Package\DF Load Employee\Load_Northwind Employee.Inputs[OLE DB Destination Input].ExternalColumns[Address]"
+                      lineageId="Package\DF Load Employee\Northwind Employee.Outputs[OLE DB Source Output].Columns[Address]" />
+                    <inputColumn
+                      refId="Package\DF Load Employee\Load_Northwind Employee.Inputs[OLE DB Destination Input].Columns[City]"
+                      cachedDataType="wstr"
+                      cachedLength="15"
+                      cachedName="City"
+                      externalMetadataColumnId="Package\DF Load Employee\Load_Northwind Employee.Inputs[OLE DB Destination Input].ExternalColumns[City]"
+                      lineageId="Package\DF Load Employee\Northwind Employee.Outputs[OLE DB Source Output].Columns[City]" />
+                    <inputColumn
+                      refId="Package\DF Load Employee\Load_Northwind Employee.Inputs[OLE DB Destination Input].Columns[Region]"
+                      cachedDataType="wstr"
+                      cachedLength="15"
+                      cachedName="Region"
+                      externalMetadataColumnId="Package\DF Load Employee\Load_Northwind Employee.Inputs[OLE DB Destination Input].ExternalColumns[Region]"
+                      lineageId="Package\DF Load Employee\Northwind Employee.Outputs[OLE DB Source Output].Columns[Region]" />
+                    <inputColumn
+                      refId="Package\DF Load Employee\Load_Northwind Employee.Inputs[OLE DB Destination Input].Columns[PostalCode]"
+                      cachedDataType="wstr"
+                      cachedLength="10"
+                      cachedName="PostalCode"
+                      externalMetadataColumnId="Package\DF Load Employee\Load_Northwind Employee.Inputs[OLE DB Destination Input].ExternalColumns[PostalCode]"
+                      lineageId="Package\DF Load Employee\Northwind Employee.Outputs[OLE DB Source Output].Columns[PostalCode]" />
+                    <inputColumn
+                      refId="Package\DF Load Employee\Load_Northwind Employee.Inputs[OLE DB Destination Input].Columns[Country]"
+                      cachedDataType="wstr"
+                      cachedLength="15"
+                      cachedName="Country"
+                      externalMetadataColumnId="Package\DF Load Employee\Load_Northwind Employee.Inputs[OLE DB Destination Input].ExternalColumns[Country]"
+                      lineageId="Package\DF Load Employee\Northwind Employee.Outputs[OLE DB Source Output].Columns[Country]" />
+                    <inputColumn
+                      refId="Package\DF Load Employee\Load_Northwind Employee.Inputs[OLE DB Destination Input].Columns[ETLLOAD]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="ETLLOAD"
+                      externalMetadataColumnId="Package\DF Load Employee\Load_Northwind Employee.Inputs[OLE DB Destination Input].ExternalColumns[ETLLoad]"
+                      lineageId="Package\DF Load Employee\Agregar columnas.Outputs[Derived Column Output].Columns[ETLLOAD]" />
+                    <inputColumn
+                      refId="Package\DF Load Employee\Load_Northwind Employee.Inputs[OLE DB Destination Input].Columns[ETLEXECUTE]"
+                      cachedDataType="i4"
+                      cachedName="ETLEXECUTE"
+                      externalMetadataColumnId="Package\DF Load Employee\Load_Northwind Employee.Inputs[OLE DB Destination Input].ExternalColumns[ETLExecution]"
+                      lineageId="Package\DF Load Employee\Agregar columnas.Outputs[Derived Column Output].Columns[ETLEXECUTE]" />
+                    <inputColumn
+                      refId="Package\DF Load Employee\Load_Northwind Employee.Inputs[OLE DB Destination Input].Columns[LastName]"
+                      cachedDataType="wstr"
+                      cachedLength="20"
+                      cachedName="LastName"
+                      externalMetadataColumnId="Package\DF Load Employee\Load_Northwind Employee.Inputs[OLE DB Destination Input].ExternalColumns[LastName]"
+                      lineageId="Package\DF Load Employee\Northwind Employee.Outputs[OLE DB Source Output].Columns[LastName]" />
+                    <inputColumn
+                      refId="Package\DF Load Employee\Load_Northwind Employee.Inputs[OLE DB Destination Input].Columns[FirstName]"
+                      cachedDataType="wstr"
+                      cachedLength="10"
+                      cachedName="FirstName"
+                      externalMetadataColumnId="Package\DF Load Employee\Load_Northwind Employee.Inputs[OLE DB Destination Input].ExternalColumns[FirstName]"
+                      lineageId="Package\DF Load Employee\Northwind Employee.Outputs[OLE DB Source Output].Columns[FirstName]" />
+                    <inputColumn
+                      refId="Package\DF Load Employee\Load_Northwind Employee.Inputs[OLE DB Destination Input].Columns[Title]"
+                      cachedDataType="wstr"
+                      cachedLength="30"
+                      cachedName="Title"
+                      externalMetadataColumnId="Package\DF Load Employee\Load_Northwind Employee.Inputs[OLE DB Destination Input].ExternalColumns[Title]"
+                      lineageId="Package\DF Load Employee\Northwind Employee.Outputs[OLE DB Source Output].Columns[Title]" />
+                    <inputColumn
+                      refId="Package\DF Load Employee\Load_Northwind Employee.Inputs[OLE DB Destination Input].Columns[TitleOfCourtesy]"
+                      cachedDataType="wstr"
+                      cachedLength="25"
+                      cachedName="TitleOfCourtesy"
+                      externalMetadataColumnId="Package\DF Load Employee\Load_Northwind Employee.Inputs[OLE DB Destination Input].ExternalColumns[TitleOfCourtesy]"
+                      lineageId="Package\DF Load Employee\Northwind Employee.Outputs[OLE DB Source Output].Columns[TitleOfCourtesy]" />
+                    <inputColumn
+                      refId="Package\DF Load Employee\Load_Northwind Employee.Inputs[OLE DB Destination Input].Columns[BirthDate]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="BirthDate"
+                      externalMetadataColumnId="Package\DF Load Employee\Load_Northwind Employee.Inputs[OLE DB Destination Input].ExternalColumns[BirthDate]"
+                      lineageId="Package\DF Load Employee\Northwind Employee.Outputs[OLE DB Source Output].Columns[BirthDate]" />
+                    <inputColumn
+                      refId="Package\DF Load Employee\Load_Northwind Employee.Inputs[OLE DB Destination Input].Columns[HireDate]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="HireDate"
+                      externalMetadataColumnId="Package\DF Load Employee\Load_Northwind Employee.Inputs[OLE DB Destination Input].ExternalColumns[HireDate]"
+                      lineageId="Package\DF Load Employee\Northwind Employee.Outputs[OLE DB Source Output].Columns[HireDate]" />
+                    <inputColumn
+                      refId="Package\DF Load Employee\Load_Northwind Employee.Inputs[OLE DB Destination Input].Columns[HomePhone]"
+                      cachedDataType="wstr"
+                      cachedLength="24"
+                      cachedName="HomePhone"
+                      externalMetadataColumnId="Package\DF Load Employee\Load_Northwind Employee.Inputs[OLE DB Destination Input].ExternalColumns[HomePhone]"
+                      lineageId="Package\DF Load Employee\Northwind Employee.Outputs[OLE DB Source Output].Columns[HomePhone]" />
+                    <inputColumn
+                      refId="Package\DF Load Employee\Load_Northwind Employee.Inputs[OLE DB Destination Input].Columns[Extension]"
+                      cachedDataType="wstr"
+                      cachedLength="4"
+                      cachedName="Extension"
+                      externalMetadataColumnId="Package\DF Load Employee\Load_Northwind Employee.Inputs[OLE DB Destination Input].ExternalColumns[Extension]"
+                      lineageId="Package\DF Load Employee\Northwind Employee.Outputs[OLE DB Source Output].Columns[Extension]" />
+                    <inputColumn
+                      refId="Package\DF Load Employee\Load_Northwind Employee.Inputs[OLE DB Destination Input].Columns[Photo]"
+                      cachedDataType="image"
+                      cachedName="Photo"
+                      externalMetadataColumnId="Package\DF Load Employee\Load_Northwind Employee.Inputs[OLE DB Destination Input].ExternalColumns[Photo]"
+                      lineageId="Package\DF Load Employee\Northwind Employee.Outputs[OLE DB Source Output].Columns[Photo]" />
+                    <inputColumn
+                      refId="Package\DF Load Employee\Load_Northwind Employee.Inputs[OLE DB Destination Input].Columns[Notes]"
+                      cachedDataType="nText"
+                      cachedName="Notes"
+                      externalMetadataColumnId="Package\DF Load Employee\Load_Northwind Employee.Inputs[OLE DB Destination Input].ExternalColumns[Notes]"
+                      lineageId="Package\DF Load Employee\Northwind Employee.Outputs[OLE DB Source Output].Columns[Notes]" />
+                    <inputColumn
+                      refId="Package\DF Load Employee\Load_Northwind Employee.Inputs[OLE DB Destination Input].Columns[ReportsTo]"
+                      cachedDataType="i4"
+                      cachedName="ReportsTo"
+                      externalMetadataColumnId="Package\DF Load Employee\Load_Northwind Employee.Inputs[OLE DB Destination Input].ExternalColumns[ReportsTo]"
+                      lineageId="Package\DF Load Employee\Northwind Employee.Outputs[OLE DB Source Output].Columns[ReportsTo]" />
+                    <inputColumn
+                      refId="Package\DF Load Employee\Load_Northwind Employee.Inputs[OLE DB Destination Input].Columns[PhotoPath]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="PhotoPath"
+                      externalMetadataColumnId="Package\DF Load Employee\Load_Northwind Employee.Inputs[OLE DB Destination Input].ExternalColumns[PhotoPath]"
+                      lineageId="Package\DF Load Employee\Northwind Employee.Outputs[OLE DB Source Output].Columns[PhotoPath]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\DF Load Employee\Load_Northwind Employee.Inputs[OLE DB Destination Input].ExternalColumns[Address]"
+                      dataType="wstr"
+                      length="60"
+                      name="Address" />
+                    <externalMetadataColumn
+                      refId="Package\DF Load Employee\Load_Northwind Employee.Inputs[OLE DB Destination Input].ExternalColumns[City]"
+                      dataType="wstr"
+                      length="15"
+                      name="City" />
+                    <externalMetadataColumn
+                      refId="Package\DF Load Employee\Load_Northwind Employee.Inputs[OLE DB Destination Input].ExternalColumns[Region]"
+                      dataType="wstr"
+                      length="15"
+                      name="Region" />
+                    <externalMetadataColumn
+                      refId="Package\DF Load Employee\Load_Northwind Employee.Inputs[OLE DB Destination Input].ExternalColumns[PostalCode]"
+                      dataType="wstr"
+                      length="10"
+                      name="PostalCode" />
+                    <externalMetadataColumn
+                      refId="Package\DF Load Employee\Load_Northwind Employee.Inputs[OLE DB Destination Input].ExternalColumns[Country]"
+                      dataType="wstr"
+                      length="15"
+                      name="Country" />
+                    <externalMetadataColumn
+                      refId="Package\DF Load Employee\Load_Northwind Employee.Inputs[OLE DB Destination Input].ExternalColumns[ETLLoad]"
+                      dataType="dbTimeStamp"
+                      name="ETLLoad" />
+                    <externalMetadataColumn
+                      refId="Package\DF Load Employee\Load_Northwind Employee.Inputs[OLE DB Destination Input].ExternalColumns[ETLExecution]"
+                      dataType="i4"
+                      name="ETLExecution" />
+                    <externalMetadataColumn
+                      refId="Package\DF Load Employee\Load_Northwind Employee.Inputs[OLE DB Destination Input].ExternalColumns[EmployeeID]"
+                      dataType="i4"
+                      name="EmployeeID" />
+                    <externalMetadataColumn
+                      refId="Package\DF Load Employee\Load_Northwind Employee.Inputs[OLE DB Destination Input].ExternalColumns[LastName]"
+                      dataType="wstr"
+                      length="20"
+                      name="LastName" />
+                    <externalMetadataColumn
+                      refId="Package\DF Load Employee\Load_Northwind Employee.Inputs[OLE DB Destination Input].ExternalColumns[FirstName]"
+                      dataType="wstr"
+                      length="10"
+                      name="FirstName" />
+                    <externalMetadataColumn
+                      refId="Package\DF Load Employee\Load_Northwind Employee.Inputs[OLE DB Destination Input].ExternalColumns[Title]"
+                      dataType="wstr"
+                      length="30"
+                      name="Title" />
+                    <externalMetadataColumn
+                      refId="Package\DF Load Employee\Load_Northwind Employee.Inputs[OLE DB Destination Input].ExternalColumns[TitleOfCourtesy]"
+                      dataType="wstr"
+                      length="25"
+                      name="TitleOfCourtesy" />
+                    <externalMetadataColumn
+                      refId="Package\DF Load Employee\Load_Northwind Employee.Inputs[OLE DB Destination Input].ExternalColumns[BirthDate]"
+                      dataType="dbTimeStamp"
+                      name="BirthDate" />
+                    <externalMetadataColumn
+                      refId="Package\DF Load Employee\Load_Northwind Employee.Inputs[OLE DB Destination Input].ExternalColumns[HireDate]"
+                      dataType="dbTimeStamp"
+                      name="HireDate" />
+                    <externalMetadataColumn
+                      refId="Package\DF Load Employee\Load_Northwind Employee.Inputs[OLE DB Destination Input].ExternalColumns[HomePhone]"
+                      dataType="wstr"
+                      length="24"
+                      name="HomePhone" />
+                    <externalMetadataColumn
+                      refId="Package\DF Load Employee\Load_Northwind Employee.Inputs[OLE DB Destination Input].ExternalColumns[Extension]"
+                      dataType="wstr"
+                      length="4"
+                      name="Extension" />
+                    <externalMetadataColumn
+                      refId="Package\DF Load Employee\Load_Northwind Employee.Inputs[OLE DB Destination Input].ExternalColumns[Photo]"
+                      dataType="image"
+                      name="Photo" />
+                    <externalMetadataColumn
+                      refId="Package\DF Load Employee\Load_Northwind Employee.Inputs[OLE DB Destination Input].ExternalColumns[Notes]"
+                      dataType="nText"
+                      name="Notes" />
+                    <externalMetadataColumn
+                      refId="Package\DF Load Employee\Load_Northwind Employee.Inputs[OLE DB Destination Input].ExternalColumns[ReportsTo]"
+                      dataType="i4"
+                      name="ReportsTo" />
+                    <externalMetadataColumn
+                      refId="Package\DF Load Employee\Load_Northwind Employee.Inputs[OLE DB Destination Input].ExternalColumns[PhotoPath]"
+                      dataType="wstr"
+                      length="255"
+                      name="PhotoPath" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\DF Load Employee\Load_Northwind Employee.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\DF Load Employee\Load_Northwind Employee.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DF Load Employee\Load_Northwind Employee.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DF Load Employee\Load_Northwind Employee.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DF Load Employee\Load_Northwind Employee.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DF Load Employee\Load_Northwind Employee.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\DF Load Employee\Northwind Employee"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="Northwind Employee"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[Employees]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\DF Load Employee\Northwind Employee.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[.,1422.NORTHWND.sa]"
+                  connectionManagerRefId="Package.ConnectionManagers[.,1422.NORTHWND.sa]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\DF Load Employee\Northwind Employee.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DF Load Employee\Northwind Employee.Outputs[OLE DB Source Output].Columns[EmployeeID]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF Load Employee\Northwind Employee.Outputs[OLE DB Source Output].ExternalColumns[EmployeeID]"
+                      lineageId="Package\DF Load Employee\Northwind Employee.Outputs[OLE DB Source Output].Columns[EmployeeID]"
+                      name="EmployeeID"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DF Load Employee\Northwind Employee.Outputs[OLE DB Source Output].Columns[LastName]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF Load Employee\Northwind Employee.Outputs[OLE DB Source Output].ExternalColumns[LastName]"
+                      length="20"
+                      lineageId="Package\DF Load Employee\Northwind Employee.Outputs[OLE DB Source Output].Columns[LastName]"
+                      name="LastName"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DF Load Employee\Northwind Employee.Outputs[OLE DB Source Output].Columns[FirstName]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF Load Employee\Northwind Employee.Outputs[OLE DB Source Output].ExternalColumns[FirstName]"
+                      length="10"
+                      lineageId="Package\DF Load Employee\Northwind Employee.Outputs[OLE DB Source Output].Columns[FirstName]"
+                      name="FirstName"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DF Load Employee\Northwind Employee.Outputs[OLE DB Source Output].Columns[Title]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF Load Employee\Northwind Employee.Outputs[OLE DB Source Output].ExternalColumns[Title]"
+                      length="30"
+                      lineageId="Package\DF Load Employee\Northwind Employee.Outputs[OLE DB Source Output].Columns[Title]"
+                      name="Title"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DF Load Employee\Northwind Employee.Outputs[OLE DB Source Output].Columns[TitleOfCourtesy]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF Load Employee\Northwind Employee.Outputs[OLE DB Source Output].ExternalColumns[TitleOfCourtesy]"
+                      length="25"
+                      lineageId="Package\DF Load Employee\Northwind Employee.Outputs[OLE DB Source Output].Columns[TitleOfCourtesy]"
+                      name="TitleOfCourtesy"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DF Load Employee\Northwind Employee.Outputs[OLE DB Source Output].Columns[BirthDate]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF Load Employee\Northwind Employee.Outputs[OLE DB Source Output].ExternalColumns[BirthDate]"
+                      lineageId="Package\DF Load Employee\Northwind Employee.Outputs[OLE DB Source Output].Columns[BirthDate]"
+                      name="BirthDate"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DF Load Employee\Northwind Employee.Outputs[OLE DB Source Output].Columns[HireDate]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF Load Employee\Northwind Employee.Outputs[OLE DB Source Output].ExternalColumns[HireDate]"
+                      lineageId="Package\DF Load Employee\Northwind Employee.Outputs[OLE DB Source Output].Columns[HireDate]"
+                      name="HireDate"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DF Load Employee\Northwind Employee.Outputs[OLE DB Source Output].Columns[Address]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF Load Employee\Northwind Employee.Outputs[OLE DB Source Output].ExternalColumns[Address]"
+                      length="60"
+                      lineageId="Package\DF Load Employee\Northwind Employee.Outputs[OLE DB Source Output].Columns[Address]"
+                      name="Address"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DF Load Employee\Northwind Employee.Outputs[OLE DB Source Output].Columns[City]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF Load Employee\Northwind Employee.Outputs[OLE DB Source Output].ExternalColumns[City]"
+                      length="15"
+                      lineageId="Package\DF Load Employee\Northwind Employee.Outputs[OLE DB Source Output].Columns[City]"
+                      name="City"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DF Load Employee\Northwind Employee.Outputs[OLE DB Source Output].Columns[Region]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF Load Employee\Northwind Employee.Outputs[OLE DB Source Output].ExternalColumns[Region]"
+                      length="15"
+                      lineageId="Package\DF Load Employee\Northwind Employee.Outputs[OLE DB Source Output].Columns[Region]"
+                      name="Region"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DF Load Employee\Northwind Employee.Outputs[OLE DB Source Output].Columns[PostalCode]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF Load Employee\Northwind Employee.Outputs[OLE DB Source Output].ExternalColumns[PostalCode]"
+                      length="10"
+                      lineageId="Package\DF Load Employee\Northwind Employee.Outputs[OLE DB Source Output].Columns[PostalCode]"
+                      name="PostalCode"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DF Load Employee\Northwind Employee.Outputs[OLE DB Source Output].Columns[Country]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF Load Employee\Northwind Employee.Outputs[OLE DB Source Output].ExternalColumns[Country]"
+                      length="15"
+                      lineageId="Package\DF Load Employee\Northwind Employee.Outputs[OLE DB Source Output].Columns[Country]"
+                      name="Country"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DF Load Employee\Northwind Employee.Outputs[OLE DB Source Output].Columns[HomePhone]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF Load Employee\Northwind Employee.Outputs[OLE DB Source Output].ExternalColumns[HomePhone]"
+                      length="24"
+                      lineageId="Package\DF Load Employee\Northwind Employee.Outputs[OLE DB Source Output].Columns[HomePhone]"
+                      name="HomePhone"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DF Load Employee\Northwind Employee.Outputs[OLE DB Source Output].Columns[Extension]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF Load Employee\Northwind Employee.Outputs[OLE DB Source Output].ExternalColumns[Extension]"
+                      length="4"
+                      lineageId="Package\DF Load Employee\Northwind Employee.Outputs[OLE DB Source Output].Columns[Extension]"
+                      name="Extension"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DF Load Employee\Northwind Employee.Outputs[OLE DB Source Output].Columns[Photo]"
+                      dataType="image"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF Load Employee\Northwind Employee.Outputs[OLE DB Source Output].ExternalColumns[Photo]"
+                      lineageId="Package\DF Load Employee\Northwind Employee.Outputs[OLE DB Source Output].Columns[Photo]"
+                      name="Photo"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DF Load Employee\Northwind Employee.Outputs[OLE DB Source Output].Columns[Notes]"
+                      dataType="nText"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF Load Employee\Northwind Employee.Outputs[OLE DB Source Output].ExternalColumns[Notes]"
+                      lineageId="Package\DF Load Employee\Northwind Employee.Outputs[OLE DB Source Output].Columns[Notes]"
+                      name="Notes"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DF Load Employee\Northwind Employee.Outputs[OLE DB Source Output].Columns[ReportsTo]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF Load Employee\Northwind Employee.Outputs[OLE DB Source Output].ExternalColumns[ReportsTo]"
+                      lineageId="Package\DF Load Employee\Northwind Employee.Outputs[OLE DB Source Output].Columns[ReportsTo]"
+                      name="ReportsTo"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DF Load Employee\Northwind Employee.Outputs[OLE DB Source Output].Columns[PhotoPath]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF Load Employee\Northwind Employee.Outputs[OLE DB Source Output].ExternalColumns[PhotoPath]"
+                      length="255"
+                      lineageId="Package\DF Load Employee\Northwind Employee.Outputs[OLE DB Source Output].Columns[PhotoPath]"
+                      name="PhotoPath"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\DF Load Employee\Northwind Employee.Outputs[OLE DB Source Output].ExternalColumns[EmployeeID]"
+                      dataType="i4"
+                      name="EmployeeID" />
+                    <externalMetadataColumn
+                      refId="Package\DF Load Employee\Northwind Employee.Outputs[OLE DB Source Output].ExternalColumns[LastName]"
+                      dataType="wstr"
+                      length="20"
+                      name="LastName" />
+                    <externalMetadataColumn
+                      refId="Package\DF Load Employee\Northwind Employee.Outputs[OLE DB Source Output].ExternalColumns[FirstName]"
+                      dataType="wstr"
+                      length="10"
+                      name="FirstName" />
+                    <externalMetadataColumn
+                      refId="Package\DF Load Employee\Northwind Employee.Outputs[OLE DB Source Output].ExternalColumns[Title]"
+                      dataType="wstr"
+                      length="30"
+                      name="Title" />
+                    <externalMetadataColumn
+                      refId="Package\DF Load Employee\Northwind Employee.Outputs[OLE DB Source Output].ExternalColumns[TitleOfCourtesy]"
+                      dataType="wstr"
+                      length="25"
+                      name="TitleOfCourtesy" />
+                    <externalMetadataColumn
+                      refId="Package\DF Load Employee\Northwind Employee.Outputs[OLE DB Source Output].ExternalColumns[BirthDate]"
+                      dataType="dbTimeStamp"
+                      name="BirthDate" />
+                    <externalMetadataColumn
+                      refId="Package\DF Load Employee\Northwind Employee.Outputs[OLE DB Source Output].ExternalColumns[HireDate]"
+                      dataType="dbTimeStamp"
+                      name="HireDate" />
+                    <externalMetadataColumn
+                      refId="Package\DF Load Employee\Northwind Employee.Outputs[OLE DB Source Output].ExternalColumns[Address]"
+                      dataType="wstr"
+                      length="60"
+                      name="Address" />
+                    <externalMetadataColumn
+                      refId="Package\DF Load Employee\Northwind Employee.Outputs[OLE DB Source Output].ExternalColumns[City]"
+                      dataType="wstr"
+                      length="15"
+                      name="City" />
+                    <externalMetadataColumn
+                      refId="Package\DF Load Employee\Northwind Employee.Outputs[OLE DB Source Output].ExternalColumns[Region]"
+                      dataType="wstr"
+                      length="15"
+                      name="Region" />
+                    <externalMetadataColumn
+                      refId="Package\DF Load Employee\Northwind Employee.Outputs[OLE DB Source Output].ExternalColumns[PostalCode]"
+                      dataType="wstr"
+                      length="10"
+                      name="PostalCode" />
+                    <externalMetadataColumn
+                      refId="Package\DF Load Employee\Northwind Employee.Outputs[OLE DB Source Output].ExternalColumns[Country]"
+                      dataType="wstr"
+                      length="15"
+                      name="Country" />
+                    <externalMetadataColumn
+                      refId="Package\DF Load Employee\Northwind Employee.Outputs[OLE DB Source Output].ExternalColumns[HomePhone]"
+                      dataType="wstr"
+                      length="24"
+                      name="HomePhone" />
+                    <externalMetadataColumn
+                      refId="Package\DF Load Employee\Northwind Employee.Outputs[OLE DB Source Output].ExternalColumns[Extension]"
+                      dataType="wstr"
+                      length="4"
+                      name="Extension" />
+                    <externalMetadataColumn
+                      refId="Package\DF Load Employee\Northwind Employee.Outputs[OLE DB Source Output].ExternalColumns[Photo]"
+                      dataType="image"
+                      name="Photo" />
+                    <externalMetadataColumn
+                      refId="Package\DF Load Employee\Northwind Employee.Outputs[OLE DB Source Output].ExternalColumns[Notes]"
+                      dataType="nText"
+                      name="Notes" />
+                    <externalMetadataColumn
+                      refId="Package\DF Load Employee\Northwind Employee.Outputs[OLE DB Source Output].ExternalColumns[ReportsTo]"
+                      dataType="i4"
+                      name="ReportsTo" />
+                    <externalMetadataColumn
+                      refId="Package\DF Load Employee\Northwind Employee.Outputs[OLE DB Source Output].ExternalColumns[PhotoPath]"
+                      dataType="wstr"
+                      length="255"
+                      name="PhotoPath" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\DF Load Employee\Northwind Employee.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DF Load Employee\Northwind Employee.Outputs[OLE DB Source Error Output].Columns[EmployeeID]"
+                      dataType="i4"
+                      lineageId="Package\DF Load Employee\Northwind Employee.Outputs[OLE DB Source Error Output].Columns[EmployeeID]"
+                      name="EmployeeID" />
+                    <outputColumn
+                      refId="Package\DF Load Employee\Northwind Employee.Outputs[OLE DB Source Error Output].Columns[LastName]"
+                      dataType="wstr"
+                      length="20"
+                      lineageId="Package\DF Load Employee\Northwind Employee.Outputs[OLE DB Source Error Output].Columns[LastName]"
+                      name="LastName" />
+                    <outputColumn
+                      refId="Package\DF Load Employee\Northwind Employee.Outputs[OLE DB Source Error Output].Columns[FirstName]"
+                      dataType="wstr"
+                      length="10"
+                      lineageId="Package\DF Load Employee\Northwind Employee.Outputs[OLE DB Source Error Output].Columns[FirstName]"
+                      name="FirstName" />
+                    <outputColumn
+                      refId="Package\DF Load Employee\Northwind Employee.Outputs[OLE DB Source Error Output].Columns[Title]"
+                      dataType="wstr"
+                      length="30"
+                      lineageId="Package\DF Load Employee\Northwind Employee.Outputs[OLE DB Source Error Output].Columns[Title]"
+                      name="Title" />
+                    <outputColumn
+                      refId="Package\DF Load Employee\Northwind Employee.Outputs[OLE DB Source Error Output].Columns[TitleOfCourtesy]"
+                      dataType="wstr"
+                      length="25"
+                      lineageId="Package\DF Load Employee\Northwind Employee.Outputs[OLE DB Source Error Output].Columns[TitleOfCourtesy]"
+                      name="TitleOfCourtesy" />
+                    <outputColumn
+                      refId="Package\DF Load Employee\Northwind Employee.Outputs[OLE DB Source Error Output].Columns[BirthDate]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\DF Load Employee\Northwind Employee.Outputs[OLE DB Source Error Output].Columns[BirthDate]"
+                      name="BirthDate" />
+                    <outputColumn
+                      refId="Package\DF Load Employee\Northwind Employee.Outputs[OLE DB Source Error Output].Columns[HireDate]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\DF Load Employee\Northwind Employee.Outputs[OLE DB Source Error Output].Columns[HireDate]"
+                      name="HireDate" />
+                    <outputColumn
+                      refId="Package\DF Load Employee\Northwind Employee.Outputs[OLE DB Source Error Output].Columns[Address]"
+                      dataType="wstr"
+                      length="60"
+                      lineageId="Package\DF Load Employee\Northwind Employee.Outputs[OLE DB Source Error Output].Columns[Address]"
+                      name="Address" />
+                    <outputColumn
+                      refId="Package\DF Load Employee\Northwind Employee.Outputs[OLE DB Source Error Output].Columns[City]"
+                      dataType="wstr"
+                      length="15"
+                      lineageId="Package\DF Load Employee\Northwind Employee.Outputs[OLE DB Source Error Output].Columns[City]"
+                      name="City" />
+                    <outputColumn
+                      refId="Package\DF Load Employee\Northwind Employee.Outputs[OLE DB Source Error Output].Columns[Region]"
+                      dataType="wstr"
+                      length="15"
+                      lineageId="Package\DF Load Employee\Northwind Employee.Outputs[OLE DB Source Error Output].Columns[Region]"
+                      name="Region" />
+                    <outputColumn
+                      refId="Package\DF Load Employee\Northwind Employee.Outputs[OLE DB Source Error Output].Columns[PostalCode]"
+                      dataType="wstr"
+                      length="10"
+                      lineageId="Package\DF Load Employee\Northwind Employee.Outputs[OLE DB Source Error Output].Columns[PostalCode]"
+                      name="PostalCode" />
+                    <outputColumn
+                      refId="Package\DF Load Employee\Northwind Employee.Outputs[OLE DB Source Error Output].Columns[Country]"
+                      dataType="wstr"
+                      length="15"
+                      lineageId="Package\DF Load Employee\Northwind Employee.Outputs[OLE DB Source Error Output].Columns[Country]"
+                      name="Country" />
+                    <outputColumn
+                      refId="Package\DF Load Employee\Northwind Employee.Outputs[OLE DB Source Error Output].Columns[HomePhone]"
+                      dataType="wstr"
+                      length="24"
+                      lineageId="Package\DF Load Employee\Northwind Employee.Outputs[OLE DB Source Error Output].Columns[HomePhone]"
+                      name="HomePhone" />
+                    <outputColumn
+                      refId="Package\DF Load Employee\Northwind Employee.Outputs[OLE DB Source Error Output].Columns[Extension]"
+                      dataType="wstr"
+                      length="4"
+                      lineageId="Package\DF Load Employee\Northwind Employee.Outputs[OLE DB Source Error Output].Columns[Extension]"
+                      name="Extension" />
+                    <outputColumn
+                      refId="Package\DF Load Employee\Northwind Employee.Outputs[OLE DB Source Error Output].Columns[Photo]"
+                      dataType="image"
+                      lineageId="Package\DF Load Employee\Northwind Employee.Outputs[OLE DB Source Error Output].Columns[Photo]"
+                      name="Photo" />
+                    <outputColumn
+                      refId="Package\DF Load Employee\Northwind Employee.Outputs[OLE DB Source Error Output].Columns[Notes]"
+                      dataType="nText"
+                      lineageId="Package\DF Load Employee\Northwind Employee.Outputs[OLE DB Source Error Output].Columns[Notes]"
+                      name="Notes" />
+                    <outputColumn
+                      refId="Package\DF Load Employee\Northwind Employee.Outputs[OLE DB Source Error Output].Columns[ReportsTo]"
+                      dataType="i4"
+                      lineageId="Package\DF Load Employee\Northwind Employee.Outputs[OLE DB Source Error Output].Columns[ReportsTo]"
+                      name="ReportsTo" />
+                    <outputColumn
+                      refId="Package\DF Load Employee\Northwind Employee.Outputs[OLE DB Source Error Output].Columns[PhotoPath]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\DF Load Employee\Northwind Employee.Outputs[OLE DB Source Error Output].Columns[PhotoPath]"
+                      name="PhotoPath" />
+                    <outputColumn
+                      refId="Package\DF Load Employee\Northwind Employee.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DF Load Employee\Northwind Employee.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DF Load Employee\Northwind Employee.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DF Load Employee\Northwind Employee.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\DF Load Employee.Paths[Derived Column Output]"
+              endId="Package\DF Load Employee\Contar numero de registros insertados.Inputs[Row Count Input 1]"
+              name="Derived Column Output"
+              startId="Package\DF Load Employee\Agregar columnas.Outputs[Derived Column Output]" />
+            <path
+              refId="Package\DF Load Employee.Paths[OLE DB Source Output]"
+              endId="Package\DF Load Employee\Agregar columnas.Inputs[Derived Column Input]"
+              name="OLE DB Source Output"
+              startId="Package\DF Load Employee\Northwind Employee.Outputs[OLE DB Source Output]" />
+            <path
+              refId="Package\DF Load Employee.Paths[Row Count Output 1]"
+              endId="Package\DF Load Employee\Load_Northwind Employee.Inputs[OLE DB Destination Input]"
+              name="Row Count Output 1"
+              startId="Package\DF Load Employee\Contar numero de registros insertados.Outputs[Row Count Output 1]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Insertar Registro NorthWind_Metadata"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Tarea Ejecutar SQL"
+      DTS:DTSID="{165633C3-8B79-46BE-A543-9959B5843988}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Insertar Registro NorthWind_Metadata"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{6318A0EA-D3DB-452C-8E67-A6AE6483199A}"
+          SQLTask:SqlStatementSource="INSERT INTO ETLExecution (UserName, MachineName, PackageName, EtlLoad)&#xA;VALUES(?,?,?,GETDATE())" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="0"
+            SQLTask:DtsVariableName="System::UserName"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="130"
+            SQLTask:ParameterSize="-1" />
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="1"
+            SQLTask:DtsVariableName="System::MachineName"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="130"
+            SQLTask:ParameterSize="-1" />
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="2"
+            SQLTask:DtsVariableName="System::PackageName"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="130"
+            SQLTask:ParameterSize="-1" />
+        </SQLTask:SqlTaskData>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Obtener ID Northwind_Metadata"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Tarea Ejecutar SQL"
+      DTS:DTSID="{5B5F539A-209B-4B2F-8B7C-7808F21CFC31}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Obtener ID Northwind_Metadata"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{6318A0EA-D3DB-452C-8E67-A6AE6483199A}"
+          SQLTask:SqlStatementSource="select top 1 ID from ETLExecution&#xA;WHERE PackageName = ?&#xA;Order by ID Desc"
+          SQLTask:ResultType="ResultSetType_SingleRow" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+          <SQLTask:ResultBinding
+            SQLTask:ResultName="0"
+            SQLTask:DtsVariableName="User::ETLEXECUTION" />
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="0"
+            SQLTask:DtsVariableName="System::PackageName"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="130"
+            SQLTask:ParameterSize="-1" />
+        </SQLTask:SqlTaskData>
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Restricción]"
+      DTS:CreationName=""
+      DTS:DTSID="{79EFCAC3-1374-42F3-85E9-3A915335E797}"
+      DTS:From="Package\Insertar Registro NorthWind_Metadata"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Restricción"
+      DTS:To="Package\Obtener ID Northwind_Metadata" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Restricción 1]"
+      DTS:CreationName=""
+      DTS:DTSID="{F701D1DB-688B-4652-BA7D-8D761CF8FC6D}"
+      DTS:From="Package\Obtener ID Northwind_Metadata"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Restricción 1"
+      DTS:To="Package\DF Load Employee" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Restricción 2]"
+      DTS:CreationName=""
+      DTS:DTSID="{C5D71CB8-B6DC-4D64-94F1-DC186809D907}"
+      DTS:From="Package\DF Load Employee"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Restricción 2"
+      DTS:To="Package\Actualizar columna ETLCountRows" />
+  </DTS:PrecedenceConstraints>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--Esta sección CDATA contiene la información de diseño del paquete. Esta sección incluye información como, por ejemplo, las coordenadas (x,y), el ancho y el alto.-->
+<!--Si edita manualmente esta sección y comete un error, puede eliminarlo. -->
+<!--El paquete podrá cargarse normalmente, pero se perderá la información de diseño anterior y el diseñador reorganizará los elementos automáticamente en la superficie de diseño.-->
+<Objects
+  Version="8">
+  <!--Cada uno de los nodos siguientes contiene propiedades que no afectan al comportamiento en tiempo de ejecución.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="241.6,41.6"
+          Id="Package\Actualizar columna ETLCountRows"
+          TopLeft="309.999983062347,275.599998083512" />
+        <NodeLayout
+          Size="167.2,41.6"
+          Id="Package\DF Load Employee"
+          TopLeft="354.999980603656,200.199998607834" />
+        <NodeLayout
+          Size="256,41.6"
+          Id="Package\Insertar Registro NorthWind_Metadata"
+          TopLeft="349.999980876844,19.0666665340794" />
+        <NodeLayout
+          Size="228,41.6"
+          Id="Package\Obtener ID Northwind_Metadata"
+          TopLeft="354.166647315854,96.1999993310372" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Restricción]"
+          TopLeft="477.999980876844,60.6666665340794">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-9.8333335609899,35.5333327969578"
+              Start="0,0"
+              End="-9.8333335609899,28.0333327969578">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,13.7666663984789" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,13.7666663984789"
+                    Point2="0,17.7666663984789"
+                    Point3="-4,17.7666663984789" />
+                  <mssgle:LineSegment
+                    End="-5.8333335609899,17.7666663984789" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-5.8333335609899,17.7666663984789"
+                    Point2="-9.8333335609899,17.7666663984789"
+                    Point3="-9.8333335609899,21.7666663984789" />
+                  <mssgle:LineSegment
+                    End="-9.8333335609899,28.0333327969578" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Restricción 1]"
+          TopLeft="468.166647315854,137.799999331037">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-29.5666667121979,62.399999276797"
+              Start="0,0"
+              End="-29.5666667121979,54.899999276797">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,27.1999996383985" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,27.1999996383985"
+                    Point2="0,31.1999996383985"
+                    Point3="-4,31.1999996383985" />
+                  <mssgle:LineSegment
+                    End="-25.5666667121979,31.1999996383985" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-25.5666667121979,31.1999996383985"
+                    Point2="-29.5666667121979,31.1999996383985"
+                    Point3="-29.5666667121979,35.1999996383985" />
+                  <mssgle:LineSegment
+                    End="-29.5666667121979,54.899999276797" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Restricción 2]"
+          TopLeft="434.699981833002,241.799998607834">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,33.7999994756778"
+              Start="0,0"
+              End="0,26.2999994756778">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,26.2999994756778" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\DF Load Employee">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="174.4,41.6"
+          Id="Package\DF Load Employee\Northwind Employee"
+          TopLeft="356.66664717926,95.3333326703973" />
+        <NodeLayout
+          Size="203.2,41.6"
+          Id="Package\DF Load Employee\Load_Northwind Employee"
+          TopLeft="353.749980671953,355.983330857869" />
+        <NodeLayout
+          Size="162.4,41.6"
+          Id="Package\DF Load Employee\Agregar columnas"
+          TopLeft="362.499980193874,202.799998589754" />
+        <NodeLayout
+          Size="255.2,41.6"
+          Id="Package\DF Load Employee\Contar numero de registros insertados"
+          TopLeft="301.041650218476,278.416664730592" />
+        <EdgeLayout
+          Id="Package\DF Load Employee.Paths[Row Count Output 1]"
+          TopLeft="428.641650218476,320.016664730592">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="26.7083304534777,35.9666661272775"
+              Start="0,0"
+              End="26.7083304534777,28.4666661272775">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,13.9833330636388" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,13.9833330636388"
+                    Point2="0,17.9833330636388"
+                    Point3="4,17.9833330636388" />
+                  <mssgle:LineSegment
+                    End="22.7083304534777,17.9833330636388" />
+                  <mssgle:CubicBezierSegment
+                    Point1="22.7083304534777,17.9833330636388"
+                    Point2="26.7083304534777,17.9833330636388"
+                    Point3="26.7083304534777,21.9833330636388" />
+                  <mssgle:LineSegment
+                    End="26.7083304534777,28.4666661272775" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\DF Load Employee.Paths[OLE DB Source Output]"
+          TopLeft="443.783313686567,136.933332670397">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,65.8666659193569"
+              Start="0,0"
+              End="0,58.3666659193569">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,58.3666659193569" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\DF Load Employee.Paths[Derived Column Output]"
+          TopLeft="443.699980193874,244.399998589754">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-15.0583299753984,34.0166661408379"
+              Start="0,0"
+              End="-15.0583299753984,26.5166661408379">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,13.008333070419" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,13.008333070419"
+                    Point2="0,17.008333070419"
+                    Point3="-4,17.008333070419" />
+                  <mssgle:LineSegment
+                    End="-11.0583299753984,17.008333070419" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-11.0583299753984,17.008333070419"
+                    Point2="-15.0583299753984,17.008333070419"
+                    Point3="-15.0583299753984,21.008333070419" />
+                  <mssgle:LineSegment
+                    End="-15.0583299753984,26.5166661408379" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\DF Load Employee\Northwind Employee">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\DF Load Employee\Load_Northwind Employee">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

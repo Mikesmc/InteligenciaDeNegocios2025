@@ -1,0 +1,334 @@
+<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="11/18/2025 7:15:29 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="DESKTOP-E6RKQKD"
+  DTS:CreatorName="DESKTOP-E6RKQKD\cuent"
+  DTS:DTSID="{98B8CAEB-5C53-454C-A474-A5C9E5C49A9E}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="16.0.5685.0"
+  DTS:LocaleID="2058"
+  DTS:ObjectName="CargaLoad"
+  DTS:PackageType="5"
+  DTS:VersionBuild="7"
+  DTS:VersionGUID="{D1A942DB-580D-4069-B2BA-6961CD5FEEDD}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Carga Master"
+      DTS:CreationName="STOCK:SEQUENCE"
+      DTS:Description="Contenedor de secuencias"
+      DTS:DTSID="{3523B6E6-3946-4F54-9B61-0CD43DAAB57A}"
+      DTS:ExecutableType="STOCK:SEQUENCE"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Carga Master">
+      <DTS:Variables />
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package\Carga Master\LoadCustomers"
+          DTS:CreationName="Microsoft.ExecutePackageTask"
+          DTS:Description="Tarea Ejecutar paquete"
+          DTS:DTSID="{24370346-F387-4A59-AF6B-FE9A0BD64D97}"
+          DTS:ExecutableType="Microsoft.ExecutePackageTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="LoadCustomers"
+          DTS:TaskContact="Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <ExecutePackageTask>
+              <UseProjectReference>True</UseProjectReference>
+              <PackageName>LoadCustomers.dtsx</PackageName>
+            </ExecutePackageTask>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Carga Master\LoadEmployee"
+          DTS:CreationName="Microsoft.ExecutePackageTask"
+          DTS:Description="Tarea Ejecutar paquete"
+          DTS:DTSID="{11D42C9F-95A4-4B41-9E87-1A2FA5914048}"
+          DTS:ExecutableType="Microsoft.ExecutePackageTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="LoadEmployee"
+          DTS:TaskContact="Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <ExecutePackageTask>
+              <UseProjectReference>True</UseProjectReference>
+              <PackageName>LoadEmployee.dtsx</PackageName>
+            </ExecutePackageTask>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Carga Master\LoadOrderDetails"
+          DTS:CreationName="Microsoft.ExecutePackageTask"
+          DTS:Description="Tarea Ejecutar paquete"
+          DTS:DTSID="{D06B79A5-F64D-4574-B0FA-040E021B1582}"
+          DTS:ExecutableType="Microsoft.ExecutePackageTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="LoadOrderDetails"
+          DTS:TaskContact="Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <ExecutePackageTask>
+              <UseProjectReference>True</UseProjectReference>
+              <PackageName>LoadOrderDetails.dtsx</PackageName>
+            </ExecutePackageTask>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Carga Master\LoadOrders"
+          DTS:CreationName="Microsoft.ExecutePackageTask"
+          DTS:Description="Tarea Ejecutar paquete"
+          DTS:DTSID="{12C51F64-F8CD-4507-9BC5-3949AF801661}"
+          DTS:ExecutableType="Microsoft.ExecutePackageTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="LoadOrders"
+          DTS:TaskContact="Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <ExecutePackageTask>
+              <UseProjectReference>True</UseProjectReference>
+              <PackageName>LoadOrders.dtsx</PackageName>
+            </ExecutePackageTask>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Carga Master\LoadProducts"
+          DTS:CreationName="Microsoft.ExecutePackageTask"
+          DTS:Description="Tarea Ejecutar paquete"
+          DTS:DTSID="{ED9429C2-447E-49B7-9117-15ACE4E86518}"
+          DTS:ExecutableType="Microsoft.ExecutePackageTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="LoadProducts"
+          DTS:TaskContact="Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <ExecutePackageTask>
+              <UseProjectReference>True</UseProjectReference>
+              <PackageName>LoadProducts.dtsx</PackageName>
+            </ExecutePackageTask>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Carga Master\LoadShippers"
+          DTS:CreationName="Microsoft.ExecutePackageTask"
+          DTS:Description="Tarea Ejecutar paquete"
+          DTS:DTSID="{D094E207-04F1-470A-920F-4FD64F0AA03F}"
+          DTS:ExecutableType="Microsoft.ExecutePackageTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="LoadShippers"
+          DTS:TaskContact="Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <ExecutePackageTask>
+              <UseProjectReference>True</UseProjectReference>
+              <PackageName>LoadShippers.dtsx</PackageName>
+            </ExecutePackageTask>
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+      <DTS:PrecedenceConstraints>
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Carga Master.PrecedenceConstraints[Restricción]"
+          DTS:CreationName=""
+          DTS:DTSID="{E0F8C404-1AF6-4F8A-826B-EDCC1CE99A6C}"
+          DTS:From="Package\Carga Master\LoadEmployee"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Restricción"
+          DTS:To="Package\Carga Master\LoadProducts" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Carga Master.PrecedenceConstraints[Restricción 1]"
+          DTS:CreationName=""
+          DTS:DTSID="{9E6E46B9-0243-4C3B-A6AA-2C024FAC453F}"
+          DTS:From="Package\Carga Master\LoadProducts"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Restricción 1"
+          DTS:To="Package\Carga Master\LoadCustomers" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Carga Master.PrecedenceConstraints[Restricción 2]"
+          DTS:CreationName=""
+          DTS:DTSID="{CA60E0D1-C233-4C38-8E51-D4F5FF2D8F37}"
+          DTS:From="Package\Carga Master\LoadCustomers"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Restricción 2"
+          DTS:To="Package\Carga Master\LoadShippers" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Carga Master.PrecedenceConstraints[Restricción 3]"
+          DTS:CreationName=""
+          DTS:DTSID="{311B59DA-1859-42DA-B34E-C27E7817B328}"
+          DTS:From="Package\Carga Master\LoadShippers"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Restricción 3"
+          DTS:To="Package\Carga Master\LoadOrders" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Carga Master.PrecedenceConstraints[Restricción 4]"
+          DTS:CreationName=""
+          DTS:DTSID="{905EC2CE-BC52-4F55-94C6-00EEF9981EC4}"
+          DTS:From="Package\Carga Master\LoadOrders"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Restricción 4"
+          DTS:To="Package\Carga Master\LoadOrderDetails" />
+      </DTS:PrecedenceConstraints>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--Esta sección CDATA contiene la información de diseño del paquete. Esta sección incluye información como, por ejemplo, las coordenadas (x,y), el ancho y el alto.-->
+<!--Si edita manualmente esta sección y comete un error, puede eliminarlo. -->
+<!--El paquete podrá cargarse normalmente, pero se perderá la información de diseño anterior y el diseñador reorganizará los elementos automáticamente en la superficie de diseño.-->
+<Objects
+  Version="8">
+  <!--Cada uno de los nodos siguientes contiene propiedades que no afectan al comportamiento en tiempo de ejecución.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="152,41.6"
+          Id="Package\Carga Master\LoadCustomers"
+          TopLeft="220.699957519275,132.866665937437" />
+        <NodeLayout
+          Size="148,41.6"
+          Id="Package\Carga Master\LoadEmployee"
+          TopLeft="26.5333014614068,28.86666666064" />
+        <NodeLayout
+          Size="160,41.6"
+          Id="Package\Carga Master\LoadOrderDetails"
+          TopLeft="203.199958475433,246.266665376954" />
+        <NodeLayout
+          Size="133.6,41.6"
+          Id="Package\Carga Master\LoadOrders"
+          TopLeft="20.6999684467925,246.399998481272" />
+        <NodeLayout
+          Size="142.4,41.6"
+          Id="Package\Carga Master\LoadProducts"
+          TopLeft="220.699957519275,33.1999999638397" />
+        <NodeLayout
+          Size="142.4,41.6"
+          Id="Package\Carga Master\LoadShippers"
+          TopLeft="21.5333017345942,138.933332561916" />
+        <EdgeLayout
+          Id="Package\Carga Master.PrecedenceConstraints[Restricción]"
+          TopLeft="174.533301461407,51.8333333122399">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="46.1666560578682,0"
+              Start="0,0"
+              End="38.6666560578682,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="38.6666560578682,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Carga Master.PrecedenceConstraints[Restricción 1]"
+          TopLeft="294.299957519275,74.7999999638397">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,58.0666659735973"
+              Start="0,0"
+              End="0,50.5666659735973">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,50.5666659735973" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Carga Master.PrecedenceConstraints[Restricción 2]"
+          TopLeft="220.699957519275,156.699999249677">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-56.7666557846806,0"
+              Start="0,0"
+              End="-49.2666557846806,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="-49.2666557846806,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Carga Master.PrecedenceConstraints[Restricción 3]"
+          TopLeft="90.1166350906933,180.533332561916">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,65.8666659193561"
+              Start="0,0"
+              End="0,58.3666659193561">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,58.3666659193561" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Carga Master.PrecedenceConstraints[Restricción 4]"
+          TopLeft="154.299968446792,267.133331929113">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="48.8999900286402,0"
+              Start="0,0"
+              End="41.3999900286402,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="41.3999900286402,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="385.6,324.8"
+          Size="385.6,368"
+          Id="Package\Carga Master"
+          TopLeft="277.499984838069,212.866666371359" />
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

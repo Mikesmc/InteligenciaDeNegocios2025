@@ -1,0 +1,711 @@
+<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="12/3/2025 11:10:04 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="MSI"
+  DTS:CreatorName="MSI\gusta"
+  DTS:DTSID="{6719E115-B011-4CA2-AD21-C96118E8B3A2}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="16.0.5685.0"
+  DTS:LocaleID="2058"
+  DTS:ObjectName="Fact_Sales"
+  DTS:PackageType="5"
+  DTS:VersionBuild="52"
+  DTS:VersionGUID="{59F92DD4-9681-4015-A0F4-D090D19CB323}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[.,1422.Datamart_Northwind.sa]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{D33F932B-FB2D-477D-9609-33B246E57185}"
+      DTS:ObjectName=".,1422.Datamart_Northwind.sa">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=.,1422;User ID=sa;Initial Catalog=Datamart_Northwind;Provider=MSOLEDBSQL.1;Persist Security Info=True;Application Name=SSIS-Package1-{D33F932B-FB2D-477D-9609-33B246E57185}.,1422.Datamart_Northwind.sa;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[.,1422.Datamart_northwind.sa1]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{1EC3D17B-F3F9-482F-B11B-562CEFC25C92}"
+      DTS:ObjectName=".,1422.Datamart_northwind.sa1">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=.,1422;User ID=sa;Initial Catalog=Datamart_northwind;Provider=MSOLEDBSQL.1;Application Name=SSIS-Fact_Sales-{1EC3D17B-F3F9-482F-B11B-562CEFC25C92}.,1422.Datamart_northwind.sa1;Auto Translate=False;">
+          <DTS:Password
+            DTS:Name="Password"
+            Sensitive="1"
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAxkPZQf2+b06WS1sIs1Z74AAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAAAwE2uNRdNy3ZVYbpt69AfAHUL1WcLGFhrDEteveCRSxgAAAAAOgAAAAAIAACAAAAATj1gn3Xkjljv98J5D6AHj7XiMkL/UXouqbE3yQGBpAiAAAACTldir8k5x06oJgqqzJkoghJ/YwE/MpvDBZityzAQWmkAAAABSbpX3qED6muEtt3iczDVBNN+YRnadWKEv3+117TLJbf8HCVUzGoegt9UoN6WeXEZKe2/GWvg7MRCEVpzQP4dQ</DTS:Password>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[.,1422.Stage_Northwind.sa]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{144C8237-A65C-42B1-AD83-A5282F7925EF}"
+      DTS:ObjectName=".,1422.Stage_Northwind.sa">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=.,1422;User ID=sa;Initial Catalog=Stage_Northwind;Provider=MSOLEDBSQL.1;Persist Security Info=True;Application Name=SSIS-Package1-{144C8237-A65C-42B1-AD83-A5282F7925EF}.,1422.Stage_Northwind.sa;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[.,1422.Stage_Northwind.sa1]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{0418750F-D3E4-4E2E-B974-7F0EDA569BAD}"
+      DTS:ObjectName=".,1422.Stage_Northwind.sa1">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=.,1422;User ID=sa;Initial Catalog=Stage_Northwind;Provider=MSOLEDBSQL.1;Persist Security Info=True;Application Name=SSIS-Fact_Sales-{0418750F-D3E4-4E2E-B974-7F0EDA569BAD}.,1422.Stage_Northwind.sa1;Auto Translate=False;">
+          <DTS:Password
+            DTS:Name="Password"
+            Sensitive="1"
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAxkPZQf2+b06WS1sIs1Z74AAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAAAaTOoFTEU36hIZgEhSUrx9egQCanCaiJW0s+jts+H47AAAAAAOgAAAAAIAACAAAADzSSLiNNmN7TPqKOgUZqp8uA1Mild8DsSovN3qXTuGoyAAAABPZCszfCkeAUVb0tHBIg7xN3uKVLr+qPwXfqynrnbvC0AAAAAguG0HWy7dd8D84EjdxS+9MQ7Q1/bnplgmNx3GciGcZk/cdpXQPpBL5DC4dm8V9H4CYcpIlNsfv7Uhd3yEk3Nq</DTS:Password>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{BBA59860-9F6C-497F-A8E8-5C4FB478BD1C}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="MaximaFecha">
+      <DTS:VariableValue
+        DTS:DataType="3">0</DTS:VariableValue>
+    </DTS:Variable>
+  </DTS:Variables>
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\DimShippers"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{f49e5317-4ebe-4f6c-8737-20a8b7074b92}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="DimShippers"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\DimShippers\Destino de OLE DB"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="Destino de OLE DB;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos los derechos reservados; http://www.microsoft.com/sql/support;4"
+              description="Destino de OLE DB"
+              name="Destino de OLE DB"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="Número de segundos antes de que se agote el tiempo de espera de un comando. Un valor de 0 indica un tiempo de espera infinito."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Especifica el nombre del objeto de base de datos usado para abrir un conjunto de filas."
+                  name="OpenRowset">[dbo].[fact_sales]</property>
+                <property
+                  dataType="System.String"
+                  description="Especifica la variable que contiene el nombre del objeto de base de datos usado para abrir un conjunto de filas."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="Comando SQL para ejecutar."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica la página de códigos de columna para utilizar cuando la información de página de códigos no está disponible en el origen de datos."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Fuerza el uso del valor de la propiedad DefaultCodePage al describir datos de caracteres."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica el modo utilizado para obtener acceso a la base de datos."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indica si los valores proporcionados para columnas de identidad se van a copiar al destino. Si es False, los valores de las columnas de identidad se generan automáticamente en el destino. Solo se aplica si está activada la carga rápida."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indica si las columnas que contienen NULL tendrán NULL insertado en el destino. Si es False, las columnas que contienen NULL tendrán sus valores predeterminados insertados en el destino. Solo se aplica si está activada la carga rápida."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Especifica opciones para usar con la carga rápida. Solo se aplica si está activada la carga rápida."
+                  name="FastLoadOptions"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica cuándo se emiten confirmaciones durante la inserción de datos. El valor 0 especifica que se emitirá una confirmación al final de la inserción de datos. Solo se aplica si está activada la carga rápida."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\DimShippers\Destino de OLE DB.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[.,1422.Datamart_northwind.sa1]"
+                  connectionManagerRefId="Package.ConnectionManagers[.,1422.Datamart_northwind.sa1]"
+                  description="La conexión de tiempo de ejecución OLE DB usada para obtener acceso a la base de datos."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\DimShippers\Destino de OLE DB.Inputs[Entrada de destino de OLE DB]"
+                  errorOrTruncationOperation="Insertar"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="Entrada de destino de OLE DB">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\DimShippers\Destino de OLE DB.Inputs[Entrada de destino de OLE DB].Columns[order_date_key]"
+                      cachedDataType="i4"
+                      cachedName="order_date_key"
+                      externalMetadataColumnId="Package\DimShippers\Destino de OLE DB.Inputs[Entrada de destino de OLE DB].ExternalColumns[order_date_key]"
+                      lineageId="Package\DimShippers\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[order_date_key]" />
+                    <inputColumn
+                      refId="Package\DimShippers\Destino de OLE DB.Inputs[Entrada de destino de OLE DB].Columns[customer_key]"
+                      cachedDataType="i4"
+                      cachedName="customer_key"
+                      externalMetadataColumnId="Package\DimShippers\Destino de OLE DB.Inputs[Entrada de destino de OLE DB].ExternalColumns[customer_key]"
+                      lineageId="Package\DimShippers\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[customer_key]" />
+                    <inputColumn
+                      refId="Package\DimShippers\Destino de OLE DB.Inputs[Entrada de destino de OLE DB].Columns[product_key]"
+                      cachedDataType="i4"
+                      cachedName="product_key"
+                      externalMetadataColumnId="Package\DimShippers\Destino de OLE DB.Inputs[Entrada de destino de OLE DB].ExternalColumns[product_key]"
+                      lineageId="Package\DimShippers\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[product_key]" />
+                    <inputColumn
+                      refId="Package\DimShippers\Destino de OLE DB.Inputs[Entrada de destino de OLE DB].Columns[employee_key]"
+                      cachedDataType="i4"
+                      cachedName="employee_key"
+                      externalMetadataColumnId="Package\DimShippers\Destino de OLE DB.Inputs[Entrada de destino de OLE DB].ExternalColumns[employee_key]"
+                      lineageId="Package\DimShippers\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[employee_key]" />
+                    <inputColumn
+                      refId="Package\DimShippers\Destino de OLE DB.Inputs[Entrada de destino de OLE DB].Columns[shipper_key]"
+                      cachedDataType="i4"
+                      cachedName="shipper_key"
+                      externalMetadataColumnId="Package\DimShippers\Destino de OLE DB.Inputs[Entrada de destino de OLE DB].ExternalColumns[shipper_key]"
+                      lineageId="Package\DimShippers\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[shipper_key]" />
+                    <inputColumn
+                      refId="Package\DimShippers\Destino de OLE DB.Inputs[Entrada de destino de OLE DB].Columns[order_number]"
+                      cachedDataType="i4"
+                      cachedName="order_number"
+                      externalMetadataColumnId="Package\DimShippers\Destino de OLE DB.Inputs[Entrada de destino de OLE DB].ExternalColumns[order_number]"
+                      lineageId="Package\DimShippers\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[order_number]" />
+                    <inputColumn
+                      refId="Package\DimShippers\Destino de OLE DB.Inputs[Entrada de destino de OLE DB].Columns[order_qty]"
+                      cachedDataType="i4"
+                      cachedName="order_qty"
+                      externalMetadataColumnId="Package\DimShippers\Destino de OLE DB.Inputs[Entrada de destino de OLE DB].ExternalColumns[order_qty]"
+                      lineageId="Package\DimShippers\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[order_qty]" />
+                    <inputColumn
+                      refId="Package\DimShippers\Destino de OLE DB.Inputs[Entrada de destino de OLE DB].Columns[unit_price]"
+                      cachedDataType="numeric"
+                      cachedName="unit_price"
+                      cachedPrecision="19"
+                      cachedScale="4"
+                      externalMetadataColumnId="Package\DimShippers\Destino de OLE DB.Inputs[Entrada de destino de OLE DB].ExternalColumns[unit_price]"
+                      lineageId="Package\DimShippers\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[unit_price]" />
+                    <inputColumn
+                      refId="Package\DimShippers\Destino de OLE DB.Inputs[Entrada de destino de OLE DB].Columns[discount]"
+                      cachedDataType="numeric"
+                      cachedName="discount"
+                      cachedPrecision="5"
+                      cachedScale="2"
+                      externalMetadataColumnId="Package\DimShippers\Destino de OLE DB.Inputs[Entrada de destino de OLE DB].ExternalColumns[discount]"
+                      lineageId="Package\DimShippers\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[discount]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\DimShippers\Destino de OLE DB.Inputs[Entrada de destino de OLE DB].ExternalColumns[fact_sales_key]"
+                      dataType="i8"
+                      name="fact_sales_key" />
+                    <externalMetadataColumn
+                      refId="Package\DimShippers\Destino de OLE DB.Inputs[Entrada de destino de OLE DB].ExternalColumns[order_date_key]"
+                      dataType="i4"
+                      name="order_date_key" />
+                    <externalMetadataColumn
+                      refId="Package\DimShippers\Destino de OLE DB.Inputs[Entrada de destino de OLE DB].ExternalColumns[customer_key]"
+                      dataType="i4"
+                      name="customer_key" />
+                    <externalMetadataColumn
+                      refId="Package\DimShippers\Destino de OLE DB.Inputs[Entrada de destino de OLE DB].ExternalColumns[product_key]"
+                      dataType="i4"
+                      name="product_key" />
+                    <externalMetadataColumn
+                      refId="Package\DimShippers\Destino de OLE DB.Inputs[Entrada de destino de OLE DB].ExternalColumns[employee_key]"
+                      dataType="i4"
+                      name="employee_key" />
+                    <externalMetadataColumn
+                      refId="Package\DimShippers\Destino de OLE DB.Inputs[Entrada de destino de OLE DB].ExternalColumns[shipper_key]"
+                      dataType="i4"
+                      name="shipper_key" />
+                    <externalMetadataColumn
+                      refId="Package\DimShippers\Destino de OLE DB.Inputs[Entrada de destino de OLE DB].ExternalColumns[order_number]"
+                      dataType="i4"
+                      name="order_number" />
+                    <externalMetadataColumn
+                      refId="Package\DimShippers\Destino de OLE DB.Inputs[Entrada de destino de OLE DB].ExternalColumns[order_qty]"
+                      dataType="i4"
+                      name="order_qty" />
+                    <externalMetadataColumn
+                      refId="Package\DimShippers\Destino de OLE DB.Inputs[Entrada de destino de OLE DB].ExternalColumns[unit_price]"
+                      dataType="numeric"
+                      name="unit_price"
+                      precision="19"
+                      scale="4" />
+                    <externalMetadataColumn
+                      refId="Package\DimShippers\Destino de OLE DB.Inputs[Entrada de destino de OLE DB].ExternalColumns[discount]"
+                      dataType="numeric"
+                      name="discount"
+                      precision="5"
+                      scale="4" />
+                    <externalMetadataColumn
+                      refId="Package\DimShippers\Destino de OLE DB.Inputs[Entrada de destino de OLE DB].ExternalColumns[extended_amount]"
+                      dataType="numeric"
+                      name="extended_amount"
+                      precision="19"
+                      scale="4" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\DimShippers\Destino de OLE DB.Outputs[Salida de error de destino de OLE DB]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Salida de error de destino de OLE DB"
+                  synchronousInputId="Package\DimShippers\Destino de OLE DB.Inputs[Entrada de destino de OLE DB]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DimShippers\Destino de OLE DB.Outputs[Salida de error de destino de OLE DB].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DimShippers\Destino de OLE DB.Outputs[Salida de error de destino de OLE DB].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DimShippers\Destino de OLE DB.Outputs[Salida de error de destino de OLE DB].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DimShippers\Destino de OLE DB.Outputs[Salida de error de destino de OLE DB].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\DimShippers\Origen de OLE DB"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="Origen de OLE DB;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos los derechos reservados; http://www.microsoft.com/sql/support;7"
+              description="Origen de OLE DB"
+              name="Origen de OLE DB"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="Número de segundos antes de que se agote el tiempo de espera de un comando. Un valor de 0 indica un tiempo de espera infinito."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Especifica el nombre del objeto de base de datos usado para abrir un conjunto de filas."
+                  name="OpenRowset"></property>
+                <property
+                  dataType="System.String"
+                  description="Especifica la variable que contiene el nombre del objeto de base de datos usado para abrir un conjunto de filas."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="Comando SQL para ejecutar."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT 
+      dd.date_key                         AS order_date_key
+    , dc.customer_key
+    , dp.product_key
+    , de.employee_key
+    , ds.shipper_key
+    , sv.Ventas_NOrden                    AS order_number
+    , sv.Ventas_Unidades                  AS order_qty
+    , CAST(sv.Ventas_PUnitario AS DECIMAL(19,4)) AS unit_price
+    , CAST(sv.Ventas_Descuento AS DECIMAL(5,2))  AS discount
+FROM STAGE_NORTHWIND.dbo.Stage_Ventas AS sv
+JOIN Datamart_Northwind.dbo.dim_customer  AS dc
+    ON sv.Cliente_Codigo       = dc.customerid_nk
+   AND dc.is_current           = 1            -- 🔹 solo la versión actual del cliente
+JOIN Datamart_Northwind.dbo.dim_employee  AS de
+    ON sv.Empleado_Codigo      = de.employeeid_nk
+JOIN Datamart_Northwind.dbo.dim_product   AS dp
+    ON sv.Producto_Codigo      = dp.productid_nk
+JOIN Datamart_Northwind.dbo.dim_shipper   AS ds
+    ON sv.Transportista_codigo = ds.shipperid_nk
+JOIN Datamart_Northwind.dbo.dim_date      AS dd
+    ON dd.[date] = CAST(sv.Ventas_OrderDate AS date)
+WHERE 
+    -- 1) Fechas &gt;= a la máxima que ya tienes
+    CAST(sv.Ventas_OrderDate AS date) &gt;= COALESCE(
+          (SELECT MAX(d.[date])
+           FROM Datamart_Northwind.dbo.fact_sales fs
+           JOIN Datamart_Northwind.dbo.dim_date d 
+                ON fs.order_date_key = d.date_key),
+          '19000101'
+      )	
+    -- 2) Evitar duplicar orders que ya estén en la fact
+    AND NOT EXISTS (
+        SELECT 1
+        FROM Datamart_Northwind.dbo.fact_sales fs
+        WHERE fs.order_number = sv.Ventas_NOrden
+    )
+ORDER BY 
+      dc.customer_key
+    , de.employee_key
+    , dp.product_key
+    , ds.shipper_key
+    , dd.date_key
+    , sv.Ventas_NOrden;</property>
+                <property
+                  dataType="System.String"
+                  description="Variable que contiene el comando SQL para ejecutar."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica la página de códigos de columna para utilizar cuando la información de página de códigos no está disponible en el origen de datos."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Fuerza el uso del valor de la propiedad DefaultCodePage al describir datos de caracteres."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica el modo utilizado para obtener acceso a la base de datos."
+                  name="AccessMode"
+                  typeConverter="AccessMode">2</property>
+                <property
+                  dataType="System.String"
+                  description="Asignaciones entre los parámetros del comando SQL y las variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\DimShippers\Origen de OLE DB.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[.,1422.Stage_Northwind.sa1]"
+                  connectionManagerRefId="Package.ConnectionManagers[.,1422.Stage_Northwind.sa1]"
+                  description="La conexión de tiempo de ejecución OLE DB usada para obtener acceso a la base de datos."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\DimShippers\Origen de OLE DB.Outputs[Salida de origen de OLE DB]"
+                  name="Salida de origen de OLE DB">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DimShippers\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[order_date_key]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DimShippers\Origen de OLE DB.Outputs[Salida de origen de OLE DB].ExternalColumns[order_date_key]"
+                      lineageId="Package\DimShippers\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[order_date_key]"
+                      name="order_date_key"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DimShippers\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[customer_key]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DimShippers\Origen de OLE DB.Outputs[Salida de origen de OLE DB].ExternalColumns[customer_key]"
+                      lineageId="Package\DimShippers\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[customer_key]"
+                      name="customer_key"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DimShippers\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[product_key]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DimShippers\Origen de OLE DB.Outputs[Salida de origen de OLE DB].ExternalColumns[product_key]"
+                      lineageId="Package\DimShippers\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[product_key]"
+                      name="product_key"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DimShippers\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[employee_key]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DimShippers\Origen de OLE DB.Outputs[Salida de origen de OLE DB].ExternalColumns[employee_key]"
+                      lineageId="Package\DimShippers\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[employee_key]"
+                      name="employee_key"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DimShippers\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[shipper_key]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DimShippers\Origen de OLE DB.Outputs[Salida de origen de OLE DB].ExternalColumns[shipper_key]"
+                      lineageId="Package\DimShippers\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[shipper_key]"
+                      name="shipper_key"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DimShippers\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[order_number]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DimShippers\Origen de OLE DB.Outputs[Salida de origen de OLE DB].ExternalColumns[order_number]"
+                      lineageId="Package\DimShippers\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[order_number]"
+                      name="order_number"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DimShippers\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[order_qty]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DimShippers\Origen de OLE DB.Outputs[Salida de origen de OLE DB].ExternalColumns[order_qty]"
+                      lineageId="Package\DimShippers\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[order_qty]"
+                      name="order_qty"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DimShippers\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[unit_price]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DimShippers\Origen de OLE DB.Outputs[Salida de origen de OLE DB].ExternalColumns[unit_price]"
+                      lineageId="Package\DimShippers\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[unit_price]"
+                      name="unit_price"
+                      precision="19"
+                      scale="4"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DimShippers\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[discount]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DimShippers\Origen de OLE DB.Outputs[Salida de origen de OLE DB].ExternalColumns[discount]"
+                      lineageId="Package\DimShippers\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[discount]"
+                      name="discount"
+                      precision="5"
+                      scale="2"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\DimShippers\Origen de OLE DB.Outputs[Salida de origen de OLE DB].ExternalColumns[order_date_key]"
+                      dataType="i4"
+                      name="order_date_key" />
+                    <externalMetadataColumn
+                      refId="Package\DimShippers\Origen de OLE DB.Outputs[Salida de origen de OLE DB].ExternalColumns[customer_key]"
+                      dataType="i4"
+                      name="customer_key" />
+                    <externalMetadataColumn
+                      refId="Package\DimShippers\Origen de OLE DB.Outputs[Salida de origen de OLE DB].ExternalColumns[product_key]"
+                      dataType="i4"
+                      name="product_key" />
+                    <externalMetadataColumn
+                      refId="Package\DimShippers\Origen de OLE DB.Outputs[Salida de origen de OLE DB].ExternalColumns[employee_key]"
+                      dataType="i4"
+                      name="employee_key" />
+                    <externalMetadataColumn
+                      refId="Package\DimShippers\Origen de OLE DB.Outputs[Salida de origen de OLE DB].ExternalColumns[shipper_key]"
+                      dataType="i4"
+                      name="shipper_key" />
+                    <externalMetadataColumn
+                      refId="Package\DimShippers\Origen de OLE DB.Outputs[Salida de origen de OLE DB].ExternalColumns[order_number]"
+                      dataType="i4"
+                      name="order_number" />
+                    <externalMetadataColumn
+                      refId="Package\DimShippers\Origen de OLE DB.Outputs[Salida de origen de OLE DB].ExternalColumns[order_qty]"
+                      dataType="i4"
+                      name="order_qty" />
+                    <externalMetadataColumn
+                      refId="Package\DimShippers\Origen de OLE DB.Outputs[Salida de origen de OLE DB].ExternalColumns[unit_price]"
+                      dataType="numeric"
+                      name="unit_price"
+                      precision="19"
+                      scale="4" />
+                    <externalMetadataColumn
+                      refId="Package\DimShippers\Origen de OLE DB.Outputs[Salida de origen de OLE DB].ExternalColumns[discount]"
+                      dataType="numeric"
+                      name="discount"
+                      precision="5"
+                      scale="2" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\DimShippers\Origen de OLE DB.Outputs[Salida de error de origen de OLE DB]"
+                  isErrorOut="true"
+                  name="Salida de error de origen de OLE DB">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DimShippers\Origen de OLE DB.Outputs[Salida de error de origen de OLE DB].Columns[order_date_key]"
+                      dataType="i4"
+                      lineageId="Package\DimShippers\Origen de OLE DB.Outputs[Salida de error de origen de OLE DB].Columns[order_date_key]"
+                      name="order_date_key" />
+                    <outputColumn
+                      refId="Package\DimShippers\Origen de OLE DB.Outputs[Salida de error de origen de OLE DB].Columns[customer_key]"
+                      dataType="i4"
+                      lineageId="Package\DimShippers\Origen de OLE DB.Outputs[Salida de error de origen de OLE DB].Columns[customer_key]"
+                      name="customer_key" />
+                    <outputColumn
+                      refId="Package\DimShippers\Origen de OLE DB.Outputs[Salida de error de origen de OLE DB].Columns[product_key]"
+                      dataType="i4"
+                      lineageId="Package\DimShippers\Origen de OLE DB.Outputs[Salida de error de origen de OLE DB].Columns[product_key]"
+                      name="product_key" />
+                    <outputColumn
+                      refId="Package\DimShippers\Origen de OLE DB.Outputs[Salida de error de origen de OLE DB].Columns[employee_key]"
+                      dataType="i4"
+                      lineageId="Package\DimShippers\Origen de OLE DB.Outputs[Salida de error de origen de OLE DB].Columns[employee_key]"
+                      name="employee_key" />
+                    <outputColumn
+                      refId="Package\DimShippers\Origen de OLE DB.Outputs[Salida de error de origen de OLE DB].Columns[shipper_key]"
+                      dataType="i4"
+                      lineageId="Package\DimShippers\Origen de OLE DB.Outputs[Salida de error de origen de OLE DB].Columns[shipper_key]"
+                      name="shipper_key" />
+                    <outputColumn
+                      refId="Package\DimShippers\Origen de OLE DB.Outputs[Salida de error de origen de OLE DB].Columns[order_number]"
+                      dataType="i4"
+                      lineageId="Package\DimShippers\Origen de OLE DB.Outputs[Salida de error de origen de OLE DB].Columns[order_number]"
+                      name="order_number" />
+                    <outputColumn
+                      refId="Package\DimShippers\Origen de OLE DB.Outputs[Salida de error de origen de OLE DB].Columns[order_qty]"
+                      dataType="i4"
+                      lineageId="Package\DimShippers\Origen de OLE DB.Outputs[Salida de error de origen de OLE DB].Columns[order_qty]"
+                      name="order_qty" />
+                    <outputColumn
+                      refId="Package\DimShippers\Origen de OLE DB.Outputs[Salida de error de origen de OLE DB].Columns[unit_price]"
+                      dataType="numeric"
+                      lineageId="Package\DimShippers\Origen de OLE DB.Outputs[Salida de error de origen de OLE DB].Columns[unit_price]"
+                      name="unit_price"
+                      precision="19"
+                      scale="4" />
+                    <outputColumn
+                      refId="Package\DimShippers\Origen de OLE DB.Outputs[Salida de error de origen de OLE DB].Columns[discount]"
+                      dataType="numeric"
+                      lineageId="Package\DimShippers\Origen de OLE DB.Outputs[Salida de error de origen de OLE DB].Columns[discount]"
+                      name="discount"
+                      precision="5"
+                      scale="2" />
+                    <outputColumn
+                      refId="Package\DimShippers\Origen de OLE DB.Outputs[Salida de error de origen de OLE DB].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DimShippers\Origen de OLE DB.Outputs[Salida de error de origen de OLE DB].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DimShippers\Origen de OLE DB.Outputs[Salida de error de origen de OLE DB].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DimShippers\Origen de OLE DB.Outputs[Salida de error de origen de OLE DB].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\DimShippers.Paths[Salida de origen de OLE DB]"
+              endId="Package\DimShippers\Destino de OLE DB.Inputs[Entrada de destino de OLE DB]"
+              name="Salida de origen de OLE DB"
+              startId="Package\DimShippers\Origen de OLE DB.Outputs[Salida de origen de OLE DB]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--Esta sección CDATA contiene la información de diseño del paquete. Esta sección incluye información como, por ejemplo, las coordenadas (x,y), el ancho y el alto.-->
+<!--Si edita manualmente esta sección y comete un error, puede eliminarlo. -->
+<!--El paquete podrá cargarse normalmente, pero se perderá la información de diseño anterior y el diseñador reorganizará los elementos automáticamente en la superficie de diseño.-->
+<Objects
+  Version="8">
+  <!--Cada uno de los nodos siguientes contiene propiedades que no afectan al comportamiento en tiempo de ejecución.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="142.4,41.6"
+          Id="Package\DimShippers"
+          TopLeft="336.666669034296,175.59999998192" />
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\DimShippers">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="164.8,41.6"
+          Id="Package\DimShippers\Origen de OLE DB"
+          TopLeft="268.333318672247,118.733332507677" />
+        <NodeLayout
+          Size="168.8,41.6"
+          Id="Package\DimShippers\Destino de OLE DB"
+          TopLeft="261.666652369831,215.799998499354" />
+        <EdgeLayout
+          Id="Package\DimShippers.Paths[Salida de origen de OLE DB]"
+          TopLeft="348.399985521039,160.333332507677">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,55.4666659916768"
+              Start="0,0"
+              End="0,47.9666659916768">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,47.9666659916768" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\DimShippers\Destino de OLE DB">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\DimShippers\Origen de OLE DB">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

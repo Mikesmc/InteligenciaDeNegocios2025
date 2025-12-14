@@ -1,0 +1,1713 @@
+<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="11/27/2025 6:23:30 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="DESKTOP-772JNFH"
+  DTS:CreatorName="DESKTOP-772JNFH\Bruno"
+  DTS:DTSID="{49D132C5-CD89-49B9-B30C-467F5639C51B}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="16.0.5685.0"
+  DTS:LocaleID="2058"
+  DTS:ObjectName="DimProducto"
+  DTS:PackageType="5"
+  DTS:VersionBuild="37"
+  DTS:VersionGUID="{B5918F16-3F13-4543-9AFF-52DCBD8E0647}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[.,1422.Datamart_Northwind.sa]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{9060AC5C-BBC8-4356-97DD-CBC52D31EE27}"
+      DTS:ObjectName=".,1422.Datamart_Northwind.sa">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=.,1422;User ID=sa;Initial Catalog=Datamart_Northwind;Provider=MSOLEDBSQL.1;Application Name=SSIS-Package1-{9060AC5C-BBC8-4356-97DD-CBC52D31EE27}.,1422.Datamart_Northwind.sa;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[.,1422.Datamart_northwind.sa1]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{0F9075B5-AD20-45C9-8018-879DE4D24AC0}"
+      DTS:ObjectName=".,1422.Datamart_northwind.sa1">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=.,1422;User ID=sa;Initial Catalog=Datamart_northwind;Provider=MSOLEDBSQL.1;Application Name=SSIS-DimProducto-{0F9075B5-AD20-45C9-8018-879DE4D24AC0}.,1422.Datamart_northwind.sa1;Auto Translate=False;">
+          <DTS:Password
+            DTS:Name="Password"
+            Sensitive="1"
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAxkPZQf2+b06WS1sIs1Z74AAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAAAxWv7ML4i5HtHk2R74lSD0GPJd2B2GboHU1/iaR6ojXwAAAAAOgAAAAAIAACAAAABMGX9UsZVBPy7eRBV3J2A8uDlg4wyFv0NE+vXsbniy3CAAAABQE+arKCnyx2E8TC5Ib6bgmC3hZaFrF02xM3mE6aqZLkAAAAC1tsoK52Nz87URjtYat/NG4KICUrMdYpPZi4ixBH1maY6zd8wkJc+KZKRnLE6nyb+jRcvDtXrVjD75mINqU4D+</DTS:Password>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[.,1422.NORTHWIND_METADATA.sa]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{03873995-3E7E-4C89-BDD0-8F79C3BE8B3B}"
+      DTS:ObjectName=".,1422.NORTHWIND_METADATA.sa">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=.,1422;User ID=sa;Initial Catalog=NORTHWIND_METADATA;Provider=MSOLEDBSQL.1;Application Name=SSIS-Package1-{03873995-3E7E-4C89-BDD0-8F79C3BE8B3B}.,1422.NORTHWIND_METADATA.sa;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[.,1422.NORTHWIND_METADATA.sa1]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{E4C9BC73-00FF-4C1D-974C-63B4B7E07872}"
+      DTS:ObjectName=".,1422.NORTHWIND_METADATA.sa1">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=.,1422;User ID=sa;Initial Catalog=NORTHWIND_METADATA;Provider=MSOLEDBSQL.1;Persist Security Info=True;Application Name=SSIS-DimProducto-{E4C9BC73-00FF-4C1D-974C-63B4B7E07872}.,1422.NORTHWIND_METADATA.sa1;Auto Translate=False;">
+          <DTS:Password
+            DTS:Name="Password"
+            Sensitive="1"
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAxkPZQf2+b06WS1sIs1Z74AAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAADLig0Jh+9xq7Cngezfitj5UDVZKpjPUedDKtbM133ezwAAAAAOgAAAAAIAACAAAAAF0nWNcMuogZO9nhXiilcoWikcGIQPBd2AoECKNOYq9yAAAAAMJGWvf/iWXpGMjK78AQJm2ff4j1PsBWR7LP8QIRsx3UAAAADrFcdJOVJtaKp0EPFpPUm7ifgOHTkji1pa/RjGtprvHdm6J+Bw2BCH/qbSiJ7Yfgo7ZWgI9lq6IPzBBFOV7Qwy</DTS:Password>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[.,1422.Stage_Northwind.sa]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{EBCF5B28-3194-47C6-A306-E543521BDD65}"
+      DTS:ObjectName=".,1422.Stage_Northwind.sa">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=.,1422;User ID=sa;Initial Catalog=Stage_Northwind;Provider=MSOLEDBSQL.1;Persist Security Info=True;Application Name=SSIS-Package1-{EBCF5B28-3194-47C6-A306-E543521BDD65}.,1422.Stage_Northwind.sa;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[.,1422.Stage_Northwind.sa1]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{27675F34-22E6-49A2-91A9-26713ED7EC50}"
+      DTS:ObjectName=".,1422.Stage_Northwind.sa1">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=.,1422;User ID=sa;Initial Catalog=Stage_Northwind;Provider=MSOLEDBSQL.1;Persist Security Info=True;Application Name=SSIS-DimProducto-{27675F34-22E6-49A2-91A9-26713ED7EC50}.,1422.Stage_Northwind.sa1;Auto Translate=False;">
+          <DTS:Password
+            DTS:Name="Password"
+            Sensitive="1"
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAxkPZQf2+b06WS1sIs1Z74AAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAABpZt65LZdxXyR059qCtFSieCkvWRJx/dK9StrMGBWuuQAAAAAOgAAAAAIAACAAAABIZc8V9AI7vKhG/8jKYZrduj2qBgXyGkrj/i+LKK3mqyAAAABY6mbAEZJq/n7MdqEZlipGvTYMTrnV6jy5XSIGiU6gcEAAAABEVoZzkUsaSoujGb6wzvy+cztd4lAOkBr31tt+5gKN4cxXe+nN3Lpd/F2pWphzuGP3w3FZWGklYxrnoCecoDFF</DTS:Password>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{FDF94D21-828F-4321-9FEC-82774DE1327E}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="ETLCantidadRegistrosModificados">
+      <DTS:VariableValue
+        DTS:DataType="3">0</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{54CF44B2-61A5-412F-8D43-B0D449196E89}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="ETLCantidadRegistrosNuevos">
+      <DTS:VariableValue
+        DTS:DataType="3">0</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{8A9A4459-4A5C-4D44-AAB5-B3928D80EDEB}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="ETLExecution">
+      <DTS:VariableValue
+        DTS:DataType="3">0</DTS:VariableValue>
+    </DTS:Variable>
+  </DTS:Variables>
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\DF DIM PRODUCTO"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{F8FB8B87-6441-4C69-A92F-14C90FB2CC24}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="DF DIM PRODUCTO"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\DF DIM PRODUCTO\Cantidad de Registros Modificados"
+              componentClassID="Microsoft.RowCount"
+              contactInfo="Row Count;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Counts rows as they pass through a data flow. For example, use the number of rows processed to determine whether or not to perform cleanup operations, or update text in an e-mail message to communicate processing status."
+              name="Cantidad de Registros Modificados">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable to hold the row count."
+                  name="VariableName">User::ETLCantidadRegistrosModificados</property>
+              </properties>
+              <inputs>
+                <input
+                  refId="Package\DF DIM PRODUCTO\Cantidad de Registros Modificados.Inputs[Row Count Input 1]"
+                  hasSideEffects="true"
+                  name="Row Count Input 1">
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\DF DIM PRODUCTO\Cantidad de Registros Modificados.Outputs[Row Count Output 1]"
+                  name="Row Count Output 1"
+                  synchronousInputId="Package\DF DIM PRODUCTO\Cantidad de Registros Modificados.Inputs[Row Count Input 1]">
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\DF DIM PRODUCTO\Cantidad de Registros Nuevos"
+              componentClassID="Microsoft.RowCount"
+              contactInfo="Row Count;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Counts rows as they pass through a data flow. For example, use the number of rows processed to determine whether or not to perform cleanup operations, or update text in an e-mail message to communicate processing status."
+              name="Cantidad de Registros Nuevos">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable to hold the row count."
+                  name="VariableName">User::ETLCantidadRegistrosNuevos</property>
+              </properties>
+              <inputs>
+                <input
+                  refId="Package\DF DIM PRODUCTO\Cantidad de Registros Nuevos.Inputs[Row Count Input 1]"
+                  hasSideEffects="true"
+                  name="Row Count Input 1">
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\DF DIM PRODUCTO\Cantidad de Registros Nuevos.Outputs[Row Count Output 1]"
+                  name="Row Count Output 1"
+                  synchronousInputId="Package\DF DIM PRODUCTO\Cantidad de Registros Nuevos.Inputs[Row Count Input 1]">
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\DF DIM PRODUCTO\Comando de OLE DB"
+              componentClassID="Microsoft.OLEDBCommand"
+              contactInfo="Comando de OLE DB;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos los derechos reservados; http://www.microsoft.com/sql/support;2"
+              description="Ejecuta una instrucción SQL para cada fila de un flujo de datos. Por ejemplo, se usa para llamar al procedimiento almacenado de configuración de nuevo empleado para cada fila de la tabla de nuevos empleados. Nota: la ejecución de una instrucción SQL para cada fila de un flujo de datos de gran tamaño puede tardar mucho tiempo."
+              name="Comando de OLE DB"
+              usesDispositions="true"
+              version="2">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="Número de segundos antes de que se agote el tiempo de espera de un comando. Un valor de 0 indica un tiempo de espera infinito."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Comando SQL para ejecutar."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">update [dbo].[dim_product] set [category_name]=?,
+[product_name]=?, [supplier_name]=? where [productid_nk]=?</property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica la página de códigos de columna para utilizar cuando la información de página de códigos no está disponible en el origen de datos."
+                  name="DefaultCodePage">1252</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\DF DIM PRODUCTO\Comando de OLE DB.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[.,1422.Datamart_northwind.sa1]"
+                  connectionManagerRefId="Package.ConnectionManagers[.,1422.Datamart_northwind.sa1]"
+                  description="La conexión de tiempo de ejecución OLE DB usada para obtener acceso a la base de datos."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\DF DIM PRODUCTO\Comando de OLE DB.Inputs[Entrada de comando de OLE DB]"
+                  errorOrTruncationOperation="Ejecución de comando"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="Entrada de comando de OLE DB">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\DF DIM PRODUCTO\Comando de OLE DB.Inputs[Entrada de comando de OLE DB].Columns[Categoria_Nombre]"
+                      cachedDataType="wstr"
+                      cachedLength="15"
+                      cachedName="Categoria_Nombre"
+                      externalMetadataColumnId="Package\DF DIM PRODUCTO\Comando de OLE DB.Inputs[Entrada de comando de OLE DB].ExternalColumns[Param_0]"
+                      lineageId="Package\DF DIM PRODUCTO\STAGE NORHTWIND.Outputs[OLE DB Source Output].Columns[Categoria_Nombre]" />
+                    <inputColumn
+                      refId="Package\DF DIM PRODUCTO\Comando de OLE DB.Inputs[Entrada de comando de OLE DB].Columns[Producto_Nombre]"
+                      cachedDataType="wstr"
+                      cachedLength="40"
+                      cachedName="Producto_Nombre"
+                      externalMetadataColumnId="Package\DF DIM PRODUCTO\Comando de OLE DB.Inputs[Entrada de comando de OLE DB].ExternalColumns[Param_1]"
+                      lineageId="Package\DF DIM PRODUCTO\STAGE NORHTWIND.Outputs[OLE DB Source Output].Columns[Producto_Nombre]" />
+                    <inputColumn
+                      refId="Package\DF DIM PRODUCTO\Comando de OLE DB.Inputs[Entrada de comando de OLE DB].Columns[ProveedorNombre]"
+                      cachedDataType="wstr"
+                      cachedLength="40"
+                      cachedName="ProveedorNombre"
+                      externalMetadataColumnId="Package\DF DIM PRODUCTO\Comando de OLE DB.Inputs[Entrada de comando de OLE DB].ExternalColumns[Param_2]"
+                      lineageId="Package\DF DIM PRODUCTO\STAGE NORHTWIND.Outputs[OLE DB Source Output].Columns[ProveedorNombre]" />
+                    <inputColumn
+                      refId="Package\DF DIM PRODUCTO\Comando de OLE DB.Inputs[Entrada de comando de OLE DB].Columns[Producto_Codigo]"
+                      cachedDataType="i4"
+                      cachedName="Producto_Codigo"
+                      externalMetadataColumnId="Package\DF DIM PRODUCTO\Comando de OLE DB.Inputs[Entrada de comando de OLE DB].ExternalColumns[Param_3]"
+                      lineageId="Package\DF DIM PRODUCTO\STAGE NORHTWIND.Outputs[OLE DB Source Output].Columns[Producto_Codigo]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\DF DIM PRODUCTO\Comando de OLE DB.Inputs[Entrada de comando de OLE DB].ExternalColumns[Param_0]"
+                      dataType="wstr"
+                      length="15"
+                      name="Param_0">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Información de parámetros. Coincide con los valores de DBPARAMFLAGSENUM de OLE DB."
+                          name="DBParamInfoFlags">65</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\DF DIM PRODUCTO\Comando de OLE DB.Inputs[Entrada de comando de OLE DB].ExternalColumns[Param_1]"
+                      dataType="wstr"
+                      length="40"
+                      name="Param_1">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Información de parámetros. Coincide con los valores de DBPARAMFLAGSENUM de OLE DB."
+                          name="DBParamInfoFlags">65</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\DF DIM PRODUCTO\Comando de OLE DB.Inputs[Entrada de comando de OLE DB].ExternalColumns[Param_2]"
+                      dataType="wstr"
+                      length="40"
+                      name="Param_2">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Información de parámetros. Coincide con los valores de DBPARAMFLAGSENUM de OLE DB."
+                          name="DBParamInfoFlags">65</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\DF DIM PRODUCTO\Comando de OLE DB.Inputs[Entrada de comando de OLE DB].ExternalColumns[Param_3]"
+                      dataType="i4"
+                      name="Param_3">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Información de parámetros. Coincide con los valores de DBPARAMFLAGSENUM de OLE DB."
+                          name="DBParamInfoFlags">81</property>
+                      </properties>
+                    </externalMetadataColumn>
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\DF DIM PRODUCTO\Comando de OLE DB.Outputs[Salida de comando de OLE DB]"
+                  exclusionGroup="1"
+                  name="Salida de comando de OLE DB"
+                  synchronousInputId="Package\DF DIM PRODUCTO\Comando de OLE DB.Inputs[Entrada de comando de OLE DB]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\DF DIM PRODUCTO\Comando de OLE DB.Outputs[Salida de error de comando de OLE DB]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Salida de error de comando de OLE DB"
+                  synchronousInputId="Package\DF DIM PRODUCTO\Comando de OLE DB.Inputs[Entrada de comando de OLE DB]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DF DIM PRODUCTO\Comando de OLE DB.Outputs[Salida de error de comando de OLE DB].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DF DIM PRODUCTO\Comando de OLE DB.Outputs[Salida de error de comando de OLE DB].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DF DIM PRODUCTO\Comando de OLE DB.Outputs[Salida de error de comando de OLE DB].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DF DIM PRODUCTO\Comando de OLE DB.Outputs[Salida de error de comando de OLE DB].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\DF DIM PRODUCTO\Dim product"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="Dim product"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[dim_product]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\DF DIM PRODUCTO\Dim product.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[.,1422.Datamart_northwind.sa1]"
+                  connectionManagerRefId="Package.ConnectionManagers[.,1422.Datamart_northwind.sa1]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\DF DIM PRODUCTO\Dim product.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\DF DIM PRODUCTO\Dim product.Inputs[OLE DB Destination Input].Columns[Producto_Codigo]"
+                      cachedDataType="i4"
+                      cachedName="Producto_Codigo"
+                      externalMetadataColumnId="Package\DF DIM PRODUCTO\Dim product.Inputs[OLE DB Destination Input].ExternalColumns[productid_nk]"
+                      lineageId="Package\DF DIM PRODUCTO\STAGE NORHTWIND.Outputs[OLE DB Source Output].Columns[Producto_Codigo]" />
+                    <inputColumn
+                      refId="Package\DF DIM PRODUCTO\Dim product.Inputs[OLE DB Destination Input].Columns[Producto_Nombre]"
+                      cachedDataType="wstr"
+                      cachedLength="40"
+                      cachedName="Producto_Nombre"
+                      externalMetadataColumnId="Package\DF DIM PRODUCTO\Dim product.Inputs[OLE DB Destination Input].ExternalColumns[product_name]"
+                      lineageId="Package\DF DIM PRODUCTO\STAGE NORHTWIND.Outputs[OLE DB Source Output].Columns[Producto_Nombre]" />
+                    <inputColumn
+                      refId="Package\DF DIM PRODUCTO\Dim product.Inputs[OLE DB Destination Input].Columns[Categoria_Nombre]"
+                      cachedDataType="wstr"
+                      cachedLength="15"
+                      cachedName="Categoria_Nombre"
+                      externalMetadataColumnId="Package\DF DIM PRODUCTO\Dim product.Inputs[OLE DB Destination Input].ExternalColumns[category_name]"
+                      lineageId="Package\DF DIM PRODUCTO\STAGE NORHTWIND.Outputs[OLE DB Source Output].Columns[Categoria_Nombre]" />
+                    <inputColumn
+                      refId="Package\DF DIM PRODUCTO\Dim product.Inputs[OLE DB Destination Input].Columns[ProveedorNombre]"
+                      cachedDataType="wstr"
+                      cachedLength="40"
+                      cachedName="ProveedorNombre"
+                      externalMetadataColumnId="Package\DF DIM PRODUCTO\Dim product.Inputs[OLE DB Destination Input].ExternalColumns[supplier_name]"
+                      lineageId="Package\DF DIM PRODUCTO\STAGE NORHTWIND.Outputs[OLE DB Source Output].Columns[ProveedorNombre]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\DF DIM PRODUCTO\Dim product.Inputs[OLE DB Destination Input].ExternalColumns[product_key]"
+                      dataType="i4"
+                      name="product_key" />
+                    <externalMetadataColumn
+                      refId="Package\DF DIM PRODUCTO\Dim product.Inputs[OLE DB Destination Input].ExternalColumns[productid_nk]"
+                      dataType="i4"
+                      name="productid_nk" />
+                    <externalMetadataColumn
+                      refId="Package\DF DIM PRODUCTO\Dim product.Inputs[OLE DB Destination Input].ExternalColumns[product_name]"
+                      dataType="wstr"
+                      length="40"
+                      name="product_name" />
+                    <externalMetadataColumn
+                      refId="Package\DF DIM PRODUCTO\Dim product.Inputs[OLE DB Destination Input].ExternalColumns[category_name]"
+                      dataType="wstr"
+                      length="15"
+                      name="category_name" />
+                    <externalMetadataColumn
+                      refId="Package\DF DIM PRODUCTO\Dim product.Inputs[OLE DB Destination Input].ExternalColumns[supplier_name]"
+                      dataType="wstr"
+                      length="40"
+                      name="supplier_name" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\DF DIM PRODUCTO\Dim product.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\DF DIM PRODUCTO\Dim product.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DF DIM PRODUCTO\Dim product.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DF DIM PRODUCTO\Dim product.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DF DIM PRODUCTO\Dim product.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DF DIM PRODUCTO\Dim product.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\DF DIM PRODUCTO\Insertar registros DimProducMod"
+              componentClassID="Microsoft.OLEDBCommand"
+              contactInfo="OLE DB Command;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;2"
+              description="Runs an SQL statement for each row in a data flow. For example, call a 'new employee setup' stored procedure for each row in the 'new employees' table. Note: running an SQL statement for each row of a large data flow may take a long time."
+              name="Insertar registros DimProducMod"
+              usesDispositions="true"
+              version="2">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">INSERT INTO [STAGE_NORTHWIND].[dbo].[Dim_Producto_Mod]
+([Producto_Codigo], [Producto_Nombre], [Producto_Nombre_Categoria], [ProveedorNombre], [ETLLoad])
+VALUES
+(?, ?, ?, ?, GETDATE())</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\DF DIM PRODUCTO\Insertar registros DimProducMod.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[.,1422.Stage_Northwind.sa1]"
+                  connectionManagerRefId="Package.ConnectionManagers[.,1422.Stage_Northwind.sa1]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\DF DIM PRODUCTO\Insertar registros DimProducMod.Inputs[OLE DB Command Input]"
+                  errorOrTruncationOperation="Command Execution"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Command Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\DF DIM PRODUCTO\Insertar registros DimProducMod.Inputs[OLE DB Command Input].Columns[Producto_Codigo]"
+                      cachedDataType="i4"
+                      cachedName="Producto_Codigo"
+                      externalMetadataColumnId="Package\DF DIM PRODUCTO\Insertar registros DimProducMod.Inputs[OLE DB Command Input].ExternalColumns[Param_0]"
+                      lineageId="Package\DF DIM PRODUCTO\STAGE NORHTWIND.Outputs[OLE DB Source Output].Columns[Producto_Codigo]" />
+                    <inputColumn
+                      refId="Package\DF DIM PRODUCTO\Insertar registros DimProducMod.Inputs[OLE DB Command Input].Columns[Producto_Nombre]"
+                      cachedDataType="wstr"
+                      cachedLength="40"
+                      cachedName="Producto_Nombre"
+                      externalMetadataColumnId="Package\DF DIM PRODUCTO\Insertar registros DimProducMod.Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
+                      lineageId="Package\DF DIM PRODUCTO\STAGE NORHTWIND.Outputs[OLE DB Source Output].Columns[Producto_Nombre]" />
+                    <inputColumn
+                      refId="Package\DF DIM PRODUCTO\Insertar registros DimProducMod.Inputs[OLE DB Command Input].Columns[Categoria_Nombre]"
+                      cachedDataType="wstr"
+                      cachedLength="15"
+                      cachedName="Categoria_Nombre"
+                      externalMetadataColumnId="Package\DF DIM PRODUCTO\Insertar registros DimProducMod.Inputs[OLE DB Command Input].ExternalColumns[Param_2]"
+                      lineageId="Package\DF DIM PRODUCTO\STAGE NORHTWIND.Outputs[OLE DB Source Output].Columns[Categoria_Nombre]" />
+                    <inputColumn
+                      refId="Package\DF DIM PRODUCTO\Insertar registros DimProducMod.Inputs[OLE DB Command Input].Columns[ProveedorNombre]"
+                      cachedDataType="wstr"
+                      cachedLength="40"
+                      cachedName="ProveedorNombre"
+                      externalMetadataColumnId="Package\DF DIM PRODUCTO\Insertar registros DimProducMod.Inputs[OLE DB Command Input].ExternalColumns[Param_3]"
+                      lineageId="Package\DF DIM PRODUCTO\STAGE NORHTWIND.Outputs[OLE DB Source Output].Columns[ProveedorNombre]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\DF DIM PRODUCTO\Insertar registros DimProducMod.Inputs[OLE DB Command Input].ExternalColumns[Param_0]"
+                      dataType="i4"
+                      name="Param_0">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">81</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\DF DIM PRODUCTO\Insertar registros DimProducMod.Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
+                      dataType="wstr"
+                      length="80"
+                      name="Param_1">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">65</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\DF DIM PRODUCTO\Insertar registros DimProducMod.Inputs[OLE DB Command Input].ExternalColumns[Param_2]"
+                      dataType="wstr"
+                      length="15"
+                      name="Param_2">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">65</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\DF DIM PRODUCTO\Insertar registros DimProducMod.Inputs[OLE DB Command Input].ExternalColumns[Param_3]"
+                      dataType="wstr"
+                      length="40"
+                      name="Param_3">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">65</property>
+                      </properties>
+                    </externalMetadataColumn>
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\DF DIM PRODUCTO\Insertar registros DimProducMod.Outputs[OLE DB Command Output]"
+                  exclusionGroup="1"
+                  name="OLE DB Command Output"
+                  synchronousInputId="Package\DF DIM PRODUCTO\Insertar registros DimProducMod.Inputs[OLE DB Command Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\DF DIM PRODUCTO\Insertar registros DimProducMod.Outputs[OLE DB Command Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Command Error Output"
+                  synchronousInputId="Package\DF DIM PRODUCTO\Insertar registros DimProducMod.Inputs[OLE DB Command Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DF DIM PRODUCTO\Insertar registros DimProducMod.Outputs[OLE DB Command Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DF DIM PRODUCTO\Insertar registros DimProducMod.Outputs[OLE DB Command Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DF DIM PRODUCTO\Insertar registros DimProducMod.Outputs[OLE DB Command Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DF DIM PRODUCTO\Insertar registros DimProducMod.Outputs[OLE DB Command Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\DF DIM PRODUCTO\Slowly Changing Dimension"
+              componentClassID="Microsoft.SCD"
+              contactInfo="Slowly Changing Dimension;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;3"
+              description="Updates a SQL Server Analysis Services data warehouse dimension. Update dimension records that are already present and  insert dimension records that aren't. For example, update the DimProduct table of the AdventureWorksDW OLAP database with data from the Products table in the AdventureWorks OLTP database."
+              name="Slowly Changing Dimension"
+              version="3">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Specifies the SELECT statement used to create a schema rowset."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT [category_name], [product_name], [productid_nk], [supplier_name] FROM [dbo].[dim_product]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the WHERE clause in the SELECT statement that selects the current row among rows with identical business keys."
+                  name="CurrentRowWhere"></property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether historical attribute updates are directed to the transformation output for changing attribute updates."
+                  name="UpdateChangingAttributeHistory">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the transformation fails when columns with fixed attributes contain changes."
+                  name="FailOnFixedAttributeChange">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the column name for the inferred member."
+                  name="InferredMemberIndicator"></property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether inferred member updates are detected."
+                  name="EnableInferredMember">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the transformation fails when a lookup of an existing record fails."
+                  name="FailOnLookupFailure">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies that all rows in the input are new or the transformation detects the change type."
+                  name="IncomingRowChangeType"
+                  typeConverter="IncomingRowChangeType">1</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\DF DIM PRODUCTO\Slowly Changing Dimension.Connections[LookupConnection]"
+                  connectionManagerID="Package.ConnectionManagers[.,1422.Datamart_northwind.sa1]"
+                  connectionManagerRefId="Package.ConnectionManagers[.,1422.Datamart_northwind.sa1]"
+                  description="Defines the connection to use for lookups in the dimension table"
+                  name="LookupConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\DF DIM PRODUCTO\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input]"
+                  name="Slowly Changing Dimension Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\DF DIM PRODUCTO\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].Columns[Categoria_Nombre]"
+                      cachedDataType="wstr"
+                      cachedLength="15"
+                      cachedName="Categoria_Nombre"
+                      externalMetadataColumnId="Package\DF DIM PRODUCTO\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[category_name]"
+                      lineageId="Package\DF DIM PRODUCTO\STAGE NORHTWIND.Outputs[OLE DB Source Output].Columns[Categoria_Nombre]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          name="ColumnType"
+                          typeConverter="ColumnType">2</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DF DIM PRODUCTO\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].Columns[Producto_Nombre]"
+                      cachedDataType="wstr"
+                      cachedLength="40"
+                      cachedName="Producto_Nombre"
+                      externalMetadataColumnId="Package\DF DIM PRODUCTO\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[product_name]"
+                      lineageId="Package\DF DIM PRODUCTO\STAGE NORHTWIND.Outputs[OLE DB Source Output].Columns[Producto_Nombre]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          name="ColumnType"
+                          typeConverter="ColumnType">2</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DF DIM PRODUCTO\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].Columns[Producto_Codigo]"
+                      cachedDataType="i4"
+                      cachedName="Producto_Codigo"
+                      externalMetadataColumnId="Package\DF DIM PRODUCTO\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[productid_nk]"
+                      lineageId="Package\DF DIM PRODUCTO\STAGE NORHTWIND.Outputs[OLE DB Source Output].Columns[Producto_Codigo]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          name="ColumnType"
+                          typeConverter="ColumnType">1</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DF DIM PRODUCTO\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].Columns[ProveedorNombre]"
+                      cachedDataType="wstr"
+                      cachedLength="40"
+                      cachedName="ProveedorNombre"
+                      externalMetadataColumnId="Package\DF DIM PRODUCTO\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[supplier_name]"
+                      lineageId="Package\DF DIM PRODUCTO\STAGE NORHTWIND.Outputs[OLE DB Source Output].Columns[ProveedorNombre]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          name="ColumnType"
+                          typeConverter="ColumnType">2</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\DF DIM PRODUCTO\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[category_name]"
+                      dataType="wstr"
+                      length="15"
+                      name="category_name" />
+                    <externalMetadataColumn
+                      refId="Package\DF DIM PRODUCTO\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[product_name]"
+                      dataType="wstr"
+                      length="40"
+                      name="product_name" />
+                    <externalMetadataColumn
+                      refId="Package\DF DIM PRODUCTO\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[productid_nk]"
+                      dataType="i4"
+                      name="productid_nk" />
+                    <externalMetadataColumn
+                      refId="Package\DF DIM PRODUCTO\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[supplier_name]"
+                      dataType="wstr"
+                      length="40"
+                      name="supplier_name" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\DF DIM PRODUCTO\Slowly Changing Dimension.Outputs[Unchanged Output]"
+                  description="Unchanged rows"
+                  exclusionGroup="1"
+                  name="Unchanged Output"
+                  synchronousInputId="Package\DF DIM PRODUCTO\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\DF DIM PRODUCTO\Slowly Changing Dimension.Outputs[New Output]"
+                  description="New rows"
+                  exclusionGroup="1"
+                  name="New Output"
+                  synchronousInputId="Package\DF DIM PRODUCTO\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\DF DIM PRODUCTO\Slowly Changing Dimension.Outputs[Fixed Attribute Output]"
+                  description="Rows with changes in columns tagged FixedAttribute"
+                  exclusionGroup="1"
+                  name="Fixed Attribute Output"
+                  synchronousInputId="Package\DF DIM PRODUCTO\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\DF DIM PRODUCTO\Slowly Changing Dimension.Outputs[Changing Attribute Updates Output]"
+                  description="These rows contain new information for ChangingAttribute (Type 1) column changes"
+                  exclusionGroup="1"
+                  name="Changing Attribute Updates Output"
+                  synchronousInputId="Package\DF DIM PRODUCTO\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\DF DIM PRODUCTO\Slowly Changing Dimension.Outputs[Historical Attribute Inserts Output]"
+                  description="HistoricalAttribute (Type 2) changes result in these new rows"
+                  exclusionGroup="2"
+                  name="Historical Attribute Inserts Output"
+                  synchronousInputId="Package\DF DIM PRODUCTO\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\DF DIM PRODUCTO\Slowly Changing Dimension.Outputs[Inferred Member Updates Output]"
+                  description="Information to update unpopulated initial dimension row"
+                  exclusionGroup="1"
+                  name="Inferred Member Updates Output"
+                  synchronousInputId="Package\DF DIM PRODUCTO\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input]">
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\DF DIM PRODUCTO\STAGE NORHTWIND"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="STAGE NORHTWIND"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset"></property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT 
+    Producto_Codigo,
+    CAST(Producto_Nombre AS NVARCHAR(40)) AS Producto_Nombre,
+    CAST(CategoriaProducto_Nombre AS NVARCHAR(15)) AS Categoria_Nombre,
+    CAST(ProveedorNombre AS NVARCHAR(40)) AS ProveedorNombre,
+    ETLLoad,
+    ETLExecution
+FROM Stage_Northwind.dbo.Stage_Producto;</property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">2</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\DF DIM PRODUCTO\STAGE NORHTWIND.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[.,1422.Stage_Northwind.sa1]"
+                  connectionManagerRefId="Package.ConnectionManagers[.,1422.Stage_Northwind.sa1]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\DF DIM PRODUCTO\STAGE NORHTWIND.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DF DIM PRODUCTO\STAGE NORHTWIND.Outputs[OLE DB Source Output].Columns[Producto_Codigo]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF DIM PRODUCTO\STAGE NORHTWIND.Outputs[OLE DB Source Output].ExternalColumns[Producto_Codigo]"
+                      lineageId="Package\DF DIM PRODUCTO\STAGE NORHTWIND.Outputs[OLE DB Source Output].Columns[Producto_Codigo]"
+                      name="Producto_Codigo"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DF DIM PRODUCTO\STAGE NORHTWIND.Outputs[OLE DB Source Output].Columns[Producto_Nombre]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF DIM PRODUCTO\STAGE NORHTWIND.Outputs[OLE DB Source Output].ExternalColumns[Producto_Nombre]"
+                      length="40"
+                      lineageId="Package\DF DIM PRODUCTO\STAGE NORHTWIND.Outputs[OLE DB Source Output].Columns[Producto_Nombre]"
+                      name="Producto_Nombre"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DF DIM PRODUCTO\STAGE NORHTWIND.Outputs[OLE DB Source Output].Columns[ProveedorNombre]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF DIM PRODUCTO\STAGE NORHTWIND.Outputs[OLE DB Source Output].ExternalColumns[ProveedorNombre]"
+                      length="40"
+                      lineageId="Package\DF DIM PRODUCTO\STAGE NORHTWIND.Outputs[OLE DB Source Output].Columns[ProveedorNombre]"
+                      name="ProveedorNombre"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DF DIM PRODUCTO\STAGE NORHTWIND.Outputs[OLE DB Source Output].Columns[ETLLoad]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF DIM PRODUCTO\STAGE NORHTWIND.Outputs[OLE DB Source Output].ExternalColumns[ETLLoad]"
+                      lineageId="Package\DF DIM PRODUCTO\STAGE NORHTWIND.Outputs[OLE DB Source Output].Columns[ETLLoad]"
+                      name="ETLLoad"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DF DIM PRODUCTO\STAGE NORHTWIND.Outputs[OLE DB Source Output].Columns[ETLExecution]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF DIM PRODUCTO\STAGE NORHTWIND.Outputs[OLE DB Source Output].ExternalColumns[ETLExecution]"
+                      lineageId="Package\DF DIM PRODUCTO\STAGE NORHTWIND.Outputs[OLE DB Source Output].Columns[ETLExecution]"
+                      name="ETLExecution"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DF DIM PRODUCTO\STAGE NORHTWIND.Outputs[OLE DB Source Output].Columns[Categoria_Nombre]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF DIM PRODUCTO\STAGE NORHTWIND.Outputs[OLE DB Source Output].ExternalColumns[Categoria_Nombre]"
+                      length="15"
+                      lineageId="Package\DF DIM PRODUCTO\STAGE NORHTWIND.Outputs[OLE DB Source Output].Columns[Categoria_Nombre]"
+                      name="Categoria_Nombre"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\DF DIM PRODUCTO\STAGE NORHTWIND.Outputs[OLE DB Source Output].ExternalColumns[Producto_Codigo]"
+                      dataType="i4"
+                      name="Producto_Codigo" />
+                    <externalMetadataColumn
+                      refId="Package\DF DIM PRODUCTO\STAGE NORHTWIND.Outputs[OLE DB Source Output].ExternalColumns[Producto_Nombre]"
+                      dataType="wstr"
+                      length="40"
+                      name="Producto_Nombre" />
+                    <externalMetadataColumn
+                      refId="Package\DF DIM PRODUCTO\STAGE NORHTWIND.Outputs[OLE DB Source Output].ExternalColumns[ProveedorNombre]"
+                      dataType="wstr"
+                      length="40"
+                      name="ProveedorNombre" />
+                    <externalMetadataColumn
+                      refId="Package\DF DIM PRODUCTO\STAGE NORHTWIND.Outputs[OLE DB Source Output].ExternalColumns[ETLLoad]"
+                      dataType="dbTimeStamp"
+                      name="ETLLoad" />
+                    <externalMetadataColumn
+                      refId="Package\DF DIM PRODUCTO\STAGE NORHTWIND.Outputs[OLE DB Source Output].ExternalColumns[ETLExecution]"
+                      dataType="i4"
+                      name="ETLExecution" />
+                    <externalMetadataColumn
+                      refId="Package\DF DIM PRODUCTO\STAGE NORHTWIND.Outputs[OLE DB Source Output].ExternalColumns[Categoria_Nombre]"
+                      dataType="wstr"
+                      length="15"
+                      name="Categoria_Nombre" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\DF DIM PRODUCTO\STAGE NORHTWIND.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DF DIM PRODUCTO\STAGE NORHTWIND.Outputs[OLE DB Source Error Output].Columns[Producto_Codigo]"
+                      dataType="i4"
+                      lineageId="Package\DF DIM PRODUCTO\STAGE NORHTWIND.Outputs[OLE DB Source Error Output].Columns[Producto_Codigo]"
+                      name="Producto_Codigo" />
+                    <outputColumn
+                      refId="Package\DF DIM PRODUCTO\STAGE NORHTWIND.Outputs[OLE DB Source Error Output].Columns[Producto_Nombre]"
+                      dataType="wstr"
+                      length="40"
+                      lineageId="Package\DF DIM PRODUCTO\STAGE NORHTWIND.Outputs[OLE DB Source Error Output].Columns[Producto_Nombre]"
+                      name="Producto_Nombre" />
+                    <outputColumn
+                      refId="Package\DF DIM PRODUCTO\STAGE NORHTWIND.Outputs[OLE DB Source Error Output].Columns[Categoria_Nombre]"
+                      dataType="wstr"
+                      length="15"
+                      lineageId="Package\DF DIM PRODUCTO\STAGE NORHTWIND.Outputs[OLE DB Source Error Output].Columns[Categoria_Nombre]"
+                      name="Categoria_Nombre" />
+                    <outputColumn
+                      refId="Package\DF DIM PRODUCTO\STAGE NORHTWIND.Outputs[OLE DB Source Error Output].Columns[ProveedorNombre]"
+                      dataType="wstr"
+                      length="40"
+                      lineageId="Package\DF DIM PRODUCTO\STAGE NORHTWIND.Outputs[OLE DB Source Error Output].Columns[ProveedorNombre]"
+                      name="ProveedorNombre" />
+                    <outputColumn
+                      refId="Package\DF DIM PRODUCTO\STAGE NORHTWIND.Outputs[OLE DB Source Error Output].Columns[ETLLoad]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\DF DIM PRODUCTO\STAGE NORHTWIND.Outputs[OLE DB Source Error Output].Columns[ETLLoad]"
+                      name="ETLLoad" />
+                    <outputColumn
+                      refId="Package\DF DIM PRODUCTO\STAGE NORHTWIND.Outputs[OLE DB Source Error Output].Columns[ETLExecution]"
+                      dataType="i4"
+                      lineageId="Package\DF DIM PRODUCTO\STAGE NORHTWIND.Outputs[OLE DB Source Error Output].Columns[ETLExecution]"
+                      name="ETLExecution" />
+                    <outputColumn
+                      refId="Package\DF DIM PRODUCTO\STAGE NORHTWIND.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DF DIM PRODUCTO\STAGE NORHTWIND.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DF DIM PRODUCTO\STAGE NORHTWIND.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DF DIM PRODUCTO\STAGE NORHTWIND.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\DF DIM PRODUCTO.Paths[New Output]"
+              endId="Package\DF DIM PRODUCTO\Cantidad de Registros Nuevos.Inputs[Row Count Input 1]"
+              name="New Output"
+              startId="Package\DF DIM PRODUCTO\Slowly Changing Dimension.Outputs[New Output]" />
+            <path
+              refId="Package\DF DIM PRODUCTO.Paths[OLE DB Command Output]"
+              endId="Package\DF DIM PRODUCTO\Comando de OLE DB.Inputs[Entrada de comando de OLE DB]"
+              name="OLE DB Command Output"
+              startId="Package\DF DIM PRODUCTO\Insertar registros DimProducMod.Outputs[OLE DB Command Output]" />
+            <path
+              refId="Package\DF DIM PRODUCTO.Paths[OLE DB Source Output]"
+              endId="Package\DF DIM PRODUCTO\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input]"
+              name="OLE DB Source Output"
+              startId="Package\DF DIM PRODUCTO\STAGE NORHTWIND.Outputs[OLE DB Source Output]" />
+            <path
+              refId="Package\DF DIM PRODUCTO.Paths[Row Count Output 1]"
+              endId="Package\DF DIM PRODUCTO\Dim product.Inputs[OLE DB Destination Input]"
+              name="Row Count Output 1"
+              startId="Package\DF DIM PRODUCTO\Cantidad de Registros Nuevos.Outputs[Row Count Output 1]" />
+            <path
+              refId="Package\DF DIM PRODUCTO.Paths[Row Count Output 11]"
+              endId="Package\DF DIM PRODUCTO\Insertar registros DimProducMod.Inputs[OLE DB Command Input]"
+              name="Row Count Output 1"
+              startId="Package\DF DIM PRODUCTO\Cantidad de Registros Modificados.Outputs[Row Count Output 1]" />
+            <path
+              refId="Package\DF DIM PRODUCTO.Paths[Unchanged Output]"
+              endId="Package\DF DIM PRODUCTO\Cantidad de Registros Modificados.Inputs[Row Count Input 1]"
+              name="Unchanged Output"
+              startId="Package\DF DIM PRODUCTO\Slowly Changing Dimension.Outputs[Unchanged Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Insertar cantidad registros nuevos y modificados"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Tarea Ejecutar SQL"
+      DTS:DTSID="{032657ce-ee23-4adc-9286-5f8c4f824bca}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Insertar cantidad registros nuevos y modificados"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{E4C9BC73-00FF-4C1D-974C-63B4B7E07872}"
+          SQLTask:SqlStatementSource="UPDATE ETLExecution&#xA;SET [ETLCountNewRegister] = ?,&#xA;    [ETLCountModifiedRegister] = ?&#xA;WHERE ID = ?" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="0"
+            SQLTask:DtsVariableName="User::ETLCantidadRegistrosNuevos"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="3"
+            SQLTask:ParameterSize="-1" />
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="1"
+            SQLTask:DtsVariableName="User::ETLCantidadRegistrosModificados"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="3"
+            SQLTask:ParameterSize="-1" />
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="2"
+            SQLTask:DtsVariableName="User::ETLExecution"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="3"
+            SQLTask:ParameterSize="-1" />
+        </SQLTask:SqlTaskData>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Insertar cantidad total"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Tarea Ejecutar SQL"
+      DTS:DTSID="{b1306208-4e2e-42c2-81b2-bf55f1998496}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Insertar cantidad total"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{E4C9BC73-00FF-4C1D-974C-63B4B7E07872}"
+          SQLTask:SqlStatementSource="UPDATE ETLExecution&#xA;SET [ETLCountRows]=([ETLCountNewRegister]+[ETLCountModifiedRegister])&#xA;WHERE ID = ?" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="0"
+            SQLTask:DtsVariableName="User::ETLExecution"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="3"
+            SQLTask:ParameterSize="-1" />
+        </SQLTask:SqlTaskData>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Insertar Registro en el metadata"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Tarea Ejecutar SQL"
+      DTS:DTSID="{054c815c-7e32-4b20-b5ec-e04603f08d77}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Insertar Registro en el metadata"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{E4C9BC73-00FF-4C1D-974C-63B4B7E07872}"
+          SQLTask:SqlStatementSource="INSERT INTO ETLExecution(UserName, MachineName, PackageName, ETLLoad)&#xA;VALUES(?,?,?,GETDATE())" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="0"
+            SQLTask:DtsVariableName="System::UserName"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="130"
+            SQLTask:ParameterSize="-1" />
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="1"
+            SQLTask:DtsVariableName="System::MachineName"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="130"
+            SQLTask:ParameterSize="-1" />
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="2"
+            SQLTask:DtsVariableName="System::PackageName"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="130"
+            SQLTask:ParameterSize="-1" />
+        </SQLTask:SqlTaskData>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Obtener ID"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Tarea Ejecutar SQL"
+      DTS:DTSID="{af31cde2-391e-478d-bb3f-6b03b6c95a46}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Obtener ID"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{E4C9BC73-00FF-4C1D-974C-63B4B7E07872}"
+          SQLTask:SqlStatementSource="SELECT TOP(1) ID FROM ETLExecution&#xA;WHERE PackageName = ?&#xA;ORDER BY ID DESC"
+          SQLTask:ResultType="ResultSetType_SingleRow" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+          <SQLTask:ResultBinding
+            SQLTask:ResultName="0"
+            SQLTask:DtsVariableName="User::ETLExecution" />
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="0"
+            SQLTask:DtsVariableName="System::PackageName"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="130"
+            SQLTask:ParameterSize="-1" />
+        </SQLTask:SqlTaskData>
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Restricción]"
+      DTS:CreationName=""
+      DTS:DTSID="{a97213e1-18b1-443e-a248-6931bbcf39c4}"
+      DTS:From="Package\Insertar Registro en el metadata"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Restricción"
+      DTS:To="Package\Obtener ID" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Restricción 1]"
+      DTS:CreationName=""
+      DTS:DTSID="{A97E83D2-D4A4-4A51-ADCA-E75679815C8F}"
+      DTS:From="Package\Obtener ID"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Restricción 1"
+      DTS:To="Package\DF DIM PRODUCTO" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Restricción 2]"
+      DTS:CreationName=""
+      DTS:DTSID="{A3E08F43-34C9-4BFA-82EA-5CF06BE5CC4E}"
+      DTS:From="Package\DF DIM PRODUCTO"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Restricción 2"
+      DTS:To="Package\Insertar cantidad registros nuevos y modificados" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Restricción 3]"
+      DTS:CreationName=""
+      DTS:DTSID="{030AC882-A5F0-41AF-AAAC-0D7BAA191018}"
+      DTS:From="Package\Insertar cantidad registros nuevos y modificados"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Restricción 3"
+      DTS:To="Package\Insertar cantidad total" />
+  </DTS:PrecedenceConstraints>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--Esta sección CDATA contiene la información de diseño del paquete. Esta sección incluye información como, por ejemplo, las coordenadas (x,y), el ancho y el alto.-->
+<!--Si edita manualmente esta sección y comete un error, puede eliminarlo. -->
+<!--El paquete podrá cargarse normalmente, pero se perderá la información de diseño anterior y el diseñador reorganizará los elementos automáticamente en la superficie de diseño.-->
+<Objects
+  Version="8">
+  <!--Cada uno de los nodos siguientes contiene propiedades que no afectan al comportamiento en tiempo de ejecución.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="176,41.6"
+          Id="Package\DF DIM PRODUCTO"
+          TopLeft="369.999979784092,160.333332218395" />
+        <NodeLayout
+          Size="300.8,41.6"
+          Id="Package\Insertar cantidad registros nuevos y modificados"
+          TopLeft="364.166646769479,240.266665702396" />
+        <NodeLayout
+          Size="178.4,41.6"
+          Id="Package\Insertar cantidad total"
+          TopLeft="412.499977461996,308.933331947193" />
+        <NodeLayout
+          Size="226.4,41.6"
+          Id="Package\Insertar Registro en el metadata"
+          TopLeft="269.999985247851,53.6000004339218" />
+        <NodeLayout
+          Size="128.8,41.6"
+          Id="Package\Obtener ID"
+          TopLeft="159.166657970185,113.933333086239" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Restricción]"
+          TopLeft="269.999985247851,74.4000004339218">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-46.433327277666,39.5333326523172"
+              Start="0,0"
+              End="-46.433327277666,32.0333326523172">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="-42.433327277666,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-42.433327277666,0"
+                    Point2="-46.433327277666,0"
+                    Point3="-46.433327277666,4" />
+                  <mssgle:LineSegment
+                    End="-46.433327277666,32.0333326523172" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Restricción 1]"
+          TopLeft="287.966657970185,134.733333086239">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="82.0333218139073,46.399999132156"
+              Start="0,0"
+              End="74.5333218139073,46.399999132156">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="37.0166609069537,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="37.0166609069537,0"
+                    Point2="41.0166609069537,0"
+                    Point3="41.0166609069537,4" />
+                  <mssgle:LineSegment
+                    End="41.0166609069537,42.399999132156" />
+                  <mssgle:CubicBezierSegment
+                    Point1="41.0166609069537,42.399999132156"
+                    Point2="41.0166609069537,46.399999132156"
+                    Point3="45.0166609069537,46.399999132156" />
+                  <mssgle:LineSegment
+                    End="74.5333218139073,46.399999132156" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Restricción 2]"
+          TopLeft="457.999979784092,201.933332218395">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="56.566666985387,38.3333334840007"
+              Start="0,0"
+              End="56.566666985387,30.8333334840007">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,15.1666667420003" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,15.1666667420003"
+                    Point2="0,19.1666667420003"
+                    Point3="4,19.1666667420003" />
+                  <mssgle:LineSegment
+                    End="52.566666985387,19.1666667420003" />
+                  <mssgle:CubicBezierSegment
+                    Point1="52.566666985387,19.1666667420003"
+                    Point2="56.566666985387,19.1666667420003"
+                    Point3="56.566666985387,23.1666667420003" />
+                  <mssgle:LineSegment
+                    End="56.566666985387,30.8333334840007" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Restricción 3]"
+          TopLeft="514.566646769479,281.866665702396">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-12.8666693074828,27.0666662447978"
+              Start="0,0"
+              End="-12.8666693074828,19.5666662447978">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,9.53333312239891" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,9.53333312239891"
+                    Point2="0,13.5333331223989"
+                    Point3="-4,13.5333331223989" />
+                  <mssgle:LineSegment
+                    End="-8.86666930748277,13.5333331223989" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-8.86666930748277,13.5333331223989"
+                    Point2="-12.8666693074828,13.5333331223989"
+                    Point3="-12.8666693074828,17.5333331223989" />
+                  <mssgle:LineSegment
+                    End="-12.8666693074828,19.5666662447978" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\DF DIM PRODUCTO">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="134.4,41.6"
+          Id="Package\DF DIM PRODUCTO\Dim product"
+          TopLeft="79.666662614379,296.233332724637" />
+        <NodeLayout
+          Size="208,41.6"
+          Id="Package\DF DIM PRODUCTO\Slowly Changing Dimension"
+          TopLeft="261.533329736359,78.5000001988808" />
+        <NodeLayout
+          Size="178.4,41.6"
+          Id="Package\DF DIM PRODUCTO\Comando de OLE DB"
+          TopLeft="474.999974047145,351.86666421983" />
+        <NodeLayout
+          Size="180.8,41.6"
+          Id="Package\DF DIM PRODUCTO\STAGE NORHTWIND"
+          TopLeft="274.299996448557,5.49999999999995" />
+        <NodeLayout
+          Size="231.2,41.6"
+          Id="Package\DF DIM PRODUCTO\Insertar registros DimProducMod"
+          TopLeft="502.499972544612,271.599998879035" />
+        <NodeLayout
+          Size="219.2,41.6"
+          Id="Package\DF DIM PRODUCTO\Cantidad de Registros Nuevos"
+          TopLeft="39.1666645266943,201.999998879035" />
+        <NodeLayout
+          Size="239.2,41.6"
+          Id="Package\DF DIM PRODUCTO\Cantidad de Registros Modificados"
+          TopLeft="505.833305695819,198.266665521595" />
+        <EdgeLayout
+          Id="Package\DF DIM PRODUCTO.Paths[Unchanged Output]"
+          TopLeft="398.866663069692,120.100000198881">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="226.566642626127,78.1666653227142"
+              Start="0,0"
+              End="226.566642626127,70.6666653227142">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,27.6246813901057" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,27.6246813901057"
+                    Point2="0,31.6246813901057"
+                    Point3="4,31.6246813901057" />
+                  <mssgle:LineSegment
+                    End="222.566642626127,31.6246813901057" />
+                  <mssgle:CubicBezierSegment
+                    Point1="222.566642626127,31.6246813901057"
+                    Point2="226.566642626127,31.6246813901057"
+                    Point3="226.566642626127,35.6246813901057" />
+                  <mssgle:LineSegment
+                    End="226.566642626127,70.6666653227142" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="71.0829892818134,36.6246813901057,84.4006640625,11.6630859375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\DF DIM PRODUCTO.Paths[Row Count Output 11]"
+          TopLeft="621.766639120216,239.866665521595">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,31.7333333574397"
+              Start="0,0"
+              End="0,24.2333333574397">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,24.2333333574397" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\DF DIM PRODUCTO.Paths[Row Count Output 1]"
+          TopLeft="147.816663570537,243.599998879035">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,52.6333338456021"
+              Start="0,0"
+              End="0,45.1333338456021">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,45.1333338456021" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\DF DIM PRODUCTO.Paths[OLE DB Source Output]"
+          TopLeft="365.116663092458,47.1">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,31.4000001988809"
+              Start="0,0"
+              End="0,23.9000001988809">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,23.9000001988809" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\DF DIM PRODUCTO.Paths[OLE DB Command Output]"
+          TopLeft="618.099972544612,313.199998879035">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-53.8999984974666,38.6666653407944"
+              Start="0,0"
+              End="-53.8999984974666,31.1666653407944">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,15.3333326703972" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,15.3333326703972"
+                    Point2="0,19.3333326703972"
+                    Point3="-4,19.3333326703972" />
+                  <mssgle:LineSegment
+                    End="-49.8999984974666,19.3333326703972" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-49.8999984974666,19.3333326703972"
+                    Point2="-53.8999984974666,19.3333326703972"
+                    Point3="-53.8999984974666,23.3333326703972" />
+                  <mssgle:LineSegment
+                    End="-53.8999984974666,31.1666653407944" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\DF DIM PRODUCTO.Paths[New Output]"
+          TopLeft="332.199996403026,120.100000198881">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-183.433331876331,81.8999986801542"
+              Start="0,0"
+              End="-183.433331876331,74.3999986801542">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,29.1351139698334" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,29.1351139698334"
+                    Point2="0,33.1351139698334"
+                    Point3="-4,33.1351139698334" />
+                  <mssgle:LineSegment
+                    End="-179.433331876331,33.1351139698334" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-179.433331876331,33.1351139698334"
+                    Point2="-183.433331876331,33.1351139698334"
+                    Point3="-183.433331876331,37.1351139698334" />
+                  <mssgle:LineSegment
+                    End="-183.433331876331,74.3999986801542" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-118.808052656916,38.1351139698334,54.1827734375,11.43359375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\DF DIM PRODUCTO\Slowly Changing Dimension">
+    <Properties>
+      <Property>
+        <Name>SCDMetadata</Name>
+        <Value
+          type="q2:string">&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;SCDWizardMetadata xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"&gt;
+  &lt;ConnectionID&gt;{0F9075B5-AD20-45C9-8018-879DE4D24AC0}&lt;/ConnectionID&gt;
+  &lt;TableName&gt;[dbo].[dim_product]&lt;/TableName&gt;
+  &lt;InputToColumnsCollection&gt;
+    &lt;InputColumnToDBColumn&gt;
+      &lt;IdentificationString&gt;STAGE NORHTWIND.Salidas[OLE DB Source Output].Columnas[Categoria_Nombre]&lt;/IdentificationString&gt;
+      &lt;ColumnName&gt;category_name&lt;/ColumnName&gt;
+      &lt;KeyType&gt;None&lt;/KeyType&gt;
+      &lt;ChangeType&gt;ChangingAttribute&lt;/ChangeType&gt;
+    &lt;/InputColumnToDBColumn&gt;
+    &lt;InputColumnToDBColumn&gt;
+      &lt;IdentificationString&gt;STAGE NORHTWIND.Salidas[OLE DB Source Output].Columnas[Producto_Nombre]&lt;/IdentificationString&gt;
+      &lt;ColumnName&gt;product_name&lt;/ColumnName&gt;
+      &lt;KeyType&gt;None&lt;/KeyType&gt;
+      &lt;ChangeType&gt;ChangingAttribute&lt;/ChangeType&gt;
+    &lt;/InputColumnToDBColumn&gt;
+    &lt;InputColumnToDBColumn&gt;
+      &lt;IdentificationString&gt;STAGE NORHTWIND.Salidas[OLE DB Source Output].Columnas[Producto_Codigo]&lt;/IdentificationString&gt;
+      &lt;ColumnName&gt;productid_nk&lt;/ColumnName&gt;
+      &lt;KeyType&gt;BusinessKey&lt;/KeyType&gt;
+      &lt;ChangeType&gt;None&lt;/ChangeType&gt;
+    &lt;/InputColumnToDBColumn&gt;
+    &lt;InputColumnToDBColumn&gt;
+      &lt;IdentificationString&gt;STAGE NORHTWIND.Salidas[OLE DB Source Output].Columnas[ProveedorNombre]&lt;/IdentificationString&gt;
+      &lt;ColumnName&gt;supplier_name&lt;/ColumnName&gt;
+      &lt;KeyType&gt;None&lt;/KeyType&gt;
+      &lt;ChangeType&gt;ChangingAttribute&lt;/ChangeType&gt;
+    &lt;/InputColumnToDBColumn&gt;
+  &lt;/InputToColumnsCollection&gt;
+  &lt;GeneratedComponentsIdentificationStrings&gt;
+    &lt;anyType xsi:type="xsd:string"&gt;Insertar destino&lt;/anyType&gt;
+    &lt;anyType xsi:type="xsd:string"&gt;Comando de OLE DB&lt;/anyType&gt;
+  &lt;/GeneratedComponentsIdentificationStrings&gt;
+  &lt;FailFixedAttribute&gt;false&lt;/FailFixedAttribute&gt;
+  &lt;FailChangeAttribute&gt;false&lt;/FailChangeAttribute&gt;
+  &lt;UseStartEndDate&gt;false&lt;/UseStartEndDate&gt;
+  &lt;CurrentIndicatorColumn /&gt;
+  &lt;InferredIndicatorColumn /&gt;
+  &lt;ValueCurrent /&gt;
+  &lt;ValueExpired /&gt;
+  &lt;StartDateColumn /&gt;
+  &lt;EndDateColumn /&gt;
+  &lt;DateVariable /&gt;
+  &lt;EnableInferredSupport&gt;false&lt;/EnableInferredSupport&gt;
+&lt;/SCDWizardMetadata&gt;</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\DF DIM PRODUCTO\STAGE NORHTWIND">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>
